@@ -9,11 +9,7 @@ namespace Coladel.GerenciadorPedidos.Domain.Body
 
         public Produto ToModel()
         {
-            return new Produto
-            {
-                NomeProduto = NomeProduto,
-                Preco = Preco
-            };
+            return new Produto(this);
         }
     }
 }

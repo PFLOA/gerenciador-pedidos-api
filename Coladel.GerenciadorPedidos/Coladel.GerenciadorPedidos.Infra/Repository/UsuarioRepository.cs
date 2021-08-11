@@ -1,4 +1,5 @@
 ﻿using Coladel.Application.Handlers.Usuarios.Response;
+using Coladel.GerenciadorPedidos.Domain.Body;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Data;
@@ -9,11 +10,9 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
     {
         public UsuarioRepository(ApplicationDbContext context) : base(context) { }
         
-        public Usuario CriarUsuario(Usuario usuario)
+        public Usuario CriarUsuario(CriarUsuarioRequestBody usuario)
         {
-            CriarUsuarioResponse newUser = new CriarUsuarioResponse(usuario);
-
-            var retorno = Set.Add(newUser.ToUsuarioModel());
+            var retorno = Set.Add(usuario.ToModel());
             context.SaveChanges();
 
             return retorno.Entity;

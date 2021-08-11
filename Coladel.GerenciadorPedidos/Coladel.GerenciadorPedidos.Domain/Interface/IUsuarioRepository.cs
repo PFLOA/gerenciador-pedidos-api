@@ -1,9 +1,10 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using Coladel.GerenciadorPedidos.Domain.Body;
+using Coladel.GerenciadorPedidos.Domain.Entidades;
 
 namespace Coladel.GerenciadorPedidos.Domain.Interface
 {
     public interface IUsuarioRepository
     {
-        Usuario CriarUsuario(Usuario usuario);
+        Usuario CriarUsuario(CriarUsuarioRequestBody usuario);
     }
 }

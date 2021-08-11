@@ -1,7 +1,5 @@
-using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra;
 using Coladel.GerenciadorPedidos.Infra.Data;
-using Coladel.GerenciadorPedidos.Infra.Repository;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -101,7 +99,6 @@ namespace Coladel.GerenciadorPedidos
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(x => x

@@ -12,7 +12,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         public Produto CriarProduto(CriarProdutoRequestBody produto)
         {
             var retorno = Set.Add(produto.ToModel());
-            var retorno_save = context.SaveChanges();
+            context.SaveChanges();
 
             return retorno.Entity;
         }

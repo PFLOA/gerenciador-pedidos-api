@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Filters\" />
+    <ProjectReference Include="..\Coladel.Core\Coladel.Core.csproj" />
   </ItemGroup>
 
 </Project>

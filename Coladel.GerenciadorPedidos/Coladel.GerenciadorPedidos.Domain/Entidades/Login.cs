@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Coladel.GerenciadorPedidos.Domain.Entidades
+﻿namespace Coladel.GerenciadorPedidos.Domain.Entidades
 {
     public class Login
     {

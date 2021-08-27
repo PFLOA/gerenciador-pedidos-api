@@ -11,8 +11,14 @@ namespace Coladel.GerenciadorPedidos.Controllers
     {
         public ProdutoController(IMediator mediator) : base(mediator) { }
 
-        [HttpPost]
+        [HttpGet]
         [AllowAnonymous]
+        public Task<IActionResult> BuscarProdutoPorFiltro([FromQuery] BuscarProdutosFiltroRequest request)
+        {
+            return _mediator.Send(request);
+        }
+
+        [HttpPost]
         public Task<IActionResult> CriarProduto([FromBody] CriarProdutoRequest request)
         {
             return _mediator.Send(request);

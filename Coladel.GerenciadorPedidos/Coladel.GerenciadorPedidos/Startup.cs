@@ -116,15 +116,16 @@ namespace Coladel.GerenciadorPedidos
             app.UseSwagger(c =>
             {
                 c.SerializeAsV2 = true;
-
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
             });
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "COLADEL Gerenciador de Pedidos API");
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "COLADEL Gerenciador de Pedidos API");
                 c.RoutePrefix = string.Empty;
                 c.EnableFilter();
             });
+
             app.UseRouting();
 
             app.UseAuthentication();

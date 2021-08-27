@@ -4,12 +4,12 @@ using System;
 
 namespace Coladel.Application.Handlers.Produtos.Response
 {
-    public class CriarProdutoResponse
+    public class BuscarProdutosFiltroResponse
     {
+        public Guid Guid { get; set; }
         public string NomeProduto { get; set; }
         public decimal Preco { get; set; }
-        public Guid Guid { get; set; }
         public DateTime DataCadastro { get; set; }
-        public CriarProdutoResponse(Produto produto) => produto.MappingProperties(this);
+        public BuscarProdutosFiltroResponse(Produto produto) => produto.MappingProperties(this);
     }
 }

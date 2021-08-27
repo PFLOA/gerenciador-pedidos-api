@@ -12,14 +12,12 @@ namespace Coladel.GerenciadorPedidos.Controllers
         public ClienteController(IMediator mediator) : base(mediator) { }
 
         [HttpGet]
-        [AllowAnonymous]
         public Task<IActionResult> BuscarClientesPorFiltro([FromQuery] BuscarClientesFiltroRequest request)
         {
             return _mediator.Send(request);
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public Task<IActionResult> CriarCliente([FromBody] CriarClienteRequest request)
         {
             return _mediator.Send(request);

@@ -6,17 +6,11 @@ using System.Text;
 
 namespace Coladel.GerenciadorPedidos.Domain.Entidades
 {
-  public class Produto : Entity<short>
-  {
-    public string NomeProduto { get; set; }
-    public decimal Preco { get; set; }
-    public Produto()
+    public class Produto : Entity<short>
     {
-
+        public string NomeProduto { get; set; }
+        public decimal Preco { get; set; }
+        public Produto() { }
+        public Produto(CriarProdutoRequestBody criarProdutoRequestBody) => criarProdutoRequestBody.MappingProperties(this);
     }
-    public Produto(CriarProdutoRequestBody criarProdutoRequestBody)
-    {
-      criarProdutoRequestBody.MappingProperties(this);
-    }
-  }
 }

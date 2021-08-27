@@ -11,9 +11,7 @@ namespace Coladel.Application.Handlers.Login.Response
         public string UserName { get; set; }
         public string Email { get; set; }
 
-        public RealizarLoginResponse(Usuario usuario)
-        {
-            usuario.MappingProperties(this);
-        }
+        public RealizarLoginResponse(Usuario usuario) => usuario.MappingProperties(this);
+
     }
 }

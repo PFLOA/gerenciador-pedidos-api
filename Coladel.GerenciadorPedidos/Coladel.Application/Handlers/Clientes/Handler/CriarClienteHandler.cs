@@ -4,20 +4,17 @@ using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Coladel.Application.Handlers.Clientes
 {
-  public class CriarClienteHandler : IRequestHandler<CriarClienteRequest, IActionResult>
+    public class CriarClienteHandler : IRequestHandler<CriarClienteRequest, IActionResult>
   {
-    private readonly IClienteRepository _clienteRepository;
+    private readonly IRepository _clienteRepository;
 
-    public CriarClienteHandler(IClienteRepository produtoRepository)
+    public CriarClienteHandler(IRepository produtoRepository)
     {
       _clienteRepository = produtoRepository;
     }
@@ -25,7 +22,7 @@ namespace Coladel.Application.Handlers.Clientes
     {
       try
       {
-        Cliente cliente = _clienteRepository.CriarCliente(request);
+        Cliente cliente = _clienteRepository.Criar(request.ToModel());
         return await Task.FromResult(new OkObjectResult(new { Produto = new CriarClienteResponse(cliente) }));
       }
       catch (Exception ex)

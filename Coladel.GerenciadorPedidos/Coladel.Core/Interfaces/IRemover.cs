@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Coladel.Core.Interfaces
 {
-    public interface IRemover<TEntidade>
+    public interface IRemover<T>
     {
+        Guid Remover(T entidade);
     }
 }

@@ -8,9 +8,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Body
   public class CriarClienteRequestBody
   {
     public string NomeCliente { get; set; }
-    public Cliente ToModel()
-    {
-      return new Cliente(this);
-    }
+    public virtual Cliente ToModel() => new Cliente(this);
   }
 }

@@ -1,13 +1,13 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Body;
+﻿using Coladel.Core;
+using Coladel.GerenciadorPedidos.Domain.Body;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Filters;
 using System.Linq;
 
 namespace Coladel.GerenciadorPedidos.Domain.Interface
 {
-    public interface IProdutoRepository
+    public interface IProdutoRepository : IRepository<Produto>
     {
         IQueryable<Produto> BuscarProdutosPorFiltro(BuscarProdutosFiltroFilter filter);
-        Produto CriarProduto(CriarProdutoRequestBody produto);
     }
 }

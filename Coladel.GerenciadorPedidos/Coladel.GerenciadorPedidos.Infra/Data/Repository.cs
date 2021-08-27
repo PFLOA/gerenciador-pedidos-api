@@ -1,11 +1,13 @@
 ﻿using Coladel.Core;
+using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Reflection;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data
 {
-    public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : class
+    public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : Entity
     {
         protected DbSet<TEntidade> Set { get; private set; }
         protected ApplicationDbContext context;
@@ -13,8 +15,31 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
         {
             context = dbContext;
             Type tipo = typeof(TEntidade);
-
             MappingProperties(dbContext, tipo);
+        }
+
+        public TEntidade BuscarPorGuid(Guid guid)
+        {
+            var result = Set.FirstOrDefault(p => p.Guid == guid);
+            return result;
+        }
+        public TEntidade Criar(TEntidade entidade)
+        {
+            var result = Set.Add(entidade);
+            context.SaveChanges();
+            return result.Entity;
+        }
+        public Guid Alterar(TEntidade entidade)
+        {
+            var result = Set.Update(entidade);
+            context.SaveChanges();
+            return result.Entity.Guid;
+        }
+        public Guid Remover(TEntidade entidade)
+        {
+            var result = Set.Remove(entidade);
+            context.SaveChanges();
+            return result.Entity.Guid;
         }
 
         private void Comparator(Object fromObjeto, PropertyInfo propertyInfo, Type toObjeto)
@@ -26,7 +51,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
                 Set = propertyInfo.GetValue(fromObjeto) as DbSet<TEntidade>;
         }
 
-        public void MappingProperties(Object fromObjeto, Type toObjeto)
+        private void MappingProperties(Object fromObjeto, Type toObjeto)
         {
             foreach (var properties in fromObjeto.GetType().GetProperties())
             {

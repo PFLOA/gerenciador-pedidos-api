@@ -2,8 +2,8 @@
 
 namespace Coladel.Core.Interfaces
 {
-    public interface IUpdater<T>
+    public interface IBuscar<T>
     {
-        Guid Alterar(T entidade);
+        T BuscarPorGuid(Guid guid);
     }
 }

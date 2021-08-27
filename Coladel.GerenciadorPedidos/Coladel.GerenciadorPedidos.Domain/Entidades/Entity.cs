@@ -2,9 +2,9 @@
 
 namespace Coladel.GerenciadorPedidos.Domain.Entidades
 {
-    public class Entity<TType>
+    public class Entity
     {
-        public TType Id { get; set; }
+        public short Id { get; set; }
         public Guid Guid { get; set; } = Guid.NewGuid();
         public DateTime DataCadastro { get; set; } = DateTime.Now;
     }

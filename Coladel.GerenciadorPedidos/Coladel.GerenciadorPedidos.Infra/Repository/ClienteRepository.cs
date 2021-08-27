@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
-    public class ClienteRepository : Repository<Cliente>, IClienteRepository
+    public class ClienteRepository : Repository<Cliente>, IRepository
     {
         public ClienteRepository(ApplicationDbContext dbContext) : base(dbContext) { }
 
@@ -16,14 +16,6 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         {
             return Set.FiltrarPorNomeCliente(filter.NomeCliente)
                     .FiltrarPorDataCadastro(filter.DataCadastro);
-        }
-
-        public Cliente CriarCliente(CriarClienteRequestBody cliente)
-        {
-            var response = Set.Add(cliente.ToModel());
-            context.SaveChanges();
-
-            return response.Entity;
         }
     }
 }

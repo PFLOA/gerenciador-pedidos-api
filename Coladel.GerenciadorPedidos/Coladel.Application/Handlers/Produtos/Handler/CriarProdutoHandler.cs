@@ -22,7 +22,7 @@ namespace Coladel.Application.Handlers.Produtos.Handler
         {
             try
             {
-                Produto produto = _produtoRepository.CriarProduto(request);
+                Produto produto = _produtoRepository.Criar(request.ToModel());
                 return await Task.FromResult(new OkObjectResult(new { Produto = new CriarProdutoResponse(produto) }));
             }
             catch (Exception ex)

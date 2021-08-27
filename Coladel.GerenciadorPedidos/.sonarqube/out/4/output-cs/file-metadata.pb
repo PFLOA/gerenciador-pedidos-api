@@ -1,0 +1,10 @@
+Å
+xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ClienteController.csutf-8
+vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\LoginController.csutf-8Å
+xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ProdutoController.csutf-8Å
+xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\UsuarioController.csutf-8k
+bD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Program.csutf-8k
+bD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Startup.csutf-8™
+ûD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.csutf-8¶
+öD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\obj\Debug\netcoreapp3.1\Coladel.GerenciadorPedidos.AssemblyInfo.csutf-8π
+≠D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\obj\Debug\netcoreapp3.1\Coladel.GerenciadorPedidos.MvcApplicationPartsAssemblyInfo.csutf-8

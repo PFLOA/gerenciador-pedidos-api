@@ -1,11 +1,11 @@
 ¤
 ^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\ApiControllerBase.cs
 
- "
-% . 
+ "
+% . 
 
-  
-+ 3  Š
+  
++ 3  Š
 dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumOrderDirection.cs
 
  "
@@ -34,28 +34,41 @@ dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\
 
  
 
-   Û
+   ´
 iD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\MappingExtensions.cs
 
- )
-
-
- & 
-
-
-. 8? I
-
-
-G S7 C) 5
-
-
-\ d   '
-   
+ )
 
- ,
-9 C' 1 %
-L T3 ;
- #' 1Â
+ ,
+9 C
+
+* 4
+L T
+
+6 >
+ -
+
+  
+ &
+
+ (
+
+ 6
+C M4 >
+V ^@ H
+ 0 2
+S Y 
+b l' 1 (
+u }6 >
+ #* 4
+. 8N X
+G S7 C8 D
+\ d  . 6
+   $)
+8 B  & 0""B L	""~ ˆ2
+Q ]7 C   "", 8""h t(
+f n  "" '""^ f
+ "" ""O TÂ
 gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\QueryExtensions.cs
 
  '2
@@ -66,22 +79,40 @@ gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Exten
 		` e! &
 			 ƒ "
  %  
- * .x
+ * .é
+qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\ValueConversionExtensions.cs
+
+		 1d
+; <& 'S Tm n E F7 8 : ;2 3
+
+) :2
+V e    "
+& /* 37 @
+ 5 6
+ : ;
+ %6 >
+ 5 6
+ W X
+  A B
+ Q R¤
 ^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.cs
 
- 
+ 
+ 		 			 
 
- ~
-dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IDataService.cs
+		
+ 
 
- !
+		 ›
+_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IBuscar.cs
 
-" +y
-_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IFinder.cs
+ 
+  	
 
- 
+
+ 
 
- &¬
+ !¬
 hD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IOperationResult.cs
  ) + ?
 
@@ -106,17 +137,23 @@ hD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Inter
 
   *
 
-2 9z
+2 9œ
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IRemover.cs
 
- 
+ 
+ 		 
 
- 'z
+		 
+
+		 œ
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IUpdater.cs
 
- 
+ 
+  
 
- '„
+ 
+
+ „
 jD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\Results\IOrderable.cs
 
  
@@ -154,12 +191,11 @@ kD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Inter
 
  
 
- §
+ š
 XD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\IRepository.cs
 
-  ?
-! *5 >N Wb k	w €
-Œ •œ
+  2
+! *5 >I R^ gs |œ
 ^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Models\BaseFilter.cs
 
  

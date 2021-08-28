@@ -39,7 +39,168 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
 
  	
 } 
-} ù
+} …
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\AlterarClienteHandler.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Clientes' /
+./ 0
+Handler0 7
+{ 
+public 
+
+class !
+AlterarClienteHandler &
+:' (
+IRequestHandler) 8
+<8 9!
+AlterarClienteRequest9 N
+,N O
+IActionResultP ]
+>] ^
+{ 
+private 
+readonly 
+IRepository $
+_clienteRepository% 7
+;7 8
+public !
+AlterarClienteHandler $
+($ %
+IRepository% 0
+clienteRepository1 B
+)B C
+{ 	
+_clienteRepository 
+=  
+clienteRepository! 2
+;2 3
+} 	
+public 
+async 
+Task 
+< 
+IActionResult '
+>' (
+Handle) /
+(/ 0!
+AlterarClienteRequest0 E
+requestF M
+,M N
+CancellationTokenO `
+cancellationTokena r
+)r s
+{ 	
+try 
+{ 
+Cliente 
+cliente 
+=  !
+_clienteRepository" 4
+.4 5
+BuscarPorGuid5 B
+(B C
+requestC J
+.J K
+GuidK O
+)O P
+;P Q
+if 
+( 
+cliente 
+is 
+null #
+)# $
+return% +
+await, 1
+Task2 6
+.6 7
+
+FromResult7 A
+(A B
+newB E 
+NotFoundObjectResultF Z
+(Z [
+new[ ^
+{_ `
+Errora f
+=g h
+$str	i ò
+}
+ò ô
+)
+ô ö
+)
+ö õ
+;
+õ ú
+request 
+. '
+MappingDifferenceProperties 3
+(3 4
+cliente4 ;
+); <
+;< =
+_clienteRepository "
+." #
+Alterar# *
+(* +
+cliente+ 2
+)2 3
+;3 4
+return   
+await   
+Task   !
+.  ! "
+
+FromResult  " ,
+(  , -
+new  - 0
+OkResult  1 9
+(  9 :
+)  : ;
+)  ; <
+;  < =
+}!! 
+catch"" 
+("" 
+	Exception"" 
+ex"" 
+)""  
+{## 
+return$$ 
+await$$ 
+Task$$ !
+.$$! "
+
+FromResult$$" ,
+($$, -
+new$$- 0"
+BadRequestObjectResult$$1 G
+($$G H
+new$$H K
+{$$L M
+Error$$N S
+=$$T U
+ex$$V X
+.$$X Y
+Message$$Y `
+}$$a b
+)$$b c
+)$$c d
+;$$d e
+throw%% 
+;%% 
+}&& 
+}'' 	
+}(( 
+})) è
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\BuscarClientesFiltroHandler.cs
 	namespace 	
 Coladel
@@ -66,16 +227,16 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
 >i j
 { 
 private 
-readonly 
-IClienteRepository +
-_clienteRepository, >
-;> ?
+readonly 
+IRepository $
+_clienteRepository% 7
+;7 8
 public '
 BuscarClientesFiltroHandler *
-(* +
-IClienteRepository+ =
-produtoRepository> O
-)O P
+(* +
+IRepository+ 6
+produtoRepository7 H
+)H I
 { 	
 _clienteRepository 
 =  
@@ -206,168 +367,222 @@ Construtor%%, 6
 ;''< =
 }(( 	
 }** 
-}++ Î
+}++ ò
 ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\CriarClienteHandler.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-Application 
-. 
-Handlers &
-.& '
-Clientes' /
-{ 
-public 
-class	 
-CriarClienteHandler "
-:# $
-IRequestHandler% 4
-<4 5
-CriarClienteRequest5 H
-,H I
-IActionResultJ W
->W X
-{ 
-private 
-readonly 
-IClienteRepository '
-_clienteRepository( :
-;: ;
-public 
+. 
+Application 
+. 
+Handlers &
+.& '
+Clientes' /
+{ 
+public 
+
+class 
+CriarClienteHandler $
+:% &
+IRequestHandler' 6
+<6 7
+CriarClienteRequest7 J
+,J K
+IActionResultL Y
+>Y Z
+{ 
+private 
+readonly 
+IRepository  
+_clienteRepository! 3
+;3 4
+public 
 
-CriarClienteHandler 
-( 
-IClienteRepository 1
-produtoRepository2 C
-)C D
-{ 
-_clienteRepository 
-= 
-produtoRepository ,
-;, -
-} 
-public 
+CriarClienteHandler 
+( 
+IRepository *
+produtoRepository+ <
+)< =
+{ 
+_clienteRepository 
+= 
+produtoRepository ,
+;, -
+} 
+public 
 
-async 
-Task 
-< 
-IActionResult #
-># $
-Handle% +
-(+ ,
-CriarClienteRequest, ?
-request@ G
-,G H
-CancellationTokenI Z
-cancellationToken[ l
-)l m
-{ 
-try 	
-{ 
-Cliente 
-cliente 
-= 
-_clienteRepository ,
-., -
-CriarCliente- 9
-(9 :
-request: A
-)A B
-;B C
-return 
-await 
-Task 
-. 
+async 
+Task 
+< 
+IActionResult #
+># $
+Handle% +
+(+ ,
+CriarClienteRequest, ?
+request@ G
+,G H
+CancellationTokenI Z
+cancellationToken[ l
+)l m
+{ 
+try 	
+{ 
+Cliente 
+cliente 
+= 
+_clienteRepository ,
+., -
+Criar- 2
+(2 3
+request3 :
+.: ;
+ToModel; B
+(B C
+)C D
+)D E
+;E F
+return 
+await 
+Task 
+. 
 
-FromResult $
-($ %
-new% (
-OkObjectResult) 7
-(7 8
-new8 ;
-{< =
-Produto> E
-=F G
-newH K 
-CriarClienteResponseL `
-(` a
-clientea h
-)h i
-}j k
-)k l
-)l m
-;m n
-} 
-catch 
-( 
-	Exception 
-ex 
-) 
-{   
-return!! 
-await!! 
-Task!! 
-.!! 
+FromResult $
+($ %
+new% (
+OkObjectResult) 7
+(7 8
+new8 ;
+{< =
+Produto> E
+=F G
+newH K 
+CriarClienteResponseL `
+(` a
+clientea h
+)h i
+}j k
+)k l
+)l m
+;m n
+} 
+catch 
+( 
+	Exception 
+ex 
+) 
+{ 
+return 
+await 
+Task 
+. 
 
-FromResult!! $
-(!!$ %
-new!!% ("
-BadRequestObjectResult!!) ?
-(!!? @
-new!!@ C
-{!!D E
-Errors!!F L
-=!!M N
-new!!O R
-[!!R S
-]!!S T
-{!!U V
-$"!!W Y
-{!!Y Z
-ex!!Z \
-.!!\ ]
-Message!!] d
-}!!d e
-"!!e f
-}!!g h
-}!!i j
-)!!j k
-)!!k l
-;!!l m
-}"" 
-}## 
-}$$ 
-}%% È
-âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\BuscarClientesFiltroRequest.cs
-	namespace 	
-Coladel
+FromResult $
+($ %
+new% ("
+BadRequestObjectResult) ?
+(? @
+new@ C
+{D E
+ErrorsF L
+=M N
+newO R
+[R S
+]S T
+{U V
+$"W Y
+{Y Z
+exZ \
+.\ ]
+Message] d
+}d e
+"e f
+}g h
+}i j
+)j k
+)k l
+;l m
+} 
+}   
+}!! 
+}"" ’
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\AlterarClienteRequest.cs
+	namespace 	
+Coladel
  
-. 
-Application 
-. 
-Handlers &
-.& '
-Clientes' /
-./ 0
-Request0 7
-{ 
-public 
+. 
+Application 
+. 
+Handlers &
+.& '
+Clientes' /
+./ 0
+Request0 7
+{ 
+public		 
 
-class '
-BuscarClientesFiltroRequest ,
-:- .&
-BuscarClientesFiltroFilter/ I
-,I J
-IRequestK S
-<S T
-IActionResultT a
->a b
-{ 
-}		 
-}
+class		 !
+AlterarClienteRequest		 &
+:		' (#
+CriarClienteRequestBody		) @
+,		@ A
+IRequest		B J
+<		J K
+IActionResult		K X
+>		X Y
+{
 
- ÷
+ 
+public 
+Guid 
+Guid 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+override 
+Cliente 
+ToModel  '
+(' (
+)( )
+=>* ,
+base. 2
+.2 3
+ToModel3 :
+(: ;
+); <
+;< =
+} 
+} È
+âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\BuscarClientesFiltroRequest.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Clientes' /
+./ 0
+Request0 7
+{ 
+public 
+
+class '
+BuscarClientesFiltroRequest ,
+:- .&
+BuscarClientesFiltroFilter/ I
+,I J
+IRequestK S
+<S T
+IActionResultT a
+>a b
+{		 
+} 
+} ÷
 ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\CriarClienteRequest.cs
 	namespace 	
 Coladel
@@ -914,7 +1129,523 @@ FromResult$$" ,
 )W X
 ;X Y
 } 
-} ù
+} Ω
+áD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Handler\BuscarPedidosFiltroHandler.cs
+	namespace
+
+ 	
+Coladel
+
+
+ 
+.
+
+ 
+Application
+
+ 
+.
+
+ 
+Handlers
+
+ &
+.
+
+& '
+Pedidos
+
+' .
+.
+
+. /
+Handler
+
+/ 6
+{ 
+public 
+
+class &
+BuscarPedidosFiltroHandler +
+:, -
+IRequestHandler. =
+<= >&
+BuscarPedidosFiltroRequest> X
+,X Y
+IActionResultZ g
+>g h
+{ 
+public 
+async 
+Task 
+< 
+IActionResult '
+>' (
+Handle) /
+(/ 0&
+BuscarPedidosFiltroRequest0 J
+requestK R
+,R S
+CancellationTokenT e
+cancellationTokenf w
+)w x
+{ 	
+try 
+{ 
+return 
+await 
+Task !
+.! "
+
+FromResult" ,
+(, -
+new- 0
+OkResult1 9
+(9 :
+): ;
+); <
+;< =
+} 
+catch 
+( 
+	Exception 
+ex 
+)  
+{ 
+return 
+await 
+Task !
+.! "
+
+FromResult" ,
+(, -
+new- 0
+BadRequestResult1 A
+(A B
+)B C
+)C D
+;D E
+} 
+} 	
+public '
+BuscarPedidosFiltroResponse *
+
+Construtor+ 5
+(5 6
+Pedido6 <
+Pedido= C
+)C D
+{ 	
+return 
+new '
+BuscarPedidosFiltroResponse 2
+(2 3
+)3 4
+;4 5
+} 	
+} 
+} 
+D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Handler\CriarPedidoHandler.cs
+	namespace
+
+ 	
+Coladel
+
+
+ 
+.
+
+ 
+Application
+
+ 
+.
+
+ 
+Handlers
+
+ &
+.
+
+& '
+Pedidos
+
+' .
+.
+
+. /
+Handler
+
+/ 6
+{ 
+public 
+
+class 
+CriarPedidoHandler #
+:$ %
+IRequestHandler& 5
+<5 6
+CriarPedidoRequest6 H
+,H I
+IActionResultJ W
+>W X
+{ 
+private 
+readonly 
+IPedidoRepository *
+_pedidoRepository+ <
+;< =
+public 
+CriarPedidoHandler !
+(! "
+IPedidoRepository" 3
+pedidoRepository4 D
+)D E
+{ 	
+_pedidoRepository 
+= 
+pedidoRepository  0
+;0 1
+} 	
+public 
+async 
+Task 
+< 
+IActionResult '
+>' (
+Handle) /
+(/ 0
+CriarPedidoRequest0 B
+requestC J
+,J K
+CancellationTokenL ]
+cancellationToken^ o
+)o p
+{ 	
+try 
+{ 
+Pedido 
+produto 
+=  
+_pedidoRepository! 2
+.2 3
+Criar3 8
+(8 9
+request9 @
+.@ A
+ToModelA H
+(H I
+)I J
+)J K
+;K L
+return 
+await 
+Task !
+.! "
+
+FromResult" ,
+(, -
+new- 0
+OkResult1 9
+(9 :
+): ;
+); <
+;< =
+} 
+catch 
+( 
+	Exception 
+ex 
+)  
+{ 
+return 
+await 
+Task !
+.! "
+
+FromResult" ,
+(, -
+new- 0"
+BadRequestObjectResult1 G
+(G H
+newH K
+{L M
+errorN S
+=T U
+exV X
+.X Y
+MessageY `
+}a b
+)b c
+)c d
+;d e
+} 
+} 	
+}   
+}!! ‰
+áD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Request\BuscarPedidosFiltroRequest.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Pedidos' .
+.. /
+Request/ 6
+{ 
+public 
+
+class &
+BuscarPedidosFiltroRequest +
+:, -%
+BuscarPedidosFiltroFilter. G
+,G H
+IRequestI Q
+<Q R
+IActionResultR _
+>_ `
+{a b
+}c d
+} …
+D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Request\CriarPedidoRequest.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Pedidos' .
+.. /
+Request/ 6
+{ 
+public 
+
+class 
+CriarPedidoRequest #
+:$ %
+CriarPedidoBody& 5
+,5 6
+IRequest7 ?
+<? @
+IActionResult@ M
+>M N
+{O P
+}Q R
+} ‘
+âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Response\BuscarPedidosFiltroResponse.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Pedidos' .
+.. /
+Response/ 7
+{ 
+public 
+
+class '
+BuscarPedidosFiltroResponse ,
+{ 
+}		 
+}
+
+ ƒ
+ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Response\CriarPedidoResponse.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Pedidos' .
+.. /
+Response/ 7
+{ 
+public 
+
+class 
+CriarPedidoResponse $
+{ 
+}		 
+}
+
+ Ω
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Handler\AlterarProdutoHandler.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Produtos' /
+./ 0
+Handler0 7
+{ 
+public 
+
+class !
+AlterarProdutoHandler &
+:' (
+IRequestHandler) 8
+<8 9!
+AlterarProdutoRequest9 N
+,N O
+IActionResultP ]
+>] ^
+{ 
+private 
+readonly 
+IProdutoRepository +
+_produtoRepository, >
+;> ?
+public !
+AlterarProdutoHandler $
+($ %
+IProdutoRepository% 7
+produtoRepository8 I
+)I J
+{ 	
+_produtoRepository 
+=  
+produtoRepository! 2
+;2 3
+} 	
+public 
+async 
+Task 
+< 
+IActionResult '
+>' (
+Handle) /
+(/ 0!
+AlterarProdutoRequest0 E
+requestF M
+,M N
+CancellationTokenO `
+cancellationTokena r
+)r s
+{ 	
+try 
+{ 
+Produto 
+produto 
+=  !
+_produtoRepository" 4
+.4 5
+BuscarPorGuid5 B
+(B C
+requestC J
+.J K
+GuidK O
+)O P
+;P Q
+if 
+( 
+produto 
+is 
+null "
+)" #
+return$ *
+await+ 0
+Task1 5
+.5 6
+
+FromResult6 @
+(@ A
+newA D 
+NotFoundObjectResultE Y
+(Y Z
+newZ ]
+{^ _
+error` e
+=f g
+$strh }
+}~ 
+)	 Ä
+)
+Ä Å
+;
+Å Ç
+request 
+. '
+MappingDifferenceProperties 3
+(3 4
+produto4 ;
+); <
+;< =
+_produtoRepository "
+." #
+Alterar# *
+(* +
+produto+ 2
+)2 3
+;3 4
+return   
+await   
+Task   !
+.  ! "
+
+FromResult  " ,
+(  , -
+new  - 0
+OkObjectResult  1 ?
+(  ? @
+new  @ C
+{  D E
+guid  G K
+=  L M
+request  N U
+.  U V
+Guid  V Z
+}  [ \
+)  \ ]
+)  ] ^
+;  ^ _
+}!! 
+catch"" 
+("" 
+	Exception"" 
+ex"" 
+)""  
+{## 
+return$$ 
+await$$ 
+Task$$ !
+.$$! "
+
+FromResult$$" ,
+($$, -
+new$$- 0"
+BadRequestObjectResult$$1 G
+($$G H
+new$$I L
+{$$M N
+error$$O T
+=$$U V
+ex$$W Y
+.$$Y Z
+Message$$Z a
+}$$a b
+)$$b c
+)$$c d
+;$$d e
+}%% 
+}&& 	
+}'' 
+}(( ù
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Handler\BuscarProdutosFiltroHandler.cs
 	namespace 	
 Coladel
@@ -1081,7 +1812,7 @@ Construtor$$, 6
 ;&&< =
 }'' 	
 }(( 
-})) è
+}))  
 ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Handler\CriarProdutoHandler.cs
 	namespace 	
 Coladel
@@ -1145,12 +1876,16 @@ Construtor$$, 6
 produto 
 =  !
 _produtoRepository" 4
-.4 5
-CriarProduto5 A
-(A B
-requestB I
-)I J
-;J K
+.4 5
+Criar5 :
+(: ;
+request; B
+.B C
+ToModelC J
+(J K
+)K L
+)L M
+;M N
 return 
 await 
 Task !
@@ -1214,7 +1949,58 @@ FromResult" ,
 } 
 }   	
 }!! 
-}"" È
+}"" ’
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Request\AlterarProdutoRequest.cs
+	namespace 	
+Coladel
+ 
+. 
+Application 
+. 
+Handlers &
+.& '
+Produtos' /
+./ 0
+Request0 7
+{ 
+public		 
+
+class		 !
+AlterarProdutoRequest		 &
+:		' (#
+CriarProdutoRequestBody		) @
+,		@ A
+IRequest		B J
+<		J K
+IActionResult		K X
+>		X Y
+{
+
+ 
+public 
+Guid 
+Guid 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+override 
+Produto 
+ToModel  '
+(' (
+)( )
+=>* ,
+base- 1
+.1 2
+ToModel2 9
+(9 :
+): ;
+;; <
+} 
+} È
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Request\BuscarProdutosFiltroRequest.cs
 	namespace 	
 Coladel

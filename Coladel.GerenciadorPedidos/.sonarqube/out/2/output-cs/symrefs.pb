@@ -4,14 +4,28 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
  )
 
  :
-B T		+ =Å
+B T		+ =÷
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\AlterarClienteHandler.cs
+
+ &(
+% 7 " 4 "
+
+ $
+1 B! 2
+
+) /
+F MC J 
+
+a r(
+  4 ;+ 2
+"" $$V XÅ
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\BuscarClientesFiltroHandler.cs
 
  ,
-, > / A
+% 7 / A
 
  *
-> O! 2
+7 H! 2
 
 ) /
 L SZ ai p
@@ -24,21 +38,28 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
 %%? F''4 ;¨
 ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Handler\CriarClienteHandler.cs
 
- "
-( :  ,
+ $
+! 3  ,
 
- 
-2 C ,
+ 
++ < ,
 
-% +
-@ G: A
+% +
+@ G3 :
 
-[ l
- a h
- !!Z \ò
+[ l
+ a h
+ Z \™
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\AlterarClienteRequest.cs
+
+		 &
+
+ 
+
+  'ò
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\BuscarClientesFiltroRequest.cs
 
- ,ê
+ ,ê
 ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Clientes\Request\CriarClienteRequest.cs
 
  "‘
@@ -104,7 +125,63 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
  
 
  $
-- 49 @Å
+- 49 @ﬁ
+áD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Handler\BuscarPedidosFiltroHandler.cs
+
+ +
+
+) /
+
+K R
+
+f w
+
+ 
+
++ 5
+
+= Cü
+D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Handler\CriarPedidoHandler.cs
+
+ #
++ < ! 2
+
+ !
+4 D  0
+
+) /
+C J9 @
+
+^ o
+
+ 
+ V Xñ
+áD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Request\BuscarPedidosFiltroRequest.cs
+
+ +ç
+D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Request\CriarPedidoRequest.cs
+
+ #ò
+âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Response\BuscarPedidosFiltroResponse.cs
+
+ ,ê
+ÅD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Pedidos\Response\CriarPedidoResponse.cs
+
+ $‡
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Handler\AlterarProdutoHandler.cs
+
+ &(
+, > " 4 "
+
+ $
+8 I! 2
+
+) /(
+F MC J   N U
+
+a r(
+  4 ;+ 2
+"" $$W YÅ
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Handler\BuscarProdutosFiltroHandler.cs
 
  ,
@@ -131,11 +208,18 @@ tD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Applicatio
 6 G! 2
 
 ) /
-D KB I
+D K; B
 
 _ p
  i p
- b dò
+ b d™
+ÉD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Request\AlterarProdutoRequest.cs
+
+		 &
+
+ 
+
+  'ò
 âD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Application\Handlers\Produtos\Request\BuscarProdutosFiltroRequest.cs
 
  ,ê

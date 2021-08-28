@@ -1,4 +1,4 @@
-³
+¦
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarClienteRequestBody.cs
 	namespace 	
 Coladel
@@ -44,21 +44,110 @@
 * +
 public 
 
-Cliente 
-ToModel 
-( 
-) 
-{ 
-return 
-new 
-Cliente 
-( 
-this 
-) 
-; 
-} 
-} 
-} Í
+virtual 
+Cliente 
+ToModel "
+(" #
+)# $
+=>% '
+new( +
+Cliente, 3
+(3 4
+this4 8
+)8 9
+;9 :
+} 
+} ×
+vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarPedidoBody.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+Body, 0
+{ 
+public		 
+
+class		 
+CriarPedidoBody		  
+{
+
+ 
+public 
+StatusPedido 
+StatusPedido (
+{) *
+get+ .
+;. /
+set0 3
+;3 4
+}5 6
+public 
+List 
+< 
+Produto 
+> 
+ProdutosList )
+{* +
+get, /
+;/ 0
+set1 4
+;4 5
+}6 7
+public 
+Cliente 
+Cliente 
+{  
+get! $
+;$ %
+set& )
+;) *
+}+ ,
+public 
+string 
+NF 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+string 
+Observacoes !
+{" #
+get$ '
+;' (
+set) ,
+;, -
+}. /
+public 
+decimal 
+Total 
+{ 
+get "
+;" #
+set$ '
+;' (
+}) *
+public 
+virtual 
+Pedido 
+ToModel %
+(% &
+)& '
+=>( *
+new+ .
+Pedido/ 5
+(5 6
+this6 :
+): ;
+;; <
+} 
+} À
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarProdutoRequestBody.cs
 	namespace 	
 Coladel
@@ -93,32 +182,23 @@
 set$ '
 ;' (
 }) *
-public
+public		 
+virtual		 
+Produto		 
+ToModel		 &
+(		& '
+)		' (
+=>		) +
+new		, /
+Produto		0 7
+(		7 8
+this		8 <
+)		< =
+;		= >
+}
 
- 
-Produto
-
- 
-ToModel
-
- 
-(
-
- 
-)
-
-  
-{ 	
-return 
-new 
-Produto 
-( 
-this #
-)# $
-;$ %
-} 	
-} 
-} ÷	
+ 
+} ÷	
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarUsuarioRequestBody.cs
 	namespace 	
 Coladel
@@ -207,7 +287,7 @@
 ;) *
 } 
 } 
-} Œ
+} Í
 sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Cliente.cs
 	namespace 	
 Coladel
@@ -224,9 +304,6 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 Cliente 
 : 
 Entity 
-<  
-short  %
->% &
 { 
 public 
 
@@ -243,28 +320,53 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 Cliente		 
 (		 
 )		 
-{
+{		 
+}		 
+public
 
- 
-} 
-public 
+ 
 
-Cliente 
-( #
-CriarClienteRequestBody *
-requestBody+ 6
-)6 7
-{ 
-requestBody 
-. 
-MappingProperties #
-(# $
-this$ (
-)( )
-;) *
-} 
-} 
-} Í
+Cliente
+
+ 
+(
+
+ #
+CriarClienteRequestBody
+
+ *
+requestBody
+
++ 6
+)
+
+6 7
+=>
+
+9 ;
+requestBody
+
+< G
+.
+
+G H
+MappingProperties
+
+H Y
+(
+
+Y Z
+this
+
+Z ^
+)
+
+^ _
+;
+
+_ `
+} 
+} œ
 rD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Entity.cs
 	namespace 	
 Coladel
@@ -280,12 +382,9 @@ rD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
 class 
 Entity 
-< 
-TType 
-> 
 { 
 public 
-TType 
+short 
 Id 
 { 
 get 
@@ -362,7 +461,132 @@ qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 ;& '
 }( )
 } 
-} °	
+} ½
+rD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Pedido.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+	Entidades, 5
+{ 
+public 
+
+class 
+Pedido 
+: 
+Entity  
+{		 
+public
+
+ 
+StatusPedido
+
+ 
+StatusPedido
+
+ (
+{
+
+) *
+get
+
++ .
+;
+
+. /
+set
+
+0 3
+;
+
+3 4
+}
+
+5 6
+public 
+virtual 
+Cliente 
+Cliente &
+{' (
+get) ,
+;, -
+set. 1
+;1 2
+}3 4
+public 
+List 
+< 
+Produto 
+> 
+ProdutosList )
+{* +
+get, /
+;/ 0
+set1 4
+;4 5
+}6 7
+public 
+string 
+NF 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+string 
+Observacoes !
+{" #
+get$ '
+;' (
+set) ,
+;, -
+}. /
+public 
+short 
+	IdCliente 
+{  
+get! $
+;$ %
+set& )
+;) *
+}+ ,
+public 
+decimal 
+Total 
+{ 
+get "
+;" #
+set$ '
+;' (
+}) *
+public 
+Pedido 
+( 
+) 
+{ 
+} 
+public 
+Pedido 
+( 
+CriarPedidoBody %
+criarPedidoBody& 5
+)5 6
+=>7 9
+criarPedidoBody: I
+.I J
+MappingPropertiesJ [
+([ \
+this\ `
+)` a
+;a b
+} 
+} ÿ
 sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Produto.cs
 	namespace 	
 Coladel
@@ -380,9 +604,6 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 Produto		 
 :		 
 Entity		 !
-<		! "
-short		" '
->		' (
 {
 
  
@@ -425,7 +646,7 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 )y z
 ;z {
 } 
-} ã
+} ²
 sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Usuario.cs
 	namespace 	
 Coladel
@@ -443,9 +664,6 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 Usuario 
 : 
 Entity !
-<! "
-short" '
->' (
 { 
 public 
 string 
@@ -606,7 +824,30 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 , 
 ParameterNull 
 } 
-} –
+} ì
+sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Enum\StatusPedido.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+Enum, 0
+{ 
+public 
+
+enum 
+StatusPedido 
+{ 
+ENTREGUE 
+, 
+EM_ANDAMENTO 
+, 
+ATRASO 
+} 
+}		 –
 „D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarClientesFiltroFilter.cs
 	namespace 	
 Coladel
@@ -645,7 +886,88 @@ BaseFilter. 8
 ;/ 0
 }1 2
 } 
-} °
+} À	
+ƒD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarPedidosFiltroFilter.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+Filters, 3
+{ 
+public 
+
+class %
+BuscarPedidosFiltroFilter *
+{ 
+public 
+StatusPedido 
+StatusPedido (
+{) *
+get+ .
+;. /
+set0 3
+;3 4
+}5 6
+public		 
+string		 
+Cliente		 
+{		 
+get		  #
+;		# $
+set		% (
+;		( )
+}		* +
+public
+
+ 
+string
+
+ 
+Produto
+
+ 
+{
+
+ 
+get
+
+  #
+;
+
+# $
+set
+
+% (
+;
+
+( )
+}
+
+* +
+public 
+string 
+NF 
+{ 
+get 
+; 
+set  #
+;# $
+}% &
+public 
+DateTime 
+DataCadastro $
+{% &
+get' *
+;* +
+set, /
+;/ 0
+}1 2
+} 
+} °
 „D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarProdutosFiltroFilter.cs
 	namespace 	
 Coladel
@@ -711,61 +1033,41 @@ BaseFilter. 8
 
 ) *
 } 
-} ”
+} Ò
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IClienteRepository.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-GerenciadorPedidos $
-.$ %
-Domain% +
-.+ ,
-	Interface, 5
-{ 
-public 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+	Interface, 5
+{ 
+public		 
 
-	interface 
-IClienteRepository '
-{		 
+	interface		 
+IRepository		  
+:		! "
+IRepository		# .
+<		. /
+Cliente		/ 6
+>		6 7
+{
+
+ 
 
-IQueryable
-
- 
-<
-
- 
-Cliente
-
- 
->
-
- #
-BuscarClientesPorFiltro
-
- 3
-(
-
-3 4&
-BuscarClientesFiltroFilter
-
-4 N
-filter
-
-O U
-)
-
-U V
-;
-
-V W
-Cliente 
-CriarCliente 
-( #
-CriarClienteRequestBody 4
-cliente5 <
-)< =
-;= >
+IQueryable 
+< 
+Cliente 
+> #
+BuscarClientesPorFiltro 3
+(3 4&
+BuscarClientesFiltroFilter4 N
+filterO U
+)U V
+;V W
 } 
 } Ú
 |D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\ILoginRepository.cs
@@ -795,61 +1097,66 @@ IQueryable
 )7 8
 ;8 9
 } 
-}		 ”
-~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IProdutoRepository.cs
-	namespace 	
-Coladel
+}		 ý
+}D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IPedidoRepository.cs
+	namespace 	
+Coladel
  
-. 
-GerenciadorPedidos $
-.$ %
-Domain% +
-.+ ,
-	Interface, 5
-{ 
-public 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+	Interface, 5
+{ 
+public		 
 
-	interface 
-IProdutoRepository '
-{		 
+	interface		 
+IPedidoRepository		 &
+:		' (
+IRepository		) 4
+<		4 5
+Pedido		5 ;
+>		; <
+{
+
+ 
+} 
+} Ù
+~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IProdutoRepository.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Domain% +
+.+ ,
+	Interface, 5
+{ 
+public		 
+
+	interface		 
+IProdutoRepository		 '
+:		( )
+IRepository		* 5
+<		5 6
+Produto		6 =
+>		= >
+{
+
+ 
 
-IQueryable
-
- 
-<
-
- 
-Produto
-
- 
->
-
- #
-BuscarProdutosPorFiltro
-
- 3
-(
-
-3 4&
-BuscarProdutosFiltroFilter
-
-4 N
-filter
-
-O U
-)
-
-U V
-;
-
-V W
-Produto 
-CriarProduto 
-( #
-CriarProdutoRequestBody 4
-produto5 <
-)< =
-;= >
+IQueryable 
+< 
+Produto 
+> #
+BuscarProdutosPorFiltro 3
+(3 4&
+BuscarProdutosFiltroFilter4 N
+filterO U
+)U V
+;V W
 } 
 } »
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IUsuarioRepository.cs

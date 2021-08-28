@@ -1,18 +1,19 @@
-ì
+Ž
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ClienteController.cs
 
-
-
- "
+		 "
 
-  
-+ 3< D
+  
++ 3< D
 
-# :
-c j" )
+# :
+c j" )
 
-# /
-O V" )è
+# /
+Q X" )
+
+# /
+O V" )è
 vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\LoginController.cs
 
   
@@ -22,7 +23,18 @@ vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 ) 1  
 
 ) .
-O T( -ì
+O T( -É
+wD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\PedidoController.cs
+
+
+
+ !
+
+ 
+* 2; C
+
+# .
+M T" )ì
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ProdutoController.cs
 
 

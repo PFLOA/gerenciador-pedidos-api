@@ -7,7 +7,24 @@
 
  
 
- °
+ "Ø
+vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarPedidoBody.cs
+
+		  
+
+ (
+
+ )
+
+ 
+
+ 
+
+ !
+
+ 
+
+ %°
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarProdutoRequestBody.cs
 
  (
@@ -16,9 +33,7 @@
 
  
 
-
-
- È
+		 &È
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Body\CriarUsuarioRequestBody.cs
 
  &
@@ -42,12 +57,17 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
 		 
 
- 
-+ 6 º
+
+
+ 
+
+
++ 6
+
+< G¤
 rD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Entity.cs
 
- 
-  
+ 
 
  
 
@@ -60,7 +80,31 @@ qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
  
 
- Ç
+ ‚
+rD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Pedido.cs
+
+ 
+
+
+
+ (
+
+ &
+
+ )
+
+ 
+
+ !
+
+ 
+
+ 
+
+ 
+
+ 
+& 5: IÇ
 sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Entidades\Produto.cs
 
 		 
@@ -116,14 +160,38 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
  
 
- «
+ ¥
+sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Enum\StatusPedido.cs
+
+ 
+
+ 
+
+ 
+
+ «
 „D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarClientesFiltroFilter.cs
 
  +
 
  !
 
- $·
+ $Î
+ƒD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarPedidosFiltroFilter.cs
+
+ *
+
+ (
+
+		 
+
+
+
+ 
+
+ 
+
+ $·
 „D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Filters\BuscarProdutosFiltroFilter.cs
 
  +
@@ -134,22 +202,14 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
 
 
- ¼
+ ¤
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IClienteRepository.cs
 
- '
+		  
 
-
-
- 3
+ 3
 
-
-
-O U
-
- 
-
-5 <®
+O U®
 |D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\ILoginRepository.cs
 
  %
@@ -158,22 +218,17 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 
 ! )
 
-2 7¼
+2 7‹
+}D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IPedidoRepository.cs
+
+		 &¤
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IProdutoRepository.cs
 
- '
+		 '
 
-
-
- 3
+ 3
 
-
-
-O U
-
- 
-
-5 <¤
+O U¤
 ~D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Domain\Interface\IUsuarioRepository.cs
 
  '

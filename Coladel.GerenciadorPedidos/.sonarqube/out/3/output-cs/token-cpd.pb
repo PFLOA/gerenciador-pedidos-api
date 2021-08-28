@@ -1,151 +1,156 @@
-ó
+´
 zD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Data\ApplicationDbContext.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-GerenciadorPedidos $
-.$ %
-Infra% *
-.* +
-Data+ /
-{ 
-public 
-class	  
-ApplicationDbContext #
-:$ %
-	DbContext& /
-{		 
+. 
+GerenciadorPedidos $
+.$ %
+Infra% *
+.* +
+Data+ /
+{ 
+public 
+
+class  
+ApplicationDbContext %
+:& '
+	DbContext( 1
+{ 
+public		 
+DbSet		 
+<		 
+Usuario		 
+>		 
+Usuario		 %
+{		& '
+get		( +
+;		+ ,
+set		- 0
+;		0 1
+}		2 3
 public
 
- 
-
+ 
 DbSet
 
- 
+ 
 <
 
- 
-Usuario
+ 
+Produto
 
- 
+ 
 >
 
- 
-Usuario
+ 
+Produto
 
- !
+ %
 {
 
-" #
+& '
 get
 
-$ '
+( +
 ;
 
-' (
++ ,
 set
 
-) ,
+- 0
 ;
 
-, -
+0 1
 }
 
-. /
-public 
-
-DbSet 
-< 
-Produto 
-> 
-Produto !
-{" #
-get$ '
-;' (
-set) ,
-;, -
-}. /
-public 
-
-DbSet 
-< 
-Cliente 
-> 
-Cliente !
-{" #
-get$ '
-;' (
-set) ,
-;, -
-}. /
-public 
- 
-ApplicationDbContext 
-(  
-DbContextOptions  0
-<0 1 
-ApplicationDbContext1 E
->E F
-optionsG N
-)N O
-:P Q
-baseR V
-(V W
-optionsW ^
-)^ _
-{` a
-}b c
-	protected 
-override 
-void 
-OnModelCreating +
-(+ ,
-ModelBuilder, 8
-modelBuilder9 E
-)E F
-{ 
-modelBuilder 
-. 
-ApplyConfiguration %
-(% &
-new& )
-UsuarioMapping* 8
-(8 9
-)9 :
-): ;
-;; <
-modelBuilder 
-. 
-ApplyConfiguration %
-(% &
-new& )
-ProdutoMapping* 8
-(8 9
-)9 :
-): ;
-;; <
-modelBuilder 
-. 
-ApplyConfiguration %
-(% &
-new& )
-ClienteMapping* 8
-(8 9
-)9 :
-): ;
-;; <
-base 
-
-.
- 
-OnModelCreating 
-( 
-modelBuilder '
-)' (
-;( )
-} 
-} 
+2 3
+public 
+DbSet 
+< 
+Cliente 
+> 
+Cliente %
+{& '
+get( +
+;+ ,
+set- 0
+;0 1
+}2 3
+public  
+ApplicationDbContext #
+(# $
+DbContextOptions$ 4
+<4 5 
+ApplicationDbContext5 I
+>I J
+optionsK R
+)R S
+:T U
+baseV Z
+(Z [
+options[ b
+)b c
+{d e
+}f g
+	protected 
+override 
+void 
+OnModelCreating  /
+(/ 0
+ModelBuilder0 <
+modelBuilder= I
+)I J
+{ 	
+modelBuilder 
+. 
+ApplyConfiguration +
+(+ ,
+new, /
+UsuarioMapping0 >
+(> ?
+)? @
+)@ A
+;A B
+modelBuilder 
+. 
+ApplyConfiguration +
+(+ ,
+new, /
+ProdutoMapping0 >
+(> ?
+)? @
+)@ A
+;A B
+modelBuilder 
+. 
+ApplyConfiguration +
+(+ ,
+new, /
+ClienteMapping0 >
+(> ?
+)? @
+)@ A
+;A B
+modelBuilder 
+. 
+ApplyConfiguration +
+(+ ,
+new, /
+PedidosMapping0 >
+(> ?
+)? @
+)@ A
+;A B
+base 
+. 
+OnModelCreating  
+(  !
+modelBuilder! -
+)- .
+;. /
+} 	
+} 
 }   Ï
 |D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Data\Mapping\ClienteMapping.cs
 	namespace 	
@@ -293,7 +298,252 @@ zD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 ;H I
 } 
 } 
-} à
+} á
+|D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Data\Mapping\PedidosMapping.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Infra% *
+.* +
+Data+ /
+./ 0
+Mapping0 7
+{		 
+public
+
+ 
+
+class
+
+ 
+PedidosMapping
+
+ 
+:
+
+  !$
+IEntityTypeConfiguration
+
+" :
+<
+
+: ;
+Pedido
+
+; A
+>
+
+A B
+{ 
+public 
+void 
+	Configure 
+( 
+EntityTypeBuilder /
+</ 0
+Pedido0 6
+>6 7
+builder8 ?
+)? @
+{ 	
+builder 
+. 
+ToTable 
+( 
+$str %
+)% &
+;& '
+builder 
+. 
+HasKey 
+( 
+p 
+=> 
+p  !
+.! "
+Id" $
+)$ %
+;% &
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+Id$ &
+)& '
+.' (
+HasColumnName( 5
+(5 6
+$str6 :
+): ;
+;; <
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+Guid$ (
+)( )
+.) *
+HasColumnName* 7
+(7 8
+$str8 >
+)> ?
+.? @
+HasColumnType@ M
+(M N
+$strN `
+)` a
+.a b
+HasDefaultValueSqlb t
+<t u
+Guidu y
+>y z
+(z {
+){ |
+;| }
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+DataCadastro$ 0
+)0 1
+.1 2
+HasColumnName2 ?
+(? @
+$str@ O
+)O P
+;P Q
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+NF$ &
+)& '
+.' (
+HasColumnName( 5
+(5 6
+$str6 :
+): ;
+;; <
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+Observacoes$ /
+)/ 0
+.0 1
+HasColumnName1 >
+(> ?
+$str? L
+)L M
+;M N
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+ProdutosList$ 0
+)0 1
+.1 2
+HasJsonConversion2 C
+<C D
+ListD H
+<H I
+ProdutoI P
+>P Q
+>Q R
+(R S
+)S T
+.T U
+HasColumnNameU b
+(b c
+$strc m
+)m n
+;n o
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+StatusPedido$ 0
+)0 1
+.1 2
+HasColumnName2 ?
+(? @
+$str@ H
+)H I
+;I J
+builder 
+. 
+Property 
+( 
+p 
+=> !
+p" #
+.# $
+Total$ )
+)) *
+.* +
+HasColumnName+ 8
+(8 9
+$str9 @
+)@ A
+;A B
+builder 
+. 
+HasOne 
+( 
+p 
+=> 
+p  !
+.! "
+Cliente" )
+)) *
+.* +
+WithMany+ 3
+(3 4
+)4 5
+.5 6
+HasForeignKey6 C
+(C D
+cD E
+=>F H
+cI J
+.J K
+	IdClienteK T
+)T U
+;U V
+} 	
+} 
+} à
 |D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Data\Mapping\ProdutoMapping.cs
 	namespace 	
 Coladel
@@ -659,211 +909,337 @@ zD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 ;H I
 } 	
 } 
-} Ç
+} ¯)
 pD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Data\Repository.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-GerenciadorPedidos $
-.$ %
-Infra% *
-.* +
-Data+ /
-{ 
-public 
+. 
+GerenciadorPedidos $
+.$ %
+Infra% *
+.* +
+Data+ /
+{		 
+public
+
+ 
 
-class 
+class
+
+ 
 
-Repository 
-< 
-	TEntidade %
->% &
-:' (
-IRepository) 4
-<4 5
-	TEntidade5 >
->> ?
-where@ E
-	TEntidadeF O
-:P Q
-classR W
-{		 
-	protected
+Repository
 
- 
-DbSet
-
- 
+ 
 <
 
- 
+ 
 	TEntidade
 
- !
+ %
 >
 
-! "
-Set
+% &
+:
 
-# &
-{
+' (
+IRepository
 
-' (
-get
+) 4
+<
 
-) ,
-;
+4 5
+	TEntidade
 
-, -
-private
+5 >
+>
 
-. 5
-set
+> ?
+where
 
-6 9
-;
+@ E
+	TEntidade
 
-9 :
-}
+F O
+:
 
-; <
-	protected  
-ApplicationDbContext &
-context' .
-;. /
-public 
+P Q
+Entity
+
+R X
+{ 
+	protected 
+DbSet 
+< 
+	TEntidade !
+>! "
+Set# &
+{' (
+get) ,
+;, -
+private. 5
+set6 9
+;9 :
+}; <
+	protected  
+ApplicationDbContext &
+context' .
+;. /
+public 
 
-Repository 
-(  
-ApplicationDbContext .
-	dbContext/ 8
-)8 9
-{ 	
-context 
-= 
-	dbContext 
-;  
-Type 
-tipo 
-= 
-typeof 
-( 
-	TEntidade (
-)( )
-;) *
-MappingProperties 
-( 
-	dbContext '
-,' (
-tipo) -
-)- .
-;. /
-} 	
-private 
-void 
+Repository 
+(  
+ApplicationDbContext .
+	dbContext/ 8
+)8 9
+{ 	
+context 
+= 
+	dbContext 
+;  
+Type 
+tipo 
+= 
+typeof 
+( 
+	TEntidade (
+)( )
+;) *
+MappingProperties 
+( 
+	dbContext '
+,' (
+tipo) -
+)- .
+;. /
+} 	
+public 
+	TEntidade 
+BuscarPorGuid &
+(& '
+Guid' +
+guid, 0
+)0 1
+{ 	
+var 
+result 
+= 
+Set 
+. 
+FirstOrDefault +
+(+ ,
+p, -
+=>. 0
+p1 2
+.2 3
+Guid3 7
+==8 :
+guid; ?
+)? @
+;@ A
+return 
+result 
+; 
+} 	
+public 
+	TEntidade 
+Criar 
+( 
+	TEntidade (
+entidade) 1
+)1 2
+{ 	
+var 
+result 
+= 
+Set 
+. 
+Add  
+(  !
+entidade! )
+)) *
+;* +
+context 
+. 
+SaveChanges 
+(  
+)  !
+;! "
+return 
+result 
+. 
+Entity  
+;  !
+} 	
+public   
+Guid   
+Alterar   
+(   
+	TEntidade   %
+entidade  & .
+)  . /
+{!! 	
+var"" 
+result"" 
+="" 
+Set"" 
+."" 
+Update"" #
+(""# $
+entidade""$ ,
+)"", -
+;""- .
+context## 
+.## 
+SaveChanges## 
+(##  
+)##  !
+;##! "
+return$$ 
+result$$ 
+.$$ 
+Entity$$  
+.$$  !
+Guid$$! %
+;$$% &
+}%% 	
+public&& 
+Guid&& 
+Remover&& 
+(&& 
+	TEntidade&& %
+entidade&&& .
+)&&. /
+{'' 	
+var(( 
+result(( 
+=(( 
+Set(( 
+.(( 
+Remove(( #
+(((# $
+entidade(($ ,
+)((, -
+;((- .
+context)) 
+.)) 
+SaveChanges)) 
+())  
+)))  !
+;))! "
+return** 
+result** 
+.** 
+Entity**  
+.**  !
+Guid**! %
+;**% &
+}++ 	
+private-- 
+void-- 
 
-Comparator 
-(  
-Object  &
+Comparator-- 
+(--  
+Object--  &
 
-fromObjeto' 1
-,1 2
-PropertyInfo3 ?
-propertyInfo@ L
-,L M
-TypeN R
-toObjetoS [
-)[ \
-{ 	
-var 
-toObjetoName 
-= 
-toObjeto '
-.' (
-Name( ,
-;, -
-var 
-found 
-= 
-toObjetoName $
-==% '
-propertyInfo( 4
-.4 5
-Name5 9
-?: ;
-propertyInfo< H
-:I J
-nullK O
-;O P
-if 
-( 
-found 
-!= 
-null 
-) 
-Set 
-= 
-propertyInfo "
-." #
-GetValue# +
-(+ ,
+fromObjeto--' 1
+,--1 2
+PropertyInfo--3 ?
+propertyInfo--@ L
+,--L M
+Type--N R
+toObjeto--S [
+)--[ \
+{.. 	
+var// 
+toObjetoName// 
+=// 
+toObjeto// '
+.//' (
+Name//( ,
+;//, -
+var00 
+found00 
+=00 
+toObjetoName00 $
+==00% '
+propertyInfo00( 4
+.004 5
+Name005 9
+?00: ;
+propertyInfo00< H
+:00I J
+null00K O
+;00O P
+if22 
+(22 
+found22 
+!=22 
+null22 
+)22 
+Set33 
+=33 
+propertyInfo33 "
+.33" #
+GetValue33# +
+(33+ ,
 
-fromObjeto, 6
-)6 7
-as8 :
-DbSet; @
-<@ A
-	TEntidadeA J
->J K
-;K L
-} 	
-public 
-void 
-MappingProperties %
-(% &
-Object& ,
+fromObjeto33, 6
+)336 7
+as338 :
+DbSet33; @
+<33@ A
+	TEntidade33A J
+>33J K
+;33K L
+}44 	
+private66 
+void66 
+MappingProperties66 &
+(66& '
+Object66' -
 
-fromObjeto- 7
-,7 8
-Type9 =
-toObjeto> F
-)F G
-{ 	
-foreach 
-( 
-var 
+fromObjeto66. 8
+,668 9
+Type66: >
+toObjeto66? G
+)66G H
+{77 	
+foreach88 
+(88 
+var88 
 
-properties #
-in$ &
+properties88 #
+in88$ &
 
-fromObjeto' 1
-.1 2
-GetType2 9
-(9 :
-): ;
-.; <
-GetProperties< I
-(I J
-)J K
-)K L
-{   
+fromObjeto88' 1
+.881 2
+GetType882 9
+(889 :
+)88: ;
+.88; <
+GetProperties88< I
+(88I J
+)88J K
+)88K L
+{99 
 
-Comparator!! 
-(!! 
+Comparator:: 
+(:: 
 
-fromObjeto!! %
-,!!% &
+fromObjeto:: %
+,::% &
 
-properties!!' 1
-,!!1 2
-toObjeto!!3 ;
-)!!; <
-;!!< =
-}"" 
-}## 	
-}$$ 
-}%% ž
+properties::' 1
+,::1 2
+toObjeto::3 ;
+)::; <
+;::< =
+};; 
+}<< 	
+}== 
+}>> ê
 sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\DependencyInjector.cs
 	namespace 	
 Coladel
@@ -873,68 +1249,80 @@ sD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 .$ %
 Infra% *
 { 
-public 
-static	 
-class 
-DependencyInjector (
-{ 
-public 
+public 
 
-static 
-void 
-ConfigureServices (
-(( )
-IServiceCollection) ;
-services< D
-)D E
-{ 
-services 
-. 
-	AddScoped 
-< 
-ILoginRepository )
-,) *
-LoginRepository+ :
->: ;
-(; <
-)< =
-;= >
-services 
-. 
-	AddScoped 
-< 
-IUsuarioRepository +
-,+ ,
-UsuarioRepository- >
->> ?
-(? @
-)@ A
-;A B
-services 
-. 
-	AddScoped 
-< 
-IProdutoRepository +
-,+ ,
-ProdutoRepository- >
->> ?
-(? @
-)@ A
-;A B
-services 
-. 
-	AddScoped 
-< 
-IClienteRepository +
-,+ ,
-ClienteRepository- >
->> ?
-(? @
-)@ A
-;A B
-} 
-} 
-} Ú
+static 
+class 
+DependencyInjector *
+{ 
+public 
+static 
+void 
+ConfigureServices ,
+(, -
+IServiceCollection- ?
+services@ H
+)H I
+{ 	
+services 
+. 
+	AddScoped 
+< 
+ILoginRepository /
+,/ 0
+LoginRepository1 @
+>@ A
+(A B
+)B C
+;C D
+services 
+. 
+	AddScoped 
+< 
+IUsuarioRepository 1
+,1 2
+UsuarioRepository3 D
+>D E
+(E F
+)F G
+;G H
+services 
+. 
+	AddScoped 
+< 
+IProdutoRepository 1
+,1 2
+ProdutoRepository3 D
+>D E
+(E F
+)F G
+;G H
+services 
+. 
+	AddScoped 
+< 
+IPedidoRepository 0
+,0 1
+PedidoRepository2 B
+>B C
+(C D
+)D E
+;E F
+services 
+. 
+	AddScoped 
+< 
+IRepository *
+,* +
+ClienteRepository, =
+>= >
+(> ?
+)? @
+;@ A
+} 	
+} 
+} é
+
 }D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\ClienteRepository.cs
 	namespace		 	
 Coladel		
@@ -959,8 +1347,8 @@ Repository% /
 </ 0
 Cliente0 7
 >7 8
-,8 9
-IClienteRepository: L
+,8 9
+IRepository: E
 { 
 public 
 ClienteRepository  
@@ -1004,43 +1392,9 @@ IQueryable 
 DataCadastro3 ?
 )? @
 ;@ A
-} 	
-public 
-Cliente 
-CriarCliente #
-(# $#
-CriarClienteRequestBody$ ;
-cliente< C
-)C D
-{ 	
-var 
-response 
-= 
-Set 
-. 
-Add "
-(" #
-cliente# *
-.* +
-ToModel+ 2
-(2 3
-)3 4
-)4 5
-;5 6
-context 
-. 
-SaveChanges 
-(  
-)  !
-;! "
-return 
-response 
-. 
-Entity "
-;" #
-} 	
-} 
-} Â
+} 	
+} 
+} Â
 {D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\LoginRepository.cs
 	namespace		 	
 Coladel		
@@ -1181,113 +1535,140 @@ CreateSalt )
 ; 
 } 	
 } 
-} Ô
-}D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\ProdutoRepository.cs
-	namespace		 	
-Coladel		
+} 
+|D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\PedidoRepository.cs
+	namespace 	
+Coladel
  
-.		 
-GerenciadorPedidos		 $
-.		$ %
-Infra		% *
-.		* +
+. 
+GerenciadorPedidos $
+.$ %
+Infra% *
+.* +
 
-Repository		+ 5
-{
-
- 
-public 
+Repository+ 5
+{ 
+public 
 
-class 
-ProdutoRepository "
-:# $
+class 
+PedidoRepository !
+:" #
 
-Repository% /
-</ 0
-Produto0 7
->7 8
-,8 9
-IProdutoRepository: L
-{ 
-public 
-ProdutoRepository  
-(  ! 
-ApplicationDbContext! 5
-context6 =
-)= >
-:? @
-baseA E
-(E F
-contextF M
-)M N
-{O P
-}Q R
-public 
+Repository$ .
+<. /
+Pedido/ 5
+>5 6
+,6 7
+IPedidoRepository8 I
+{ 
+public		 
+PedidoRepository		 
+(		   
+ApplicationDbContext		  4
+context		5 <
+)		< =
+:		> ?
+base		@ D
+(		D E
+context		E L
+)		L M
+{		N O
+}		P Q
+}
+
+ 
+} ì
 
-IQueryable 
-< 
-Produto !
->! "#
-BuscarProdutosPorFiltro# :
-(: ;&
-BuscarProdutosFiltroFilter; U
-filterV \
-)\ ]
-{ 	
-return 
-Set 
-. !
-FiltrarPorNomeProduto ,
-(, -
-filter- 3
-.3 4
-NomeProduto4 ?
-)? @
-. "
-FiltrarPorDataCadastro '
-(' (
-filter( .
-.. /
-DataCadastro/ ;
-); <
-;< =
-} 	
-public 
-Produto 
-CriarProduto #
-(# $#
-CriarProdutoRequestBody$ ;
-produto< C
-)C D
-{ 	
-var 
-retorno 
-= 
-Set 
-. 
-Add !
-(! "
-produto" )
-.) *
-ToModel* 1
-(1 2
-)2 3
-)3 4
-;4 5
-context 
-. 
-SaveChanges 
-(  
-)  !
-;! "
-return 
-retorno 
-. 
-Entity !
-;! "
-} 	
-} 
-} ù
+}D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\ProdutoRepository.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Infra% *
+.* +
+
+Repository+ 5
+{		 
+public
+
+ 
+
+class
+
+ 
+ProdutoRepository
+
+ "
+:
+
+# $
+
+Repository
+
+% /
+<
+
+/ 0
+Produto
+
+0 7
+>
+
+7 8
+,
+
+8 9
+IProdutoRepository
+
+: L
+{ 
+public 
+ProdutoRepository  
+(  ! 
+ApplicationDbContext! 5
+context6 =
+)= >
+:? @
+baseA E
+(E F
+contextF M
+)M N
+{O P
+}Q R
+public 
+
+IQueryable 
+< 
+Produto !
+>! "#
+BuscarProdutosPorFiltro# :
+(: ;&
+BuscarProdutosFiltroFilter; U
+filterV \
+)\ ]
+{ 	
+return 
+Set 
+. !
+FiltrarPorNomeProduto ,
+(, -
+filter- 3
+.3 4
+NomeProduto4 ?
+)? @
+. "
+FiltrarPorDataCadastro '
+(' (
+filter( .
+.. /
+DataCadastro/ ;
+); <
+;< =
+} 	
+} 
+} ù
 ‘D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.Infra\Repository\QueryExtensions\ClienteQueryExtension.cs
 	namespace 	
 Coladel

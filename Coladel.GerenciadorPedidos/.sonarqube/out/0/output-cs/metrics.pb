@@ -1,26 +1,27 @@
-É
-^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\ApiControllerBase.cs 8r	
-Çs
+Ç
+^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\ApiControllerBase.cs 8r	
+Çs
 dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumOrderDirection.csr	
 ~
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumTypeResult.csr	
- !"ñ
-iD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\MappingExtensions.cs 8r	
-xÇç
+ !"•
+iD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\MappingExtensions.cs 8	r"	
+ "#$%xÇ	
+ "ç
 gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\QueryExtensions.cs 8r	
-xÇm
-^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.csr		
-s
-dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IDataService.csr		
-n
-_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IFinder.csr		
-Ñ
+xÇ¶
+qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\ValueConversionExtensions.cs 8r	
+xÇ	n
+^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.csr
+	
+m
+_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IBuscar.csr	Ñ
 hD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IOperationResult.cs8	r	
-o
-`D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IRemover.csr		
-o
-`D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IUpdater.csr		
-}
+p
+`D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IRemover.csr
+	
+n
+`D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IUpdater.csr	}
 jD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\Results\IOrderable.cs8r	
 à
 pD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\Results\IPaginatedResult.cs8r	

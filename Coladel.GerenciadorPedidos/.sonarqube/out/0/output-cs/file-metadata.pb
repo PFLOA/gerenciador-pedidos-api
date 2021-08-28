@@ -3,10 +3,10 @@ g
 dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumOrderDirection.csutf-8i
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumTypeResult.csutf-8r
 iD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\MappingExtensions.csutf-8p
-gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\QueryExtensions.csutf-8g
-^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.csutf-8m
-dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IDataService.csutf-8h
-_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IFinder.csutf-8q
+gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\QueryExtensions.csutf-8z
+qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\ValueConversionExtensions.csutf-8g
+^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.csutf-8h
+_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IBuscar.csutf-8q
 hD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IOperationResult.csutf-8i
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IRemover.csutf-8i
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IUpdater.csutf-8s

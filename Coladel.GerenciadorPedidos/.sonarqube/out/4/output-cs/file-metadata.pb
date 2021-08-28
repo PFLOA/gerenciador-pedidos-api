@@ -1,6 +1,7 @@
 Å
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ClienteController.csutf-8
-vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\LoginController.csutf-8Å
+vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\LoginController.csutf-8Ä
+wD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\PedidoController.csutf-8Å
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ProdutoController.csutf-8Å
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\UsuarioController.csutf-8k
 bD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Program.csutf-8k

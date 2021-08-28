@@ -1,4 +1,4 @@
-Ù
+ø
 ^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\ApiControllerBase.cs
 	namespace		 	
 Coladel		
@@ -8,46 +8,43 @@
 {
 
  
-[ 
-	Authorize 
-] 
-[ 
-ApiController 
-] 
-[ 
-Route 
+[ 
+ApiController 
+] 
+[ 
+Route 
 
-(
+(
  
-$str  
-)  !
-]! "
-public 
+$str  
+)  !
+]! "
+public 
 
-class 
-ApiControllerBase "
-:# $
-ControllerBase% 3
-{ 
-	protected 
-readonly 
-	IMediator $
-	_mediator% .
-;. /
-public 
-ApiControllerBase  
-(  !
-	IMediator! *
-mediator+ 3
-)3 4
-{ 	
-	_mediator 
-= 
-mediator  
-;  !
-} 	
-} 
-} Ê
+class 
+ApiControllerBase "
+:# $
+ControllerBase% 3
+{ 
+	protected 
+readonly 
+	IMediator $
+	_mediator% .
+;. /
+public 
+ApiControllerBase  
+(  !
+	IMediator! *
+mediator+ 3
+)3 4
+{ 	
+	_mediator 
+= 
+mediator  
+;  !
+} 	
+} 
+} Ê
 dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\EnumOrderDirection.cs
 	namespace 	
 Coladel
@@ -171,154 +168,287 @@ dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Enum\
 ], -
 ServiceUnavaliable   
 }!! 
-}"" Ñ
+}"" º#
 iD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\MappingExtensions.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-Core 
-. 
+. 
+Core 
+. 
 
-Extensions !
-{ 
-public 
+Extensions !
+{ 
+public 
 
-static 
-class 
-MappingExtensions )
-{		 
-private
+static 
+class 
+MappingExtensions )
+{ 
+public 
+static 
+void 
+MappingProperties ,
+(, -
+this- 1
+Object2 8
+
+fromObjeto9 C
+,C D
+objectE K
+toObjetoL T
+)T U
+{		 	
+ForeachProperties
 
- 
-static
+ 
+(
 
- 
-void
-
- 
+ 
 
 Comparator
 
- &
-(
+ (
+,
 
-& '
-Object
-
-' -
+( )
 
 fromObjeto
 
-. 8
+* 4
 ,
 
-8 9
-PropertyInfo
-
-: F
-propertyInfo
-
-G S
-,
-
-S T
-object
-
-U [
+4 5
 toObjeto
 
-\ d
+6 >
 )
 
-d e
-{ 	
-var 
-found 
-= 
-toObjeto  
-.  !
-GetType! (
-(( )
-)) *
-.* +
-GetProperty+ 6
-(6 7
-propertyInfo7 C
-.C D
-NameD H
-)H I
-;I J
-if 
-( 
-found 
-!= 
-null 
-) 
-found 
-. 
-SetValue 
-( 
-toObjeto '
-,' (
-propertyInfo) 5
-.5 6
-GetValue6 >
-(> ?
+> ?
+;
+
+? @
+} 	
+public 
+static 
+void '
+MappingDifferenceProperties 6
+(6 7
+this7 ;
+Object< B
 
-fromObjeto? I
-)I J
-)J K
-;K L
-} 	
-public 
-static 
-void 
-MappingProperties ,
-(, -
-this- 1
-Object2 8
+fromObjetoC M
+,M N
+objectO U
+toObjetoV ^
+)^ _
+{ 	
+ForeachProperties 
+(  
+DifferenceComparator 2
+,2 3
 
-fromObjeto9 C
-,C D
-objectE K
-toObjetoL T
-)T U
-{ 	
-foreach 
-( 
-var 
+fromObjeto4 >
+,> ?
+toObjeto@ H
+)H I
+;I J
+} 	
+private 
+static 
+void 
+ForeachProperties -
+(- .
+Action. 4
+<4 5
+Object5 ;
+,; <
+PropertyInfo= I
+,I J
+ObjectK Q
+>Q R
+actionS Y
+,Y Z
+Object[ a
 
-properties #
-in$ &
+fromObjetob l
+,l m
+objectn t
+toObjetou }
+)} ~
+{ 	
+foreach 
+( 
+var 
 
-fromObjeto' 1
-.1 2
-GetType2 9
-(9 :
-): ;
-.; <
-GetProperties< I
-(I J
-)J K
-)K L
-{ 
+properties #
+in$ &
 
-Comparator 
-( 
+fromObjeto' 1
+.1 2
+GetType2 9
+(9 :
+): ;
+.; <
+GetProperties< I
+(I J
+)J K
+)K L
+{ 
+action 
+. 
+Invoke 
+( 
 
-fromObjeto %
-,% &
+fromObjeto (
+,( )
 
-properties' 1
-,1 2
-toObjeto3 ;
-); <
-;< =
-} 
-} 	
-} 
-} ì
+properties* 4
+,4 5
+toObjeto6 >
+)> ?
+;? @
+} 
+} 	
+private 
+static 
+void 
+
+Comparator &
+(& '
+Object' -
+
+fromObjeto. 8
+,8 9
+PropertyInfo: F
+propertyInfoG S
+,S T
+objectU [
+toObjeto\ d
+)d e
+{ 	
+var 
+found 
+= 
+toObjeto  
+.  !
+GetType! (
+(( )
+)) *
+.* +
+GetProperty+ 6
+(6 7
+propertyInfo7 C
+.C D
+NameD H
+)H I
+;I J
+if 
+( 
+found 
+!= 
+null 
+) 
+found $
+.$ %
+SetValue% -
+(- .
+toObjeto. 6
+,6 7
+propertyInfo8 D
+.D E
+GetValueE M
+(M N
+
+fromObjetoN X
+)X Y
+)Y Z
+;Z [
+} 	
+private 
+static 
+void  
+DifferenceComparator 0
+(0 1
+Object1 7
+
+fromObjeto8 B
+,B C
+PropertyInfoD P
+propertyInfoQ ]
+,] ^
+object_ e
+toObjetof n
+)n o
+{ 	
+var 
+found 
+= 
+toObjeto  
+.  !
+GetType! (
+(( )
+)) *
+.* +
+GetProperty+ 6
+(6 7
+propertyInfo7 C
+.C D
+NameD H
+)H I
+;I J
+if   
+(   
+propertyInfo   
+.   
+GetValue   %
+(  % &
+
+fromObjeto  & 0
+)  0 1
+is  2 4
+null  5 9
+)  9 :
+return  ; A
+;  A B
+if"" 
+("" 
+found"" 
+."" 
+GetValue"" 
+("" 
+toObjeto"" '
+)""' (
+!="") +
+propertyInfo"", 8
+.""8 9
+GetValue""9 A
+(""A B
+
+fromObjeto""B L
+)""L M
+)""M N
+found""O T
+.""T U
+SetValue""U ]
+(""] ^
+toObjeto""^ f
+,""f g
+propertyInfo""h t
+.""t u
+GetValue""u }
+(""} ~
+
+fromObjeto	""~ à
+)
+""à â
+)
+""â ä
+;
+""ä ã
+}## 	
+}$$ 
+}%% ì
 gD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\QueryExtensions.cs
 	namespace 	
 Coladel
@@ -408,7 +538,195 @@ IQueryable		M W
 ; 
 } 	
 } 
-} ˆ
+}  
+qD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Extensions\ValueConversionExtensions.cs
+	namespace 	
+Coladel
+ 
+. 
+Core 
+. 
+
+Extensions !
+{ 
+public		 
+
+static		 
+class		 %
+ValueConversionExtensions		 1
+{
+
+ 
+public 
+static 
+PropertyBuilder %
+<% &
+T& '
+>' (
+HasJsonConversion) :
+<: ;
+T; <
+>< =
+(= >
+this> B
+PropertyBuilderC R
+<R S
+TS T
+>T U
+propertyBuilderV e
+)e f
+whereg l
+Tm n
+:o p
+classq v
+,v w
+newx {
+({ |
+)| }
+{ 	
+ValueConverter 
+< 
+T 
+, 
+string $
+>$ %
+	converter& /
+=0 1
+new2 5
+ValueConverter6 D
+<D E
+TE F
+,F G
+stringH N
+>N O
+(O P
+v 
+=> 
+JsonConvert $
+.$ %
+SerializeObject% 4
+(4 5
+v5 6
+)6 7
+,7 8
+v 
+=> 
+JsonConvert $
+.$ %
+DeserializeObject% 6
+<6 7
+T7 8
+>8 9
+(9 :
+v: ;
+); <
+??= ?
+new@ C
+TD E
+(E F
+)F G
+) 
+; 
+ValueComparer 
+< 
+T 
+> 
+comparer %
+=& '
+new( +
+ValueComparer, 9
+<9 :
+T: ;
+>; <
+(< =
+( 
+l 
+, 
+r 
+) 
+=> 
+JsonConvert $
+.$ %
+SerializeObject% 4
+(4 5
+l5 6
+)6 7
+==8 :
+JsonConvert; F
+.F G
+SerializeObjectG V
+(V W
+rW X
+)X Y
+,Y Z
+v 
+=> 
+v 
+== 
+null 
+?  
+$num! "
+:# $
+JsonConvert% 0
+.0 1
+SerializeObject1 @
+(@ A
+vA B
+)B C
+.C D
+GetHashCodeD O
+(O P
+)P Q
+,Q R
+v 
+=> 
+JsonConvert 
+.  
+DeserializeObject  1
+<1 2
+T2 3
+>3 4
+(4 5
+JsonConvert5 @
+.@ A
+SerializeObjectA P
+(P Q
+vQ R
+)R S
+)S T
+) 
+; 
+propertyBuilder 
+. 
+HasConversion )
+() *
+	converter* 3
+)3 4
+;4 5
+propertyBuilder 
+. 
+Metadata $
+.$ %
+SetValueConverter% 6
+(6 7
+	converter7 @
+)@ A
+;A B
+propertyBuilder 
+. 
+Metadata $
+.$ %
+SetValueComparer% 5
+(5 6
+comparer6 >
+)> ?
+;? @
+return 
+propertyBuilder "
+;" #
+} 	
+} 
+} Í
 ^D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IAdder.cs
 	namespace 	
 Coladel
@@ -427,54 +745,46 @@ Interfaces !
 T 
 > 
 { 
-}		 
-}
+T		 	
+Criar		
+ 
+(		 
+T		 
+entidade		 
+)		 
+;		 
+}
 
- ä
-dD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IDataService.cs
-	namespace 	
-Coladel
+ 
+} Û
+_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IBuscar.cs
+	namespace 	
+Coladel
  
-. 
-Core 
-. 
+. 
+Core 
+. 
 
-Interfaces !
-{ 
-public 
+Interfaces !
+{ 
+public 
 
-	interface 
-IDataService !
-<! "
-	TEntidade" +
->+ ,
-{ 
-}		 
-}
-
- Ä
-_D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IFinder.cs
-	namespace 	
-Coladel
- 
-. 
-Core 
-. 
-
-Interfaces !
-{ 
-public 
-
-	interface 
-IFinder 
-< 
-	TEntidade &
->& '
-{ 
-}		 
-}
-
- ∆
+	interface 
+IBuscar 
+< 
+T 
+> 
+{ 
+T 	
+BuscarPorGuid
+ 
+( 
+Guid 
+guid !
+)! "
+;" #
+} 
+}		 ∆
 hD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IOperationResult.cs
 	namespace 	
 Coladel
@@ -587,7 +897,7 @@ AddMessage  *
 )9 :
 ;: ;
 } 
-} Ç
+} Û
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IRemover.cs
 	namespace 	
 Coladel
@@ -602,36 +912,48 @@ Interfaces !
 
 	interface 
 IRemover 
-< 
-	TEntidade '
->' (
-{ 
-}		 
-}
+< 
+T 
+>  
+{ 
+Guid		 
+Remover		 
+(		 
+T		 
+entidade		 
+)		  
+;		  !
+}
 
- Ç
+ 
+} Û
 `D:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\IUpdater.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-Core 
-. 
+. 
+Core 
+. 
 
-Interfaces !
-{ 
-public 
+Interfaces !
+{ 
+public 
 
-	interface 
-IUpdater 
-< 
-	TEntidade '
->' (
-{ 
-}		 
-}
-
- ∆
+	interface 
+IUpdater 
+< 
+T 
+>  
+{ 
+Guid 
+Alterar 
+( 
+T 
+entidade 
+)  
+;  !
+} 
+}		 ∆
 jD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\Interfaces\Results\IOrderable.cs
 	namespace 	
 Coladel
@@ -838,7 +1160,7 @@ CountTotal 
 ;" #
 }$ %
 } 
-} ¶
+} ª
 XD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\IRepository.cs
 	namespace 	
 Coladel
@@ -858,32 +1180,21 @@ XD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Core\IRepo
 <4 5
 	TEntidade5 >
 >> ?
-,? @
-IDataServiceA M
-<M N
-	TEntidadeN W
->W X
-,X Y
-IFinderZ a
-<a b
-	TEntidadeb k
->k l
-,l m
-IUpdatern v
-<v w
-	TEntidade	w Ä
->
-Ä Å
-,
-Å Ç
-IRemover
-É ã
-<
-ã å
-	TEntidade
-å ï
->
-ï ñ
+,? @
+IBuscarA H
+<H I
+	TEntidadeI R
+>R S
+,S T
+IUpdaterU ]
+<] ^
+	TEntidade^ g
+>g h
+,h i
+IRemoverj r
+<r s
+	TEntidades |
+>| }
 { 
 } 
 }		 ¯

@@ -1,97 +1,115 @@
-í
+Ï
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ClienteController.cs
-	namespace 	
-Coladel
+	namespace 	
+Coladel
  
-. 
-GerenciadorPedidos $
-.$ %
-Controllers% 0
-{		 
-public
-
- 
+. 
+GerenciadorPedidos $
+.$ %
+Controllers% 0
+{ 
+public		 
 
-class
+class		 
+ClienteController		 "
+:		# $
+ApiControllerBase		% 6
+{
 
- 
-ClienteController
-
- "
-:
-
-# $
-ApiControllerBase
-
-% 6
-{ 
-public 
-ClienteController  
-(  !
-	IMediator! *
-mediator+ 3
-)3 4
-:5 6
-base7 ;
-(; <
-mediator< D
-)D E
-{F G
-}H I
-[ 	
-HttpGet	 
-] 
-public 
-Task 
-< 
-IActionResult !
->! "#
-BuscarClientesPorFiltro# :
-(: ;
-[; <
-	FromQuery< E
-]E F'
-BuscarClientesFiltroRequestG b
-requestc j
-)j k
-{ 	
-return 
-	_mediator 
-. 
-Send !
-(! "
-request" )
-)) *
-;* +
-} 	
-[ 	
-HttpPost	 
-] 
-public 
-Task 
-< 
-IActionResult !
->! "
-CriarCliente# /
-(/ 0
-[0 1
-FromBody1 9
-]9 :
-CriarClienteRequest; N
-requestO V
-)V W
-{ 	
-return 
-	_mediator 
-. 
-Send !
-(! "
-request" )
-)) *
-;* +
-} 	
-} 
-} „
+ 
+public 
+ClienteController  
+(  !
+	IMediator! *
+mediator+ 3
+)3 4
+:5 6
+base7 ;
+(; <
+mediator< D
+)D E
+{F G
+}H I
+[ 	
+HttpGet	 
+] 
+public 
+Task 
+< 
+IActionResult !
+>! "#
+BuscarClientesPorFiltro# :
+(: ;
+[; <
+	FromQuery< E
+]E F'
+BuscarClientesFiltroRequestG b
+requestc j
+)j k
+{ 	
+return 
+	_mediator 
+. 
+Send !
+(! "
+request" )
+)) *
+;* +
+} 	
+[ 	
+HttpPut	 
+] 
+public 
+Task 
+< 
+IActionResult !
+>! "
+CriarCliente# /
+(/ 0
+[0 1
+FromBody1 9
+]9 :!
+AlterarClienteRequest; P
+requestQ X
+)X Y
+{ 	
+return 
+	_mediator 
+. 
+Send !
+(! "
+request" )
+)) *
+;* +
+} 	
+[ 	
+HttpPost	 
+] 
+public 
+Task 
+< 
+IActionResult !
+>! "
+CriarCliente# /
+(/ 0
+[0 1
+FromBody1 9
+]9 :
+CriarClienteRequest; N
+requestO V
+)V W
+{ 	
+return 
+	_mediator 
+. 
+Send !
+(! "
+request" )
+)) *
+;* +
+} 	
+} 
+} „
 vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\LoginController.cs
 	namespace 	
 Coladel
@@ -171,7 +189,77 @@ vD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.Gerenciado
 ;. /
 } 	
 } 
-} ¦
+} ®	
+wD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\PedidoController.cs
+	namespace 	
+Coladel
+ 
+. 
+GerenciadorPedidos $
+.$ %
+Controllers% 0
+{		 
+public
+
+ 
+
+class
+
+ 
+PedidoController
+
+ !
+:
+
+" #
+ApiControllerBase
+
+$ 5
+{ 
+public 
+PedidoController 
+(  
+	IMediator  )
+mediator* 2
+)2 3
+:4 5
+base6 :
+(: ;
+mediator; C
+)C D
+{E F
+}G H
+[ 	
+HttpPost	 
+] 
+[ 	
+AllowAnonymous	 
+] 
+public 
+Task 
+< 
+IActionResult !
+>! "
+CriarPedido# .
+(. /
+[/ 0
+FromBody0 8
+]8 9
+CriarPedidoRequest: L
+requestM T
+)T U
+{ 	
+return 
+	_mediator 
+. 
+Send !
+(! "
+request" )
+)) *
+;* +
+} 	
+} 
+} ¦
 xD:\GitHub\gerenciador-pedidos-api\Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos\Controllers\ProdutoController.cs
 	namespace 	
 Coladel

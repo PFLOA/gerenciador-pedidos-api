@@ -9,6 +9,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
 
         /// <summary>
         /// Construtor Padrão.

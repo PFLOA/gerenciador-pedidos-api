@@ -11,7 +11,12 @@ namespace Coladel.GerenciadorPedidos.Controllers
     {
         public PedidoController(IMediator mediator) : base(mediator) { }
 
-        
+        [HttpGet]
+        [AllowAnonymous]
+        public Task<IActionResult> BuscarPedidos([FromQuery] BuscarPedidosFiltroRequest request)
+        {
+            return _mediator.Send(request);
+        }
 
         [HttpPost]
         [AllowAnonymous]

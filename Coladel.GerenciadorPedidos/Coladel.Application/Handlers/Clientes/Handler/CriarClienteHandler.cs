@@ -12,9 +12,9 @@ namespace Coladel.Application.Handlers.Clientes
 {
     public class CriarClienteHandler : IRequestHandler<CriarClienteRequest, IActionResult>
   {
-    private readonly IRepository _clienteRepository;
+    private readonly IClienteRepository _clienteRepository;
 
-    public CriarClienteHandler(IRepository produtoRepository)
+    public CriarClienteHandler(IClienteRepository produtoRepository)
     {
       _clienteRepository = produtoRepository;
     }

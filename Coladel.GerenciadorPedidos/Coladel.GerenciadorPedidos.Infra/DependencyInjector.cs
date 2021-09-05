@@ -18,7 +18,7 @@ namespace Coladel.GerenciadorPedidos.Infra
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IPedidoRepository, PedidoRepository>();
-            services.AddScoped<IRepository, ClienteRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
         }
     }
 }

@@ -15,9 +15,9 @@ namespace Coladel.Application.Handlers.Clientes.Handler
 {
     public class BuscarClientesFiltroHandler : IRequestHandler<BuscarClientesFiltroRequest, IActionResult>
     {
-        private readonly IRepository _clienteRepository;
+        private readonly IClienteRepository _clienteRepository;
 
-        public BuscarClientesFiltroHandler(IRepository produtoRepository)
+        public BuscarClientesFiltroHandler(IClienteRepository produtoRepository)
         {
             _clienteRepository = produtoRepository;
         }

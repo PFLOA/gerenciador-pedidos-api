@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
-    public class ClienteRepository : Repository<Cliente>, IRepository
+    public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
         public ClienteRepository(ApplicationDbContext dbContext) : base(dbContext) { }
 

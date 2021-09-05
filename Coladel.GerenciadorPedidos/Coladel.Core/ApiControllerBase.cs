@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Coladel.Core
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class ApiControllerBase : ControllerBase

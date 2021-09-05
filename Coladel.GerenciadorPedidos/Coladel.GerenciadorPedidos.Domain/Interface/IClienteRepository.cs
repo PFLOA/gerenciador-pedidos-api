@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Coladel.GerenciadorPedidos.Domain.Interface
 {
-    public interface IRepository : IRepository<Cliente>
+    public interface IClienteRepository : IRepository<Cliente>
     {
         IQueryable<Cliente> BuscarClientesPorFiltro(BuscarClientesFiltroFilter filter);
     }

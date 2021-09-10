@@ -10,11 +10,7 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
     {
         public StatusPedido StatusPedido { get; set; }
         public short IdCliente { get; set; }
-        public Cliente Cliente
-        
-        
-       
-        { get; set; }
+        public Cliente Cliente { get; set; }
         public List<ItensPedido> ItensPedido { get; set; }
         public string NF { get; set; }
         public string Observacoes { get; set; }

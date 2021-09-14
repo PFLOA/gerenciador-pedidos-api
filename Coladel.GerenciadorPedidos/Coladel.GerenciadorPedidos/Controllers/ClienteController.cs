@@ -18,13 +18,29 @@ namespace Coladel.GerenciadorPedidos.Controllers
             return _mediator.Send(request);
         }
 
+        [HttpGet("Guid/{Guid}")]
+        [AllowAnonymous]
+        public Task<IActionResult> BuscarClientesPorGuid([FromRoute] BuscarClientePorGuidRequest request)
+        {
+            return _mediator.Send(request);
+        }
+
         [HttpPut]
-        public Task<IActionResult> CriarCliente([FromBody] AlterarClienteRequest request)
+        [AllowAnonymous]
+        public Task<IActionResult> AlterarCliente([FromBody] AlterarClienteRequest request)
         {
             return _mediator.Send(request);
         }
         [HttpPost]
+        [AllowAnonymous]
         public Task<IActionResult> CriarCliente([FromBody] CriarClienteRequest request)
+        {
+            return _mediator.Send(request);
+        }
+
+        [HttpPost("ExecutarBackup")]
+        [AllowAnonymous]
+        public Task<IActionResult> CriarBackupProduto(ExecutarBackupClienteRequest request)
         {
             return _mediator.Send(request);
         }

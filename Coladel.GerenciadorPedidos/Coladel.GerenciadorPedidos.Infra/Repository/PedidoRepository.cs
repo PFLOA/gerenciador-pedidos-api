@@ -3,6 +3,7 @@ using Coladel.GerenciadorPedidos.Domain.Filters;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Data;
 using Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
@@ -13,7 +14,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 
         public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter)
         {
-            var retorno = Set.FiltrarPorNomeCliente(filter.Cliente).ToList().AsQueryable();
+            var retorno = Set.FiltrarPorNomeCliente(filter.Cliente).Include(s => s.Cliente).Include("ItensPedido.Produto");
             return retorno;
         }
     }

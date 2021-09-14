@@ -2,8 +2,8 @@
 {
     public enum StatusPedido
     {
-        ENTREGUE,
-        EM_ANDAMENTO,
-        ATRASO
+        EM_ANDAMENTO = 0,
+        ENTREGUE = 1,
+        ATRASO = 2
     }
 }

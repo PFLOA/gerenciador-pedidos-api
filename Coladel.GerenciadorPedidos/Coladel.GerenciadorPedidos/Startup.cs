@@ -35,9 +35,11 @@ namespace Coladel.GerenciadorPedidos
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 var connetionString = Configuration.GetConnectionString("DefaultConnection");
-                options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString));
+                options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
             });
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddControllers()
                 .ConfigureApiBehaviorOptions(options =>
                 {
@@ -46,8 +48,7 @@ namespace Coladel.GerenciadorPedidos
 
             var assembly = AppDomain.CurrentDomain.Load("Coladel.Application");
             services.AddMediatR(assembly);
-
-            DependencyInjector.ConfigureServices(services);
+            services.ConfigureServices();
 
             services.AddSwaggerGen(c =>
             {

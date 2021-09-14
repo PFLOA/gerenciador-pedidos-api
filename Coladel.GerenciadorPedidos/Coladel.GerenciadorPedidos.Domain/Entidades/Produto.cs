@@ -10,6 +10,7 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
     {
         public string NomeProduto { get; set; }
         public decimal Preco { get; set; }
+        public ICollection<ItensPedido> ItensPedido { get; set; }
         public Produto() { }
         public Produto(CriarProdutoRequestBody criarProdutoRequestBody) => criarProdutoRequestBody.MappingProperties(this);
     }

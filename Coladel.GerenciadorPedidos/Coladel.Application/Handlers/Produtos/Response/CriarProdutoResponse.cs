@@ -6,6 +6,7 @@ namespace Coladel.Application.Handlers.Produtos.Response
 {
     public class CriarProdutoResponse
     {
+        public short Id { get; set; }
         public string NomeProduto { get; set; }
         public decimal Preco { get; set; }
         public Guid Guid { get; set; }

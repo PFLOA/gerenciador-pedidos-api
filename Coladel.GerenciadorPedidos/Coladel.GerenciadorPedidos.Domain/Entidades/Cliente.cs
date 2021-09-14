@@ -8,7 +8,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
     public class Cliente : Entity
     {
         public string NomeCliente { get; set; }
-        public virtual IEnumerable<Pedido> Pedidos { get; set; }
 
         public Cliente() { }
         public Cliente(CriarClienteRequestBody requestBody) => requestBody.MappingProperties(this);

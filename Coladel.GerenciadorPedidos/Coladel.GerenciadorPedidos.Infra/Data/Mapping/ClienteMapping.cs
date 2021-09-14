@@ -12,11 +12,9 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.ToTable("cliente");
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("id").ValueGeneratedOnAdd();
-            builder.Property(p => p.Guid).HasColumnName("guid").HasColumnType("uniqueidentifier").HasDefaultValueSql<Guid>();
+            builder.Property(p => p.Guid).HasColumnName("guid");
             builder.Property(p => p.DataCadastro).HasColumnName("data_cadastro");
-            builder.Property(p => p.NomeCliente).HasColumnName("nome_cliente");
-
-            builder.HasMany(p => p.Pedidos).WithOne(e => e.Cliente);
+            builder.Property(p => p.NomeCliente).HasColumnName("nome_cliente").HasColumnType("varchar(256)");
         }
     }
 }

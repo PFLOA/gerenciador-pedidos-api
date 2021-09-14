@@ -4,6 +4,7 @@ using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,26 +14,41 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
     {
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IClienteRepository _clienteRepository;
-        private readonly IProdutoRepository _produtoRepository;
+        private readonly IItensPedidoRepository _itensPedidoRepository;
 
-        public CriarPedidoHandler(IPedidoRepository pedidoRepository, IClienteRepository clienteRepository, IProdutoRepository produtoRepository)
+        public CriarPedidoHandler(IPedidoRepository pedidoRepository, IClienteRepository clienteRepository, IItensPedidoRepository itensPedidoRepository)
         {
             _pedidoRepository = pedidoRepository;
             _clienteRepository = clienteRepository;
-            _produtoRepository = produtoRepository;
+            _itensPedidoRepository = itensPedidoRepository;
         }
         public async Task<IActionResult> Handle(CriarPedidoRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                request.Cliente = _clienteRepository.BuscarPorGuid(request.ClienteGuid);
-                Pedido produto = _pedidoRepository.Criar(request.ToModel());
+                Cliente cliente = _clienteRepository.BuscarPorGuid(request.ClienteGuid);
+                Pedido pedido = new Pedido(request);
+
+                pedido.IdCliente = cliente.Id;
+
+                short pedidoResultId = _pedidoRepository.Criar(pedido).Id;
+                CriarPedido(request.ItenPedido, pedidoResultId);
+
                 return await Task.FromResult(new OkResult());
             }
             catch (Exception ex)
             {
                 return await Task.FromResult(new BadRequestObjectResult(new { error = ex.Message }));
             }
+        }
+
+        public void CriarPedido(List<ItensPedido> list, short idPedido)
+        {
+            list.ForEach((itensPedido) =>
+            {
+                itensPedido.IdPedido = idPedido;
+                _itensPedidoRepository.Criar(itensPedido);
+            });
         }
     }
 }

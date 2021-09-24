@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
 
 namespace Coladel.Core.Enum
 {
     public enum EnumTypeResult
     {
         [Description("OK")]
-        Ok,
+        Ok = 200,
 
         [Description("Criado")]
-        Created,
+        Created = 201,
 
         [Description("Aceito")]
-        Accepted,
+        Accepted = 202,
 
         [Description("Entrada Inválida")]
-        InvalidInput,
+        InvalidInput = 400,
 
         [Description("Não Encontrado")]
-        NotFound,
+        NotFound = 404,
 
         [Description("Proibido")]
-        Forbidden,
+        Forbidden = 403,
 
         [Description("Erro Interno")]
-        InternalError,
+        InternalError = 500,
 
         [Description("Serviço Indisponível")]
-        ServiceUnavaliable
+        ServiceUnavaliable = 503
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using Coladel.Core.Rest;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +10,18 @@ namespace Coladel.Core
     [Authorize]
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class ApiControllerBase : ControllerBase
+    public class ApiController : RestController
     {
         protected readonly IMediator _mediator;
 
-        public ApiControllerBase(IMediator mediator)
+        public ApiController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        protected async Task<IActionResult> Executar(Func<object> funcao)
+        {
+            return await Execute(funcao);
         }
     }
 }

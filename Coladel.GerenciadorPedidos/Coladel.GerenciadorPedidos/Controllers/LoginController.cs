@@ -1,26 +1,21 @@
 ﻿using Coladel.Application.Handlers.Login.Request;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+using Coladel.Core;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace Coladel.GerenciadorPedidos.Controllers
 {
-
-    [ApiController]
-    [Route("api/v1/[controller]")]
-    public class LoginController : ControllerBase
+    [AllowAnonymous]
+    public class LoginController : ApiController
     {
-        private readonly IMediator _mediator;
-        public LoginController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        public LoginController(IMediator mediator) : base(mediator) { }
 
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] RealizarLoginRequest login)
         {
-            return await _mediator.Send(login);
+            return await Execute(() => _mediator.Send(login).Result);
         }
     }
 }

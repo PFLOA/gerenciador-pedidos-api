@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Coladel.GerenciadorPedidos.Controllers
 {
-    public class ClienteController : ApiControllerBase
+    public class ClienteController : ApiController
     {
         public ClienteController(IMediator mediator) : base(mediator) { }
 

@@ -6,6 +6,6 @@ namespace Coladel.Core.Interfaces
 {
     public interface IRemover<T>
     {
-        Guid Remover(T entidade);
+        bool Remover(T entidade);
     }
 }

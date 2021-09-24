@@ -35,11 +35,14 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
             context.SaveChanges();
             return result.Entity.Guid;
         }
-        public Guid Remover(TEntidade entidade)
+        public bool Remover(TEntidade entidade)
         {
             var result = Set.Remove(entidade);
+
+            if (result is null) return false;
             context.SaveChanges();
-            return result.Entity.Guid;
+
+            return true;
         }
 
         private void Comparator(Object fromObjeto, PropertyInfo propertyInfo, Type toObjeto)

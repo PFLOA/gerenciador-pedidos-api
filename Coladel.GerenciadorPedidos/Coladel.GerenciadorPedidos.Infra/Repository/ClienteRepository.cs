@@ -1,5 +1,4 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Body;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Filters;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Data;

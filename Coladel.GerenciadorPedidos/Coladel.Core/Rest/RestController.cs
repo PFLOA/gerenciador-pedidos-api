@@ -7,11 +7,11 @@ namespace Coladel.Core.Rest
 {
     public class RestController : ControllerBase
     {
-        protected async Task<IActionResult> Execute(Func<object> func)
+        protected async Task<IActionResult> Execute(Func<Task<object>> func)
         {
             try
             {
-                var result = func.Invoke();
+                var result = await func.Invoke();
 
                 if (result != null)
                 {
@@ -21,7 +21,7 @@ namespace Coladel.Core.Rest
                     }
                 }
 
-                return await Task.FromResult(new OkResult());
+                return await Task.FromResult(new BadRequestObjectResult(new { Error = "Erro interno do servidor" }));
             }
             catch (Exception ex)
             {
@@ -31,8 +31,10 @@ namespace Coladel.Core.Rest
 
         private async Task<IActionResult> CreateActionResult(dynamic result)
         {
-            var objectResult = new ObjectResult(result);
-            objectResult.StatusCode = (int)result.ResultType;
+            _ = new ObjectResult(result)
+            {
+                StatusCode = (int)result.ResultType
+            };
 
             if (result.Messages.Count > 0)
             {

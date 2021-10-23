@@ -15,13 +15,12 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         public Usuario LoginUser(string userName, string senha)
         {
             Hash hash = new Hash(SHA512.Create());
-            string retorno = hash.VerificarSenha(senha);
 
             Usuario usuario = Set.FirstOrDefault(p => p.UserName == userName);
+            string retorno = hash.VerificarSenha(senha, usuario.Guid.ToInt32());
 
             if (usuario is null) return null;
-            string salt = Hash.CreateSalt(usuario.Guid.ToInt32());
-            usuario = Set.FirstOrDefault(p => p.UserName == userName && p.Senha == $"{retorno}{salt}");
+            usuario = Set.FirstOrDefault(p => p.UserName == userName && p.Senha == retorno);
 
             return usuario;
         }

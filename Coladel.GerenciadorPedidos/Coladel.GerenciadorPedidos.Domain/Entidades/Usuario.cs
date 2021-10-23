@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coladel.Core.Extensions;
+using System;
 
 namespace Coladel.GerenciadorPedidos.Domain.Entidades
 {
@@ -13,6 +14,10 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
         {
 
         }
+        public Usuario(object objetoMapping)
+        {
+            objetoMapping.MappingProperties(this);
+        }
         public Usuario(string nome, string senha, string userName, string email, Guid guid)
         {
             Nome = nome;
@@ -20,6 +25,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
             UserName = userName;
             Email = email;
             Guid = guid;
-        }
+        }     
     }
 }

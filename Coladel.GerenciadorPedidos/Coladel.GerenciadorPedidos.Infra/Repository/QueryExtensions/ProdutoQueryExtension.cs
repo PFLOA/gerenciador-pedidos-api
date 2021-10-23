@@ -16,5 +16,10 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
             if (dataCadastro != DateTime.MinValue) return query.Where(p => p.DataCadastro.Date == dataCadastro.Date);
             return query;
         }
+        public static IQueryable<Produto> FiltrarPorPreco(this IQueryable<Produto> query, decimal? preco)
+        {
+            if (preco.HasValue) return query.Where(p => p.Preco == preco);
+            return query;
+        }
     }
 }

@@ -7,6 +7,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Filters
     {
         public string NomeProduto { get; set; }
         public DateTime DataCadastro { get; set; }
-        public decimal Preco { get; set; }
+        public decimal? Preco { get; set; }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using System;
 
 namespace Coladel.GerenciadorPedidos.Domain.Body
 {
-  public class CriarUsuarioRequestBody
+    public class CriarUsuarioRequestBody
   {
     public string Nome { get; set; }
     public string Senha { get; set; }
@@ -12,7 +11,7 @@ namespace Coladel.GerenciadorPedidos.Domain.Body
 
     public Usuario ToModel()
     {
-      throw new NotImplementedException();
+        return new Usuario(this);
     }
   }
 }

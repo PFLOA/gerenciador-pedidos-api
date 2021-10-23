@@ -14,12 +14,12 @@ namespace Coladel.GerenciadorPedidos.Infra
     {
         public static void ConfigureServices(this IServiceCollection services)
         {
-            services.AddSingleton<ILoginRepository, LoginRepository>();
-            services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
-            services.AddSingleton<IProdutoRepository, ProdutoRepository>();
-            services.AddSingleton<IPedidoRepository, PedidoRepository>();
-            services.AddSingleton<IClienteRepository, ClienteRepository>();
-            services.AddSingleton<IItensPedidoRepository, ItensPedidoRepository>();
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IItensPedidoRepository, ItensPedidoRepository>();
         }
     }
 }

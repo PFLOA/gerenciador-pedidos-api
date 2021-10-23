@@ -14,7 +14,8 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         public IQueryable<Produto> BuscarProdutosPorFiltro(BuscarProdutosFiltroFilter filter)
         {
             return Set.FiltrarPorNomeProduto(filter.NomeProduto)
-                .FiltrarPorDataCadastro(filter.DataCadastro);
+                .FiltrarPorDataCadastro(filter.DataCadastro)
+                .FiltrarPorPreco(filter.Preco);
         }
     }
 }

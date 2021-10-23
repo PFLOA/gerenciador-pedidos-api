@@ -1,8 +1,9 @@
-﻿using Coladel.Application.Handlers.Usuarios.Response;
+﻿using Coladel.Core.Utils;
 using Coladel.GerenciadorPedidos.Domain.Body;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Data;
+using System.Security.Cryptography;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
@@ -12,7 +13,13 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         
         public Usuario CriarUsuario(CriarUsuarioRequestBody usuario)
         {
-            var retorno = Set.Add(usuario.ToModel());
+            Hash hash = new Hash(SHA512.Create());
+
+            Usuario usuarioModel = usuario.ToModel();
+            usuarioModel.Senha = hash.CriptografarSenha(usuarioModel.Senha, usuarioModel.Guid.ToInt32());
+             
+            var retorno = Set.Add(usuarioModel);
+
             context.SaveChanges();
 
             return retorno.Entity;

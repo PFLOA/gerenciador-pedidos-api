@@ -19,7 +19,7 @@ namespace Coladel.Core
             _mediator = mediator;
         }
 
-        protected async Task<IActionResult> Executar(Func<object> funcao)
+        protected async Task<IActionResult> Executar(Func<Task<object>> funcao)
         {
             return await Execute(funcao);
         }

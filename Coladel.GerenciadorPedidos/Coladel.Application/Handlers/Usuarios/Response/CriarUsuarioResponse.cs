@@ -11,25 +11,9 @@ namespace Coladel.Application.Handlers.Usuarios.Response
 {
     public class CriarUsuarioResponse
     {
-        private string _senha;
-
         public Guid Guid { get; set; }
         public string Nome { get; set; }
-        public string Senha
-        {
-            get
-            {
-                Hash hash = new Hash(SHA512.Create());
-                string senha = hash.CriptografarSenha(_senha);
-
-                string salt = Hash.CreateSalt(Guid.ToInt32());
-
-                return $"{senha}{salt}";
-            }
-            set {
-                _senha = value;
-            }
-        }
+        public string Senha { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
 
@@ -40,7 +24,7 @@ namespace Coladel.Application.Handlers.Usuarios.Response
 
         public Usuario ToUsuarioModel()
         {
-            return new Usuario(Nome, Senha, UserName, Email, Guid);
+            return new Usuario(this);
         }
     }
 }

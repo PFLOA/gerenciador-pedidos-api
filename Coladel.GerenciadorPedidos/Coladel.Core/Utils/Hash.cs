@@ -13,7 +13,7 @@ namespace Coladel.Core.Utils
             _algoritmo = algoritmo;
         }
 
-        public string CriptografarSenha(string senha)
+        public string CriptografarSenha(string senha, int salt)
         {
             var encodedValue = Encoding.UTF8.GetBytes(senha);
             var encryptedPassword = _algoritmo.ComputeHash(encodedValue);
@@ -24,9 +24,10 @@ namespace Coladel.Core.Utils
                 sb.Append(caracter.ToString("X2"));
             }
 
-            return sb.ToString();
+            return sb.ToString() + CreateSalt(salt);
         }
-        public string VerificarSenha(string senhaDigitada)
+
+        public string VerificarSenha(string senhaDigitada, int salt)
         {
             var encryptedPassword = _algoritmo.ComputeHash(Encoding.UTF8.GetBytes(senhaDigitada));
 
@@ -36,9 +37,9 @@ namespace Coladel.Core.Utils
                 sb.Append(caractere.ToString("X2"));
             }
 
-            return sb.ToString();
+            return sb.ToString() + CreateSalt(salt);
         }
-        public static string CreateSalt(int size)
+        private static string CreateSalt(int size)
         {
             RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
             byte[] buff = new byte[size];

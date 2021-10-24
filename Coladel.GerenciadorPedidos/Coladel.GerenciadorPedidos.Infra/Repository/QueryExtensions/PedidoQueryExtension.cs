@@ -1,8 +1,6 @@
 ﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
 {
@@ -13,6 +11,12 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
             if (string.IsNullOrEmpty(nomeCliente)) return query;
 
             return query.Where(p => p.Cliente.NomeCliente.ToUpper().Contains(nomeCliente.ToUpper()));
+        }
+        public static IQueryable<Pedido> FiltrarPorDataCadastro(this IQueryable<Pedido> query, DateTime dataCadastro)
+        {
+            if (dataCadastro != DateTime.MinValue) return query;
+
+            return query.Where(p => p.DataCadastro == dataCadastro);
         }
     }
 }

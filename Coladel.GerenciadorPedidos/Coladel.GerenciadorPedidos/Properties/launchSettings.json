@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:20422",
+      "applicationUrl": "https://www.advanced4s.com.br/gerenciador/",
       "sslPort": 44329
     }
   },

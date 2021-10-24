@@ -14,7 +14,10 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 
         public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter)
         {
-            var retorno = Set.FiltrarPorNomeCliente(filter.Cliente).Include(s => s.Cliente).Include("ItensPedido.Produto");
+            var retorno = Set.FiltrarPorNomeCliente(filter.Cliente)
+                .FiltrarPorDataCadastro(filter.DataCadastro)
+                .Include(s => s.Cliente)
+                .Include("ItensPedido.Produto");
             return retorno;
         }
     }

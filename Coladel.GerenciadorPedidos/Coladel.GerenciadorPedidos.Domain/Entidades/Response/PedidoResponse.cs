@@ -2,12 +2,12 @@
 using Coladel.GerenciadorPedidos.Domain.Enum;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Coladel.GerenciadorPedidos.Domain.Entidades.Response
 {
     public class PedidoResponse
     {
+        public Guid Guid { get; set; }
         public StatusPedido StatusPedido { get; set; }
         public Cliente Cliente { get; set; }
         public List<ItensPedido> ItensPedido { get; set; }

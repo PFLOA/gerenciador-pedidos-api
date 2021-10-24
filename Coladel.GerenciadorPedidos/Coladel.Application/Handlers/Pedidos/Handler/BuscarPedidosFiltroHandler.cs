@@ -17,10 +17,7 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
     {
         private readonly IPedidoRepository _pedidoRepository;
 
-        public BuscarPedidosFiltroHandler(IPedidoRepository pedidoRepository)
-        {
-            _pedidoRepository = pedidoRepository;
-        }
+        public BuscarPedidosFiltroHandler(IPedidoRepository pedidoRepository) => _pedidoRepository = pedidoRepository;
         public async Task<IActionResult> Handle(BuscarPedidosFiltroRequest request, CancellationToken cancellationToken)
         {
             Func<Pedido, BuscarPedidosFiltroResponse> retorno = Construtor;

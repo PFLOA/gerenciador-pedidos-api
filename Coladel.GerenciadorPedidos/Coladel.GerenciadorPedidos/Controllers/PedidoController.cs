@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 
 namespace Coladel.GerenciadorPedidos.Controllers
 {
+    [AllowAnonymous]
     public class PedidoController : ApiController
     {
         public PedidoController(IMediator mediator) : base(mediator) { }
 
         [HttpGet]
-        [AllowAnonymous]
-        public Task<IActionResult> BuscarPedidos([FromQuery] BuscarPedidosFiltroRequest request)
+        public async Task<IActionResult> BuscarPedidos([FromQuery] BuscarPedidosFiltroRequest request)
         {
-            return _mediator.Send(request);
+            return await _mediator.Send(request);
         }
 
         [HttpPost]
-        [AllowAnonymous]
-        public Task<IActionResult> CriarPedido([FromBody] CriarPedidoRequest request)
+        public async Task<IActionResult> CriarPedido([FromBody] CriarPedidoRequest request)
         {
-            return _mediator.Send(request);
+            return await _mediator.Send(request);
         }
     }
 }

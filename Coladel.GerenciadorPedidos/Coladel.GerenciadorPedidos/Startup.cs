@@ -114,6 +114,7 @@ namespace Coladel.GerenciadorPedidos
             }
 
             app.UseHttpsRedirection();
+
             app.UseSwagger(c =>
             {
                 c.SerializeAsV2 = true;

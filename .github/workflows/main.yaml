@@ -7,7 +7,7 @@ on:
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+      - name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Setup .Net Core

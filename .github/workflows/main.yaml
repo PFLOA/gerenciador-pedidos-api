@@ -7,6 +7,7 @@ jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Mudar Path
         run: cd Coladel.GerenciadorPedidos/
       - name: Listar

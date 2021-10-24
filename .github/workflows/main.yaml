@@ -21,7 +21,7 @@ jobs:
       - name: 🚚 Build with dotnet
         run: dotnet build Coladel.GerenciadorPedidos/ --configuration Release --no-restore
       - name: Publicando 
-        run: dotnet publish Coladel.GerenciadorPedidos/ -c Release --output /github/workspace/Release/
+        run: dotnet publish /Coladel.GerenciadorPedidos/ -c Release --output /Release/
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: 📂 Sync files
@@ -30,6 +30,6 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "./Release/"
+          localDir: "/home/runner/work/gerenciador-pedidos-api/gerenciador-pedidos-api/Release/"
           remoteDir: "www/gerenciador/"
           options: "--delete --asci"

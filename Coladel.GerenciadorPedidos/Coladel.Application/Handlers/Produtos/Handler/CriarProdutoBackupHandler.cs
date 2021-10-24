@@ -1,15 +1,9 @@
-﻿using Coladel.Application.Backup;
-using Coladel.Application.Handlers.Produtos.Request;
+﻿using Coladel.Application.Handlers.Produtos.Request;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -28,9 +22,6 @@ namespace Coladel.Application.Handlers.Produtos.Handler
         {
             try
             {
-                BackupRotinas backup = new BackupRotinas();
-                backup.ExecutarBackup<Produto>("produtos.json", CriarProduto);
-
                 return await Task.FromResult(new OkResult());
             }
             catch (Exception ex)

@@ -1,5 +1,4 @@
-﻿using Coladel.Application.Backup;
-using Coladel.Application.Handlers.Clientes.Request;
+﻿using Coladel.Application.Handlers.Clientes.Request;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
@@ -22,8 +21,6 @@ namespace Coladel.Application.Handlers.Clientes.Handler
         {
             try
             {
-                BackupRotinas backup = new BackupRotinas();
-                backup.ExecutarBackup<Cliente>("clientes.json", CriarCliente);
 
                 return await Task.FromResult(new OkResult());
             }

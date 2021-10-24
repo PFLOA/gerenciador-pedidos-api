@@ -7,7 +7,7 @@ jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Listar
         run: ls
       - name: Mudar Path

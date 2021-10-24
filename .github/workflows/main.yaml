@@ -7,13 +7,13 @@ jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup .Net Core
+      - name: 🚀 Setup .Net Core
         uses: actions/setup-dotnet@v1
         with: 
           dotnet-version: 3.1.101
-      - name: Install Dependencies
-        run: dotnet restore Coladel.GerenciadorPedidos/
-      - name: Build with dotnet
+      - name: 📂 Install Dependencies
+        run: dotnet restore Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.sln
+      - name: 🚚 Build with dotnet
         run: dotnet build ./Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.sln --configuration Release --no-restore
       - name: Publicando 
         run: dotnet publish -c Release --output ./Release

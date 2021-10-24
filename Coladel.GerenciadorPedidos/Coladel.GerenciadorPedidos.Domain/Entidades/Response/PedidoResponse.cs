@@ -14,6 +14,7 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades.Response
         public string NF { get; set; }
         public string Observacoes { get; set; }
         public decimal Total { get; set; }
+        public DateTime DataCadastro { get; set; }
         public PedidoResponse(Pedido pedido) => pedido.MappingProperties(this); 
     }
 }

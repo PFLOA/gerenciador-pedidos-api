@@ -7,11 +7,10 @@ jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Listar
-        run: ls
       - name: Mudar Path
         run: cd Coladel.GerenciadorPedidos/
+      - name: Listar
+        run: ls
       - name: 🚀 Setup .Net Core
         uses: actions/setup-dotnet@v1
         with: 

@@ -12,7 +12,7 @@ jobs:
         with: 
           dotnet-version: 3.1.101
       - name: Install Dependencies
-        run: dotnet restore gerenciador-pedidos-api/Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.sln
+        run: dotnet restore Coladel.GerenciadorPedidos.sln
       - name: Build with dotnet
         run: dotnet build ./Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.sln --configuration Release --no-restore
       - name: Publicando 

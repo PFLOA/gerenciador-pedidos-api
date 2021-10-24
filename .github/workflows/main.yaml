@@ -25,12 +25,10 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: 📂 Sync files
-        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        uses: SamKirkland/FTP-Deploy-Action@3.0.0
         with:
-          ftp_host: ${{ secrets.FTP_SERVER }}
-          ftp_username: ${{ secrets.FTP_USER }}
-          ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: ./Release/
-          dist_target_dir:  www/gerenciador/
-          delete: "true"
-          exclude: "'^.next/' '^.git/' '^README.md' '^node_modules/'"
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USER }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./Release/
+          server-dir:  www/gerenciador/

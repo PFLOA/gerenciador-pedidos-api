@@ -30,7 +30,7 @@ jobs:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_username: ${{ secrets.FTP_USER }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: Release/
+          local_source_dir: gerenciador-pedidos-api/gerenciador-pedidos-api/Release/
           dist_target_dir:  ${{ secrets.FTP_DIR_REMOTE }}
           delete: "true"
           exclude: "'^.next/' '^.git/' '^README.md' '^node_modules/'"

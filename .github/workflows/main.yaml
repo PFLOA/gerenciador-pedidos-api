@@ -24,7 +24,7 @@ jobs:
         run: dotnet publish Coladel.GerenciadorPedidos/ -c Release --output Release/
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
-        - name: Listar
+      - name: Listar
         run: ls /github/workspace/
       - name: 📂 Sync files
         uses: sebastianpopp/ftp-action@releases/v2

@@ -1,0 +1,36 @@
+name: Deploy Aplicação Asp .Net Core Api Mvc
+
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup .Net Core
+        uses: actions/setup-dotnet@v1
+        with: 
+          dotnet-version: 3.1.101
+      - name: Install Dependencies
+        run: dotnet restore
+      - name: Build with dotnet
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
+      - name: Publicando 
+        run: dotnet publish -c Release --output ./Release
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+      - name: 📂 Sync files
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.FTP_SERVER }}
+          ftp_username: ${{ secrets.FTP_USER }}
+          ftp_password: ${{ secrets.FTP_PASSWORD }}
+          local_source_dir: ./Release/
+          dist_target_dir:  ${{ secrets.FTP_DIR_REMOTE }}
+          delete: "true"
+          exclude: "'^.next/' '^.git/' '^README.md' '^node_modules/'"

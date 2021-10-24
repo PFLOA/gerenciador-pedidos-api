@@ -21,7 +21,7 @@ jobs:
       - name: 🚚 Build with dotnet
         run: dotnet build Coladel.GerenciadorPedidos/ --configuration Release --no-restore
       - name: Publicando 
-        run: dotnet publish Coladel.GerenciadorPedidos/ -c Release --output ./Release
+        run: dotnet publish Coladel.GerenciadorPedidos/ -c Release --output Release/
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: 📂 Sync files
@@ -30,7 +30,7 @@ jobs:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_username: ${{ secrets.FTP_USER }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: ./Release/
+          local_source_dir: Release/
           dist_target_dir:  ${{ secrets.FTP_DIR_REMOTE }}
           delete: "true"
           exclude: "'^.next/' '^.git/' '^README.md' '^node_modules/'"

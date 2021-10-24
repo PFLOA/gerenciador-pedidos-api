@@ -28,6 +28,6 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "~/runner/work/gerenciador-pedidos-api/gerenciador-pedidos-api/Release/"
+          localDir: "/home/runner/work/gerenciador-pedidos-api/gerenciador-pedidos-api/Release/"
           remoteDir: "www/gerenciador/"
           options: "--delete --asci"

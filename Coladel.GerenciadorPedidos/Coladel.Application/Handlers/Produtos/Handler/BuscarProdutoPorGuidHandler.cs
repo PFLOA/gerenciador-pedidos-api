@@ -5,8 +5,6 @@ using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,10 +14,7 @@ namespace Coladel.Application.Handlers.Produtos.Handler
     {
         private readonly IProdutoRepository _produtoRepository;
 
-        public BuscarProdutoPorGuidHandler(IProdutoRepository produtoRepository)
-        {
-            _produtoRepository = produtoRepository;
-        }
+        public BuscarProdutoPorGuidHandler(IProdutoRepository produtoRepository) => _produtoRepository = produtoRepository;
         public async Task<IActionResult> Handle(BuscarProdutoPorGuidRequest request, CancellationToken cancellationToken)
         {
             try

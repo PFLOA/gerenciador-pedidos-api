@@ -9,15 +9,10 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
         public string Senha { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public string ConnectionString { get; set; }
 
-        public Usuario()
-        {
-
-        }
-        public Usuario(object objetoMapping)
-        {
-            objetoMapping.MappingProperties(this);
-        }
+        public Usuario() { }
+        public Usuario(object objetoMapping) => objetoMapping.MappingProperties(this);
         public Usuario(string nome, string senha, string userName, string email, Guid guid)
         {
             Nome = nome;

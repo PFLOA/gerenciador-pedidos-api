@@ -10,7 +10,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
     public class PedidoRepository : Repository<Pedido>, IPedidoRepository
     {
-        public PedidoRepository(ApplicationDbContext context) : base(context) { }
+        public PedidoRepository(UserDbContext context) : base(context) { }
 
         public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter)
         {

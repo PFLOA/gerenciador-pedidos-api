@@ -9,7 +9,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
     public class ProdutoRepository : Repository<Produto>, IProdutoRepository
     {
-        public ProdutoRepository(ApplicationDbContext context) : base(context) { }
+        public ProdutoRepository(UserDbContext context) : base(context) { }
 
         public IQueryable<Produto> BuscarProdutosPorFiltro(BuscarProdutosFiltroFilter filter)
         {

@@ -9,7 +9,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
     public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
-        public ClienteRepository(ApplicationDbContext dbContext) : base(dbContext) { }
+        public ClienteRepository(UserDbContext dbContext) : base(dbContext) { }
 
         public IQueryable<Cliente> BuscarClientesPorFiltro(BuscarClientesFiltroFilter filter)
         {

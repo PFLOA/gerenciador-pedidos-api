@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
-    public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
+    public class UsuarioRepository : UserRepository<Usuario>, IUsuarioRepository
     {
         public UsuarioRepository(ApplicationDbContext context) : base(context) { }
         
@@ -23,6 +23,11 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
             context.SaveChanges();
 
             return retorno.Entity;
+        }
+
+        public string RetornarConnectionString()
+        {
+            return "server=107.161.183.80;port=3306;userid=colaquen_fernando;password=769619Pp**;database=colaquen_banco_teste;";
         }
     }
 }

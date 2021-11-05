@@ -1,3 +1,4 @@
+using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra;
 using Coladel.GerenciadorPedidos.Infra.Data;
 using MediatR;
@@ -13,6 +14,8 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Coladel.GerenciadorPedidos
 {
@@ -29,7 +32,9 @@ namespace Coladel.GerenciadorPedidos
         {
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()
+                                                            .AllowAnyHeader()
+                                                            .AllowAnyMethod());
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -37,6 +42,11 @@ namespace Coladel.GerenciadorPedidos
                 var connetionString = Configuration.GetConnectionString("DefaultConnection");
                 options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
             });
+
+            var assembly = AppDomain.CurrentDomain.Load("Coladel.Application");
+            services.AddMediatR(assembly);
+            services.ConfigureServices();
+
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
@@ -45,10 +55,6 @@ namespace Coladel.GerenciadorPedidos
                 {
                     options.SuppressModelStateInvalidFilter = true;
                 });
-
-            var assembly = AppDomain.CurrentDomain.Load("Coladel.Application");
-            services.AddMediatR(assembly);
-            services.ConfigureServices();
 
             services.AddSwaggerGen(c =>
             {
@@ -98,6 +104,12 @@ namespace Coladel.GerenciadorPedidos
                     ValidateAudience = false
                 };
             });
+
+            services.AddDbContext<UserDbContext>(options =>
+            {
+                var connetionString = Configuration.GetConnectionString("DynamicConnectionString");
+                options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -138,5 +150,6 @@ namespace Coladel.GerenciadorPedidos
                 endpoints.MapControllers();
             });
         }
+
     }
 }

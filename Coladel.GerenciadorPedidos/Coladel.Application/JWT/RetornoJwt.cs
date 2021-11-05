@@ -20,7 +20,8 @@ namespace Coladel.GerenciadorPedidos.JWT
                 {
                    new Claim(ClaimTypes.NameIdentifier, result.Id.ToString()),
                    new Claim(ClaimTypes.Email, result.Email),
-                   new Claim(ClaimTypes.Name, result.UserName)
+                   new Claim(ClaimTypes.Name, result.UserName),
+                   new Claim(ClaimTypes.Uri, result.ConnectionString)
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)

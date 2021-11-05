@@ -14,7 +14,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
         }
         public static IQueryable<Pedido> FiltrarPorDataCadastro(this IQueryable<Pedido> query, DateTime dataCadastro)
         {
-            if (dataCadastro != DateTime.MinValue) return query;
+            if (dataCadastro == DateTime.MinValue) return query;
 
             return query.Where(p => p.DataCadastro == dataCadastro);
         }

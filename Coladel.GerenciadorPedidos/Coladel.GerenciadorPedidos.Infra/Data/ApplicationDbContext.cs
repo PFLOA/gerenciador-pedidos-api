@@ -7,10 +7,6 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Produto> Produto { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Pedido> Pedido { get; set; }
-        public DbSet<ItensPedido> ItensPedido { get; set; }
 
         /// <summary>
         /// Construtor Padrão.
@@ -25,10 +21,6 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMapping());
-            modelBuilder.ApplyConfiguration(new ProdutoMapping());
-            modelBuilder.ApplyConfiguration(new ClienteMapping());
-            modelBuilder.ApplyConfiguration(new PedidosMapping());
-            modelBuilder.ApplyConfiguration(new ItensPedidoMapping());
             base.OnModelCreating(modelBuilder);
         }
     }

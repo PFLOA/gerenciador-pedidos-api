@@ -6,6 +6,6 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
     public class ItensPedidoRepository : Repository<ItensPedido>, IItensPedidoRepository
     {
-        public ItensPedidoRepository(ApplicationDbContext dbContext) : base(dbContext) { }
+        public ItensPedidoRepository(UserDbContext dbContext) : base(dbContext) { }
     }
 }

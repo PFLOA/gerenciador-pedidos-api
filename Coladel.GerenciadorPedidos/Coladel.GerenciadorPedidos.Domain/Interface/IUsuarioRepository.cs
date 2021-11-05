@@ -6,5 +6,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Interface
     public interface IUsuarioRepository
     {
         Usuario CriarUsuario(CriarUsuarioRequestBody usuario);
+        string RetornarConnectionString();
     }
 }

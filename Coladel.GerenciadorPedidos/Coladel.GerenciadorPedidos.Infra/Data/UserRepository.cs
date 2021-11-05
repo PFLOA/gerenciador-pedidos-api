@@ -2,47 +2,38 @@
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data
 {
-    public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : Entity
+    public class UserRepository<TEntidade> : IRepository<TEntidade> where TEntidade : Entity
     {
         protected DbSet<TEntidade> Set { get; private set; }
-        protected UserDbContext context;
-        public Repository(UserDbContext dbContext)
+        protected ApplicationDbContext context;
+        public UserRepository(ApplicationDbContext dbContext)
         {
             context = dbContext;
             Type tipo = typeof(TEntidade);
             MappingProperties(dbContext, tipo);
         }
+        public Guid Alterar(TEntidade entidade)
+        {
+            throw new NotImplementedException();
+        }
 
         public TEntidade BuscarPorGuid(Guid guid)
         {
-            var result = Set.FirstOrDefault(p => p.Guid == guid);
-            return result;
+            throw new NotImplementedException();
         }
+
         public TEntidade Criar(TEntidade entidade)
         {
-            var result = Set.Add(entidade);
-            context.SaveChanges();
-            return result.Entity;
+            throw new NotImplementedException();
         }
-        public Guid Alterar(TEntidade entidade)
-        {
-            var result = Set.Update(entidade);
-            context.SaveChanges();
-            return result.Entity.Guid;
-        }
+
         public bool Remover(TEntidade entidade)
         {
-            var result = Set.Remove(entidade);
-
-            if (result is null) return false;
-            context.SaveChanges();
-
-            return true;
+            throw new NotImplementedException();
         }
 
         private void Comparator(Object fromObjeto, PropertyInfo propertyInfo, Type toObjeto)

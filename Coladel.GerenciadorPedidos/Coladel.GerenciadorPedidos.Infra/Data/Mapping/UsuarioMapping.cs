@@ -18,6 +18,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.Property(p => p.Senha).HasColumnName("senha");
             builder.Property(p => p.Email).HasColumnName("email");
             builder.Property(p => p.UserName).HasColumnName("user_name");
+            builder.Property(p => p.Role).HasColumnName("Role").HasConversion<string>();
             builder.Property(p => p.ConnectionString).HasColumnName("connection_string");
         }
     }

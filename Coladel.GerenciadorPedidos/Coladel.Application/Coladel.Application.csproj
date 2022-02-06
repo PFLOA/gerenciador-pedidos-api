@@ -19,7 +19,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Coladel.Core\Coladel.Core.csproj" />
-    <ProjectReference Include="..\Coladel.GerenciadorPedidos.Domain\Coladel.GerenciadorPedidos.Domain.csproj" />
+    <ProjectReference Include="..\Coladel.GerenciadorPedidos.Domain\Coladel.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\ItensPedido\Response\" />
   </ItemGroup>
 
 </Project>

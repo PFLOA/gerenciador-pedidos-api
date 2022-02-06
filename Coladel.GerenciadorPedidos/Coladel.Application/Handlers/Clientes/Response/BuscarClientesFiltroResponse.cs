@@ -1,8 +1,6 @@
 ﻿using Coladel.Core.Extensions;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Coladel.Application.Handlers.Clientes.Response
 {

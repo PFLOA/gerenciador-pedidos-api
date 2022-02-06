@@ -9,10 +9,13 @@ namespace Coladel.GerenciadorPedidos.Domain.Body
     {
         public StatusPedido StatusPedido { get; set; }
         public string NF { get; set; }
+        public DateTime DataCadastro { get; set; } = DateTime.Now;
         public string Observacoes { get; set; }
         public decimal Total { get; set; }
         public Guid ClienteGuid { get; set; }
+        public decimal PorcentagemComissao { get; set; }
         public List<ItensPedido> ItenPedido { get; set; }
+
         public virtual Pedido ToModel() => new Pedido(this);
     }
 }

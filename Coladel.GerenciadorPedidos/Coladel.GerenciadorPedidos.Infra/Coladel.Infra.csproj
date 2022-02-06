@@ -17,7 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Coladel.Application\Coladel.Application.csproj" />
     <ProjectReference Include="..\Coladel.Core\Coladel.Core.csproj" />
-    <ProjectReference Include="..\Coladel.GerenciadorPedidos.Domain\Coladel.GerenciadorPedidos.Domain.csproj" />
+    <ProjectReference Include="..\Coladel.GerenciadorPedidos.Domain\Coladel.Domain.csproj" />
   </ItemGroup>
 
 </Project>

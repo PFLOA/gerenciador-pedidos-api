@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Coladel.GerenciadorPedidos.Domain.Enum
+﻿namespace Coladel.GerenciadorPedidos.Domain.Enum
 {
     public enum NivelAcesso
     {
-        Administrador,
-        Diretoria,
-        Gerencia,
-        Operacional
+        NoAccess = 0,
+        Administrador = 1,
+        Diretoria = 2,
+        Gerencia = 3,
+        Operacional = 4
     }
 }

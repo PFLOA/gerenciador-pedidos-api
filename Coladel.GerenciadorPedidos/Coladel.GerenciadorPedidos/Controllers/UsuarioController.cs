@@ -1,7 +1,7 @@
 ﻿using Coladel.Application.Handlers.Login.Handler.Usuarios.Request;
 using Coladel.Core;
+using Coladel.Domain;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -10,13 +10,10 @@ namespace Coladel.GerenciadorPedidos.Controllers
 
     public class UsuarioController : ApiController
     {
+        [Autorizacao]
         public UsuarioController(IMediator mediator): base(mediator) { }
 
         [HttpPost]
-        [AllowAnonymous]
-        public Task<IActionResult> CriarUsuario([FromBody] CriarUsuarioRequest request)
-        {
-            return _mediator.Send(request);
-        }
+        public async Task<IActionResult> CriarUsuario([FromBody] CriarUsuarioRequest request) => await _mediator.Send(request);
     }
 }

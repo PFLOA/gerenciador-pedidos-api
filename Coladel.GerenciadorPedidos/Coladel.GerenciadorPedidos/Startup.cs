@@ -16,6 +16,8 @@ using System.IO;
 using System.Reflection;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using Coladel.GerenciadorPedidos.Authentication;
+using System.Text;
 
 namespace Coladel.GerenciadorPedidos
 {
@@ -36,12 +38,15 @@ namespace Coladel.GerenciadorPedidos
                                                             .AllowAnyHeader()
                                                             .AllowAnyMethod());
             });
+            services.AddHttpContextAccessor();
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 var connetionString = Configuration.GetConnectionString("DefaultConnection");
                 options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
             });
+
+            services.AddDbContext<UserDbContext>();
 
             var assembly = AppDomain.CurrentDomain.Load("Coladel.Application");
             services.AddMediatR(assembly);
@@ -87,6 +92,7 @@ namespace Coladel.GerenciadorPedidos
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -96,19 +102,13 @@ namespace Coladel.GerenciadorPedidos
             {
                 x.RequireHttpsMetadata = false;
                 x.SaveToken = true;
-                x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Authentication.AuthenticationJwt.InitConfigureJwtAuthetication(Configuration.GetSection("JwtConfigurations:Secret").Value)),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("Jwt:Secret").Value)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
-            });
-
-            services.AddDbContext<UserDbContext>(options =>
-            {
-                var connetionString = Configuration.GetConnectionString("DynamicConnectionString");
-                options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
             });
         }
 

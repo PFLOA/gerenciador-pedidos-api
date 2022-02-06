@@ -30,6 +30,7 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
                 Pedido pedido = new Pedido(request);
 
                 pedido.IdCliente = cliente.Id;
+                pedido.CalculoComissao(request.PorcentagemComissao);
 
                 short pedidoResultId = _pedidoRepository.Criar(pedido).Id;
                 CriarPedido(request.ItenPedido, pedidoResultId);

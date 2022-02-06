@@ -1,4 +1,5 @@
 ﻿using Coladel.Core.Interfaces;
+using Coladel.Core.Interfaces.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Coladel.Core.Rest
 {
     public class RestController : ControllerBase
     {
-        protected async Task<IActionResult> Execute(Func<Task<object>> func)
+        protected async Task<IActionResult> ExecuteAsync(Func<Task<object>> func)
         {
             try
             {
@@ -16,6 +17,11 @@ namespace Coladel.Core.Rest
                 if (result != null)
                 {
                     if (result is IOperationResultBase)
+                    {
+                        return await CreateActionResult(result);
+                    }
+
+                    if (result is IPaginatedResult)
                     {
                         return await CreateActionResult(result);
                     }

@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.GerenciadorPedidos", "Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.csproj", "{0A7E7E4A-A8E6-437F-832C-2CB7B38D7709}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.GerenciadorPedidos.Domain", "Coladel.GerenciadorPedidos.Domain\Coladel.GerenciadorPedidos.Domain.csproj", "{6F4E9E4F-3ECF-4F94-BF82-86AE0F0BB2C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Domain", "Coladel.GerenciadorPedidos.Domain\Coladel.Domain.csproj", "{6F4E9E4F-3ECF-4F94-BF82-86AE0F0BB2C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.GerenciadorPedidos.Infra", "Coladel.GerenciadorPedidos.Infra\Coladel.GerenciadorPedidos.Infra.csproj", "{42745155-4A1F-4FAB-BA25-00FB68F5EE37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Infra", "Coladel.GerenciadorPedidos.Infra\Coladel.Infra.csproj", "{42745155-4A1F-4FAB-BA25-00FB68F5EE37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Core", "Coladel.Core\Coladel.Core.csproj", "{F5B47D17-6F2D-4046-BFA9-8E0F64336675}"
 EndProject

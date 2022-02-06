@@ -4,6 +4,7 @@
     {
         EM_ANDAMENTO = 0,
         ENTREGUE = 1,
-        ATRASO = 2
+        ATRASO = 2,
+        CANCELADO = 3,
     }
 }

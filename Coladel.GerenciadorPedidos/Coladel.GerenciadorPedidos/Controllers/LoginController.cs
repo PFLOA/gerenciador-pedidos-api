@@ -13,9 +13,6 @@ namespace Coladel.GerenciadorPedidos.Controllers
         public LoginController(IMediator mediator) : base(mediator) { }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] RealizarLoginRequest login)
-        {
-            return await Execute(async () => await _mediator.Send(login));
-        }
+        public async Task<IActionResult> Login([FromBody] RealizarLoginRequest login) => await ExecuteAsync(async () => await _mediator.Send(login));
     }
 }

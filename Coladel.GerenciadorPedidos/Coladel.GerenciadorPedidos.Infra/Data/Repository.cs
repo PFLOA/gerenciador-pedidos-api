@@ -18,9 +18,9 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
             MappingProperties(dbContext, tipo);
         }
 
-        public TEntidade BuscarPorGuid(Guid guid)
+        public virtual TEntidade BuscarPorGuid(Guid guid)
         {
-            var result = Set.FirstOrDefault(p => p.Guid == guid);
+            var result = Set.First(p => p.Guid == guid);
             return result;
         }
         public TEntidade Criar(TEntidade entidade)

@@ -1,5 +1,4 @@
-﻿using Coladel.Application.Handlers.Login.Request;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -20,6 +19,7 @@ namespace Coladel.GerenciadorPedidos.JWT
                 {
                    new Claim(ClaimTypes.NameIdentifier, result.Id.ToString()),
                    new Claim(ClaimTypes.Email, result.Email),
+                   new Claim(ClaimTypes.Role, result.Role.ToString()),
                    new Claim(ClaimTypes.Name, result.UserName),
                    new Claim(ClaimTypes.Uri, result.ConnectionString)
                 }),

@@ -17,6 +17,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.Property(p => p.Guid).HasColumnName("guid");
             builder.Property(p => p.IdPedido).HasColumnName("id_pedido");
             builder.Property(p => p.IdProduto).HasColumnName("id_produto");
+            builder.Property(p => p.Preco).HasColumnName("preco");
             builder.Property(p => p.Quantidade).HasColumnName("quantidade");
             builder.Property(p => p.DataCadastro).HasColumnName("data_cadastro");
 

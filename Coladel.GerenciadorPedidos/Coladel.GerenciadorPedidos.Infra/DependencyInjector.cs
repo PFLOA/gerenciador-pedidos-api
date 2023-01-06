@@ -1,7 +1,8 @@
 ﻿using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Repository;
-using Microsoft.AspNetCore.Http;
+using Coladel.GerenciadorAulas.Domain.Interface;
 using Microsoft.Extensions.DependencyInjection;
+using Coladel.Infra.Repository;
 
 namespace Coladel.GerenciadorPedidos.Infra
 {
@@ -15,6 +16,10 @@ namespace Coladel.GerenciadorPedidos.Infra
             services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IItensPedidoRepository, ItensPedidoRepository>();
+            services.AddScoped<IEmailRepository, EmailRepository>();
+            services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<IEnvioEmailRepository, EnvioEmailRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
         }
     }
 }

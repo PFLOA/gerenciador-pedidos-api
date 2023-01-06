@@ -34,23 +34,20 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
             return FiltarListaItensPedido(mes, ano).FiltrarPorProdutoRecorrente();
         }
 
-        public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter)
-        {
-            return Set.FiltrarPorNomeCliente(filter.Cliente)
-                .FiltrarPorDataCadastro(filter.DataCadastro)
+        public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter) =>
+            Set.FiltrarPorNomeCliente(filter.Cliente)
+                .FiltrarPorData(filter.Mes, filter.Ano)
+                .FiltrarPorDia(filter.Dia)
                 .FiltrarPorStatus(filter.StatusPedido)
                 .OrderByDescending(p => p.DataCadastro)
                 .Include(s => s.Cliente)
                 .Include("ItensPedido.Produto");
-        }
 
-        public int BuscarTotalStatusPedidosPorFiltro(BuscarStatusPedidoFilter filter)
-        {
-            return Set.FiltrarPorAno(filter.Ano)
+        public int BuscarTotalStatusPedidosPorFiltro(BuscarStatusPedidoFilter filter) => 
+            Set.FiltrarPorAno(filter.Ano)
                 .FiltrarPorMes(filter.Mes)
                 .FiltrarPorStatus(filter.StatusPedido)
                 .Count();
-        }
 
         public override Pedido BuscarPorGuid(Guid guid)
         {

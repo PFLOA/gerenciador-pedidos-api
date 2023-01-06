@@ -1,5 +1,5 @@
-﻿using Coladel.Core.Models;
-using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using Coladel.GerenciadorPedidos.Domain.Enum;
+using Coladel.Core.Models;
 using System;
 
 namespace Coladel.GerenciadorPedidos.Domain.Filters
@@ -10,6 +10,8 @@ namespace Coladel.GerenciadorPedidos.Domain.Filters
         public string Cliente { get; set; }
         public string Produto { get; set; }
         public string NF { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public int Dia { get; set; }
+        public int Mes { get; set; }
+        public int Ano { get; set; }
     }
 }

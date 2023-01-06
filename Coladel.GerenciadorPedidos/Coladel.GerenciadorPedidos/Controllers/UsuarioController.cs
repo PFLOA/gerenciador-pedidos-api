@@ -10,10 +10,10 @@ namespace Coladel.GerenciadorPedidos.Controllers
 
     public class UsuarioController : ApiController
     {
-        [Autorizacao]
         public UsuarioController(IMediator mediator): base(mediator) { }
 
         [HttpPost]
+        [Autorizacao]
         public async Task<IActionResult> CriarUsuario([FromBody] CriarUsuarioRequest request) => await _mediator.Send(request);
     }
 }

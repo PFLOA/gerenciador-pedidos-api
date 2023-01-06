@@ -1,7 +1,7 @@
 ﻿using Coladel.Application.Handlers.Login.Response;
+using Microsoft.AspNetCore.Mvc;
 using Coladel.Core.Interfaces;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Coladel.Application.Handlers.Login.Request
 {
@@ -9,6 +9,11 @@ namespace Coladel.Application.Handlers.Login.Request
     {
         public string UserName { get; set; }
         public string Senha { get; set; }
+
+        public RealizarLoginRequest()
+        {
+
+        }
 
         public RealizarLoginRequest(string userName, string senha)
         {

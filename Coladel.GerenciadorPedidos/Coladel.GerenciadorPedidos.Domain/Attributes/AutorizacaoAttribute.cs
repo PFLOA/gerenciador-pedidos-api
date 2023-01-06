@@ -29,6 +29,8 @@ namespace Coladel.Domain
             var valor = claims.Where(p => p.Type == ClaimTypes.Role)
                             .Select(p => p.Value).FirstOrDefault();
 
+            if (valor is null) context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized }; ;
+
             var role = (NivelAcesso)Enum.Parse(typeof(NivelAcesso), valor);
 
             if (role == NivelAcesso.NoAccess) context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized };

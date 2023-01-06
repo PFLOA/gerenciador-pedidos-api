@@ -1,0 +1,364 @@
+    [
+        {
+            "objeto": "Telefone",
+            "tabela": "telefones",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                }
+            ]
+        },
+        {
+            "objeto": "Cliente",
+            "tabela": "cliente",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "id_endereco",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": false,
+                    "fk": true,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "cnpj",
+                    "tipo": "VARCHAR(14)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "inscricao_estadual",
+                    "tipo": "VARCHAR(12)",
+                    "not_null": false,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "nome_fantasia",
+                    "tipo": "VARCHAR(256)",
+                    "not_null": false,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Pedido",
+            "tabela": "pedidos",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Configuracoes",
+            "tabela": "configuracoes",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Contato",
+            "tabela": "contatos",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Email",
+            "tabela": "emails",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "ItensPedido",
+            "tabela": "itens",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Endereco",
+            "tabela": "enderecos",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Empresa",
+            "tabela": "empresas",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Produto",
+            "tabela": "produtos",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        },
+        {
+            "objeto": "Transportadora",
+            "tabela": "transportadoras",
+            "colunas": [
+                {
+                    "nome": "id",
+                    "tipo": "SMALLINT(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": true,
+                    "ai": true
+                },
+                {
+                    "nome": "data_cadastro",
+                    "tipo": "DATETIME(6)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+                {
+                    "nome": "guid",
+                    "tipo": "CHAR(36)",
+                    "not_null": true,
+                    "fk": false,
+                    "pk": false,
+                    "ai": false
+                },
+            ]
+        }
+    ]

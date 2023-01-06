@@ -1,6 +1,6 @@
 ﻿using Coladel.GerenciadorPedidos.Domain.Body;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
 
 namespace Coladel.Application.Handlers.Clientes.Request
 {

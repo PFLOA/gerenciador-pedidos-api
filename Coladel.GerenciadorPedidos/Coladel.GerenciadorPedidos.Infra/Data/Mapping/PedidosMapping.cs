@@ -1,6 +1,6 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
 {

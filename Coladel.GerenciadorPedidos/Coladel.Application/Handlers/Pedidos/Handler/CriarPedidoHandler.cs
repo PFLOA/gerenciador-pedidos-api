@@ -1,12 +1,15 @@
 ﻿using Coladel.Application.Handlers.Pedidos.Request;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using System;
+using Coladel.GerenciadorAulas.Domain.Entidades;
+using Coladel.GerenciadorAulas.Domain.Interface;
 using System.Collections.Generic;
-using System.Threading;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Threading;
+using MediatR;
+using System;
+using Coladel.Application.Handlers.Empresas.Request;
 
 namespace Coladel.Application.Handlers.Pedidos.Handler
 {
@@ -27,6 +30,7 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
             try
             {
                 Cliente cliente = _clienteRepository.BuscarPorGuid(request.ClienteGuid);
+
                 Pedido pedido = new Pedido(request);
 
                 pedido.IdCliente = cliente.Id;

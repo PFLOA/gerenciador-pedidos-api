@@ -1,5 +1,6 @@
 ﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.Core.Extensions;
+using Coladel.GerenciadorAulas.Domain.Entidades;
+using Coladel.GerenciadorAulas.Domain.Interface;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using MediatR;
@@ -13,10 +14,12 @@ namespace Coladel.Application.Handlers.Clientes.Handler
     public class AlterarClienteHandler : IRequestHandler<AlterarClienteRequest, IActionResult>
     {
         private readonly IClienteRepository _clienteRepository;
+        private readonly IEmailRepository _emailRepository;
 
-        public AlterarClienteHandler(IClienteRepository clienteRepository)
+        public AlterarClienteHandler(IClienteRepository clienteRepository, IEmailRepository emailRepository)
         {
             _clienteRepository = clienteRepository;
+            _emailRepository = emailRepository;
         }
         public async Task<IActionResult> Handle(AlterarClienteRequest request, CancellationToken cancellationToken)
         {
@@ -24,11 +27,23 @@ namespace Coladel.Application.Handlers.Clientes.Handler
             {
                 Cliente cliente = _clienteRepository.BuscarPorGuid(request.Guid);
 
-                if (cliente is null) return await Task.FromResult(new NotFoundObjectResult(new { Error = "Não encontrado o Cliente com o GUID passado. "}));
-                request.MappingDifferenceProperties(cliente);
+                request.EmailRequest.ForEach(email =>
+                {
+                    if (email.Id == 0)
+                        cliente.Emails.Add(new Email
+                        {
+                            Descricao = email.Email,
+                            Guid = Guid.NewGuid(),
+                            Cliente = cliente,
+                        });
+                });
+
+                if (cliente is null) return await Task.FromResult(new NotFoundObjectResult(new { Error = "Não encontrado o Cliente com o GUID passado. " }));
+
+                cliente.NomeCliente = request.NomeCliente;
 
                 _clienteRepository.Alterar(cliente);
-                
+
                 return await Task.FromResult(new OkResult());
             }
             catch (Exception ex)

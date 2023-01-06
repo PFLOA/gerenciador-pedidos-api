@@ -20,22 +20,10 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
             try
             {
                 var pedido = _pedidoRepository.BuscarPorGuid(request.Guid);
+
                 if (pedido is null) return await Task.FromResult(new NotFoundResult());
 
-                switch (request.StatusPedido)
-                {
-                    case GerenciadorPedidos.Domain.Enum.StatusPedido.ENTREGUE:
-                        pedido.EntregarPedido();
-                        break;
-                    case GerenciadorPedidos.Domain.Enum.StatusPedido.ATRASO:
-                        pedido.EmAtraso();
-                        break;
-                    case GerenciadorPedidos.Domain.Enum.StatusPedido.CANCELADO:
-                        pedido.Cancelar();
-                        break;
-                    default:
-                        break;
-                }
+                pedido.StatusPedido = request.StatusPedido;
 
                 _pedidoRepository.Alterar(pedido);
 
@@ -43,7 +31,6 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
             }
             catch (Exception ex)
             {
-
                 return await Task.FromResult(new BadRequestObjectResult(new { error = ex.Message }));
             }
         }

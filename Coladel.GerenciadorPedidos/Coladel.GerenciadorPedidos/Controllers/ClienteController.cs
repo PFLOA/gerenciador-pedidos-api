@@ -24,6 +24,9 @@ namespace Coladel.GerenciadorPedidos.Controllers
         [HttpPost]
         public async Task<IActionResult> CriarCliente([FromBody] CriarClienteRequest request) => await _mediator.Send(request);
 
+        [HttpDelete]
+        public async Task<IActionResult> RemoverCliente([FromBody] RemoverClienteRequest request) => await _mediator.Send(request);
+
         [HttpPost("ExecutarBackup")]
         public async Task<IActionResult> CriarBackupProduto(ExecutarBackupClienteRequest request) => await _mediator.Send(request);
     }

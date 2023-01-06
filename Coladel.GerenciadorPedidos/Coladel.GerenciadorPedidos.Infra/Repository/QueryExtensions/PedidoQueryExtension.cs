@@ -2,6 +2,7 @@
 using Coladel.GerenciadorPedidos.Domain.Enum;
 using System;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
 {
@@ -13,7 +14,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
 
             return query.Where(p => p.Cliente.NomeCliente.ToUpper().Contains(nomeCliente.ToUpper()));
         }
-        
+
         public static IQueryable<Pedido> FiltrarPorMes(this IQueryable<Pedido> query, int mes)
         {
             if (mes == 0) return query.Where(p => p.DataCadastro.Month == DateTime.Now.Month);
@@ -28,15 +29,25 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
         }
         public static IQueryable<Pedido> FiltrarPorStatus(this IQueryable<Pedido> query, StatusPedido? statusPedido)
         {
-            if (statusPedido.HasValue) return query.Where(p => p.StatusPedido == statusPedido);
+            if (statusPedido.HasValue && statusPedido.Value == StatusPedido.TODOS) return query;
+
+            if (statusPedido.HasValue) return query.Where(p => p.StatusPedido == statusPedido.Value);
 
             return query;
         }
-        public static IQueryable<Pedido> FiltrarPorDataCadastro(this IQueryable<Pedido> query, DateTime dataCadastro)
+        public static IQueryable<Pedido> FiltrarPorDia(this IQueryable<Pedido> query, int dia)
         {
-            if (dataCadastro == DateTime.MinValue) return query;
+            if (dia == 0) return query;
 
-            return query.Where(p => p.DataCadastro.Date == dataCadastro.Date);
+            return query.Where(p => p.DataCadastro.Date.Day <= dia);
+        }
+
+        public static IQueryable<Pedido> FiltrarPorData(this IQueryable<Pedido> query, int mes, int ano)
+        {
+            if (mes == 0 || ano == 0) return query;
+
+
+            return query.Where(p => p.DataCadastro.Date.Month == mes).AsQueryable();
         }
     }
 }

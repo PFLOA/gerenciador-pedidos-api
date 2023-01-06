@@ -11,6 +11,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
     {
         protected DbSet<TEntidade> Set { get; private set; }
         protected UserDbContext context;
+
         public Repository(UserDbContext dbContext)
         {
             context = dbContext;

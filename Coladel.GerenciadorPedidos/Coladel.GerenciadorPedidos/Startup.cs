@@ -1,4 +1,3 @@
-using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra;
 using Coladel.GerenciadorPedidos.Infra.Data;
 using MediatR;
@@ -14,9 +13,6 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
-using Coladel.GerenciadorPedidos.Authentication;
 using System.Text;
 
 namespace Coladel.GerenciadorPedidos
@@ -38,6 +34,7 @@ namespace Coladel.GerenciadorPedidos
                                                             .AllowAnyHeader()
                                                             .AllowAnyMethod());
             });
+
             services.AddHttpContextAccessor();
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -48,9 +45,8 @@ namespace Coladel.GerenciadorPedidos
 
             services.AddDbContext<UserDbContext>();
 
-            var assembly = AppDomain.CurrentDomain.Load("Coladel.Application");
-            services.AddMediatR(assembly);
             services.ConfigureServices();
+            services.AddMediatR(typeof(Application.Handlers.Login.Handler.RealizarLoginHandler).GetTypeInfo().Assembly);
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
@@ -105,7 +101,7 @@ namespace Coladel.GerenciadorPedidos
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("Jwt:Secret").Value)),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("JwtConfigurations:Secret").Value)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };

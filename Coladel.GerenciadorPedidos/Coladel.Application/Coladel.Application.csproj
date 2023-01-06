@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.17" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
@@ -23,7 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Handlers\Dashboard\Response\" />
+    <Folder Include="Handlers\Empresas\Response\" />
     <Folder Include="Handlers\ItensPedido\Response\" />
+    <Folder Include="Handlers\Transportadoras\Handler\" />
+    <Folder Include="Handlers\Transportadoras\Response\" />
+    <Folder Include="Handlers\Transportadoras\Request\" />
   </ItemGroup>
 
 </Project>

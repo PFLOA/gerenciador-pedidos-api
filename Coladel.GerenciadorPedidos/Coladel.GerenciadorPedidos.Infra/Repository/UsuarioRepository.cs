@@ -3,6 +3,7 @@ using Coladel.GerenciadorPedidos.Domain.Body;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
 using Coladel.GerenciadorPedidos.Infra.Data;
+using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository

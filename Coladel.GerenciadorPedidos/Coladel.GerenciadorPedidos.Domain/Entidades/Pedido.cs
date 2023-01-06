@@ -14,8 +14,9 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
         public decimal Total { get; set; }
         public decimal TotalComissao { get; set; }
         public short IdCliente { get; set; }
-        public Cliente Cliente { get; set; }
-        public List<ItensPedido> ItensPedido { get; set; }
+
+        public virtual Cliente Cliente { get; set; }
+        public virtual List<ItensPedido> ItensPedido { get; set; }
 
         public Pedido() { }
         public Pedido(CriarPedidoBody criarPedidoBody) => criarPedidoBody.MappingProperties(this);
@@ -35,9 +36,14 @@ namespace Coladel.GerenciadorPedidos.Domain.Entidades
             StatusPedido = StatusPedido.ATRASO;
         }
 
+        public void PedidoProgramado()
+        {
+            StatusPedido = StatusPedido.PROGRAMADO;
+        }
+
         public void Cancelar()
         {
-            StatusPedido = StatusPedido.CANCELADO;
+            StatusPedido = StatusPedido.CANCELAR;
         }
     }
 }

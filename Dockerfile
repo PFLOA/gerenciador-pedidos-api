@@ -6,7 +6,7 @@ WORKDIR /app
 COPY ./Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos/*.csproj ./
 RUN dotnet restore
 
-COPY . ./
+COPY ./Coladel.GerenciadorPedidos ./
 RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1

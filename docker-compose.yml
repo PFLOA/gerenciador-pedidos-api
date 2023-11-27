@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  a4s-erp-api:
+    image: a4s-erp-api-img
+    build:
+      context: .
+    ports:
+      - "5000:5000"

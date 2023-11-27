@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 
 WORKDIR /app
 
-COPY ./Coladel.GerenciadorPedidos/*.csproj ./
+COPY ./Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos/*.csproj ./
 RUN dotnet restore
 
 COPY . ./

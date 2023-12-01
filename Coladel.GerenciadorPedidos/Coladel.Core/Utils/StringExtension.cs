@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Coladel.Core.Utils
+namespace A4S.Core.Utils
 {
     public static class StringExtension
     {

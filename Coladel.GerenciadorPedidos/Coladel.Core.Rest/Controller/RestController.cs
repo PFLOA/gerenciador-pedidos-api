@@ -1,15 +1,15 @@
-﻿using Coladel.Core.Enums;
-using Coladel.Core.Interfaces.Results;
-using Coladel.Core.Models;
+﻿using A4S.Core.Enums;
+using A4S.Core.Interfaces.Results;
+using A4S.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Coladel.Core.Rest.Model;
+using A4S.Core.Rest.Model;
 using System.Linq;
 
-namespace Coladel.Core.Rest.Controller
+namespace A4S.Core.Rest.Controller
 {
     public class RestController : ControllerBase
     {

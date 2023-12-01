@@ -1,18 +1,45 @@
+<<<<<<< HEAD
+﻿using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Infra.Data.Mapping;
+=======
 ﻿using Coladel.GerenciadorAulas.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Infra.Data.Mapping;
 using Coladel.Infra.Data.Mapping;
 using Microsoft.AspNetCore.Http;
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Security.Claims;
 
-namespace Coladel.GerenciadorPedidos.Infra.Data
+namespace A4S.ERP.Infra.Data
 {
     public class UserDbContext : DbContext
     {
-        private readonly string _connectionString;
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<BdEmpresa> BdEmpresa { get; set; }
+        public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<Contato> Contato { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Setor> Setor { get; set; }
+        public DbSet<Certificado> Certificado { get; set; }
+        public DbSet<Tributos> Tributos { get; set; }
+        public DbSet<ContatoUser> ContatoUser { get; set; }
 
+<<<<<<< HEAD
+        public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new TributosMapping());
+            modelBuilder.ApplyConfiguration(new EmpresaMapping());
+            modelBuilder.ApplyConfiguration(new ContatoUserMapping());
+            modelBuilder.ApplyConfiguration(new EnderecoMapping());
+            modelBuilder.ApplyConfiguration(new BdEmpresaMapping());
+            modelBuilder.ApplyConfiguration(new UsuarioMapping());
+            modelBuilder.ApplyConfiguration(new RoleMapping());
+            modelBuilder.ApplyConfiguration(new SetorMapping());
+            modelBuilder.ApplyConfiguration(new CertificadoMapping());
+=======
         public DbSet<Email> Email { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
@@ -51,6 +78,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
             modelBuilder.ApplyConfiguration(new ItensPedidoMapping());
             modelBuilder.ApplyConfiguration(new ConfiguracoesMapping());
             modelBuilder.ApplyConfiguration(new TransportadoraMapping());
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
             base.OnModelCreating(modelBuilder);
         }

@@ -1,8 +1,8 @@
-﻿using Coladel.Core.Enum;
+﻿using A4S.Core.Enum;
 using System;
 using System.Collections.Generic;
 
-namespace Coladel.Core.Interfaces
+namespace A4S.Core.Interfaces
 {
     public interface IOperationResultBase
     {

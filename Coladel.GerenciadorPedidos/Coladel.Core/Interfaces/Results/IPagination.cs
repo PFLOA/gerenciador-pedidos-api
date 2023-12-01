@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Interfaces.Results
+namespace A4S.Core.Interfaces.Results
 {
     public interface IPagination : IOrderable
     {

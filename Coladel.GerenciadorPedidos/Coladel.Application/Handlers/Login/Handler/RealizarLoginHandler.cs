@@ -1,17 +1,17 @@
-﻿using Coladel.Application.Handlers.Login.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.Application.Handlers.Login.Request;
-using Coladel.GerenciadorPedidos.JWT;
-using Coladel.Core.Interfaces;
+﻿using A4S.Application.Handlers.Login.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
+using A4S.Application.Handlers.Login.Request;
+using A4S.ERP.JWT;
+using A4S.Core.Interfaces;
 using System.Threading.Tasks;
-using Coladel.Core.Enum;
+using A4S.Core.Enum;
 using System.Threading;
-using Coladel.Core;
+using A4S.Core;
 using MediatR;
 using System;
 
-namespace Coladel.Application.Handlers.Login.Handler
+namespace A4S.Application.Handlers.Login.Handler
 {
     public class RealizarLoginHandler : IRequestHandler<RealizarLoginRequest, IOperationResult<RealizarLoginResponse>>
     {

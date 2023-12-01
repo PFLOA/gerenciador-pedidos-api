@@ -1,14 +1,14 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Threading;
+﻿using A4S.Application.Handlers.Empresas.Request;
+using A4S.ERP.Application.Handlers.Empresas.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Coladel.GerenciadorAulas.Domain.Interface;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Empresas.Handler
+namespace A4S.Application.Handlers.Empresas.Handler
 {
     public class BuscarEmpresaHandler : IRequestHandler<BuscarEmpresaRequest, IActionResult>
     {
@@ -20,10 +20,11 @@ namespace Coladel.Application.Handlers.Empresas.Handler
         {
             try
             {
-                var empresa = _empresaRepository.RetornarEmpresa();
+                Empresa empresa = _empresaRepository.RetornarEmpresa();
 
                 if (empresa is null) return await Task.FromResult(new NotFoundResult());
-                return await Task.FromResult(new OkObjectResult(new { OkResult = empresa }));
+
+                return await Task.FromResult(new OkObjectResult(new { result = new BuscarEmpresaResponse(empresa) }));
             }
             catch (Exception ex)
             {

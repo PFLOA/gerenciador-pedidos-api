@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Coladel.Application.Handlers.Clientes.Response
+namespace A4S.Application.Handlers.Clientes.Response
 {
     public class EmailResponse
     {

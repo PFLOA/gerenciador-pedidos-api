@@ -1,4 +1,4 @@
-﻿namespace Coladel.GerenciadorAulas.Domain.Entidades.Response
+﻿namespace A4S.ERP.Domain.Entidades.Response
 {
     public class ProdutoResponse
     {

@@ -1,9 +1,9 @@
-﻿using Coladel.Core.Enum;
+﻿using A4S.Core.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Models
+namespace A4S.Core.Models
 {
     public class OrdenationAttribute
     {

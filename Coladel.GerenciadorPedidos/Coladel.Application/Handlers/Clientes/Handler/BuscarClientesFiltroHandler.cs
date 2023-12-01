@@ -1,9 +1,9 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.Application.Handlers.Clientes.Response;
-using Coladel.Core.Extensions;
-using Coladel.Core.Results;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.Application.Handlers.Clientes.Response;
+using A4S.Core.Extensions;
+using A4S.Core.Results;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,16 +11,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Clientes.Handler
+namespace A4S.Application.Handlers.Clientes.Handler
 {
     public class BuscarClientesFiltroHandler : IRequestHandler<BuscarClientesFiltroRequest, IActionResult>
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public BuscarClientesFiltroHandler(IClienteRepository produtoRepository)
-        {
-            _clienteRepository = produtoRepository;
-        }
+        public BuscarClientesFiltroHandler(IClienteRepository produtoRepository) => _clienteRepository = produtoRepository;
+
         public async Task<IActionResult> Handle(BuscarClientesFiltroRequest request, CancellationToken cancellationToken)
         {
             Func<Cliente, BuscarClientesFiltroResponse> retorno = Construtor;
@@ -34,6 +32,7 @@ namespace Coladel.Application.Handlers.Clientes.Handler
                 return await Task.FromResult(new BadRequestObjectResult(new { Errors = new[] { $"{ex.Message}" } }));
             }
         }
+
         public BuscarClientesFiltroResponse Construtor(Cliente cliente)
         {
             return new BuscarClientesFiltroResponse(cliente);

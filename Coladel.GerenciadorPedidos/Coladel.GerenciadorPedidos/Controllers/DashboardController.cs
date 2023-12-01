@@ -1,11 +1,11 @@
-﻿using Coladel.Application.Handlers.Dashboard.Request;
+﻿using A4S.Application.Handlers.Dashboard.Request;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Coladel.Domain;
-using Coladel.Core;
+using A4S.Domain;
+using A4S.Core;
 using MediatR;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     [Autorizacao]
     public class DashboardController : ApiController

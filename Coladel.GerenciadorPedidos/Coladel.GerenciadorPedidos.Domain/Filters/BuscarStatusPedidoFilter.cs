@@ -1,6 +1,6 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.ERP.Domain.Enum;
 
-namespace Coladel.GerenciadorPedidos.Domain.Filters
+namespace A4S.ERP.Domain.Filters
 {
     public class BuscarStatusPedidoFilter
     {

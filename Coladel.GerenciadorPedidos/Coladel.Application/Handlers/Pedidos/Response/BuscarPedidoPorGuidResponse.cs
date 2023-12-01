@@ -1,11 +1,11 @@
-﻿using Coladel.Core.Extensions;
-using Coladel.GerenciadorAulas.Domain.Entidades.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.Core.Extensions;
+using A4S.ERP.Domain.Entidades.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Enum;
 using System;
 using System.Collections.Generic;
 
-namespace Coladel.Application.Handlers.Pedidos.Response
+namespace A4S.Application.Handlers.Pedidos.Response
 {
     public class BuscarPedidoPorGuidResponse
     {
@@ -22,7 +22,9 @@ namespace Coladel.Application.Handlers.Pedidos.Response
         public BuscarPedidoPorGuidResponse(Pedido mapping)
         {
             mapping.MappingProperties(this);
+
             mapping.Cliente?.MappingProperties(ClienteResponse);
+
             mapping.ItensPedido.ForEach(item =>
             {
                 ItensPedidoResponse.Add(new ItensPedidoResponse(item));

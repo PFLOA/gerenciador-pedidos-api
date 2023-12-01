@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Coladel.Application.Handlers.Pedidos.Request
+namespace A4S.Application.Handlers.Pedidos.Request
 {
     public class BuscarPedidoPorGuidRequest : IRequest<IActionResult>
     {

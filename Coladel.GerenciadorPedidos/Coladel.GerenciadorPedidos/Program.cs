@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Coladel.GerenciadorPedidos
+namespace A4S.ERP
 {
     public class Program
     {

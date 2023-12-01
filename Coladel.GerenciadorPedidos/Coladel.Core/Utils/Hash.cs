@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Coladel.Core.Utils
+namespace A4S.Core.Utils
 {
     public class Hash
     {

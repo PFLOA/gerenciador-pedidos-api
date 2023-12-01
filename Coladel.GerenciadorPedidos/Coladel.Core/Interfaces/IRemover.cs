@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Interfaces
+namespace A4S.Core.Interfaces
 {
     public interface IRemover<T>
     {

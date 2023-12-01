@@ -1,6 +1,6 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 
-namespace Coladel.GerenciadorPedidos.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class CriarProdutoRequestBody
     {

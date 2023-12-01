@@ -1,13 +1,12 @@
-﻿using Coladel.Application.Handlers.ItemPedido.Request;
-using Coladel.Application.Handlers.Pedidos.Request;
-using Coladel.Core;
-using Coladel.Domain;
+﻿using A4S.Application.Handlers.ItemPedido.Request;
+using A4S.Application.Handlers.Pedidos.Request;
+using A4S.Core;
+using A4S.Domain;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     public class PedidoController : ApiController
     {
@@ -16,14 +15,14 @@ namespace Coladel.GerenciadorPedidos.Controllers
 
         [HttpGet]
         public async Task<IActionResult> BuscarPedidos([FromQuery] BuscarPedidosFiltroRequest request) => await _mediator.Send(request);
-        
+
         [HttpGet("ItemMaisVendido")]
         public async Task<IActionResult> BuscarItemMaisVendido([FromQuery] BuscarItemMaisVendidoRequest request) => await _mediator.Send(request);
 
         [HttpGet("TotalStatus")]
         public async Task<IActionResult> BuscarTotalStatus([FromQuery] BuscarStatusPedidosRequest request) => await _mediator.Send(request);
 
-        [HttpGet("{Guid}")] 
+        [HttpGet("{Guid}")]
         public async Task<IActionResult> BuscarPedidoPorGuid([FromRoute] BuscarPedidoPorGuidRequest request) => await _mediator.Send(request);
 
         [HttpPost]

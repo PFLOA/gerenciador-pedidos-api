@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Newtonsoft.Json;
 
-namespace Coladel.Core.Extensions
+namespace A4S.Core.Extensions
 {
     public static class ValueConversionExtensions
     {

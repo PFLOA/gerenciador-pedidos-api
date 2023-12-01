@@ -1,7 +1,7 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Enum;
 
-namespace Coladel.GerenciadorPedidos.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class CriarUsuarioRequestBody
     {

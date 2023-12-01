@@ -1,16 +1,15 @@
-﻿using Coladel.Application.Handlers.Clientes.Response;
-using Coladel.Application.Handlers.Clientes.Request;
+﻿using Coladel.Application.Handlers.Clientes.Request;
+using Coladel.Application.Handlers.Clientes.Response;
 using Coladel.GerenciadorPedidos.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorAulas.Domain.Entidades;
-using Coladel.GerenciadorAulas.Domain.Interface;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Threading;
 using MediatR;
 using System;
 
-namespace Coladel.Application.Handlers.Clientes
+namespace A4S.Application.Handlers.Clientes
 {
     public class CriarClienteHandler : IRequestHandler<CriarClienteRequest, IActionResult>
     {

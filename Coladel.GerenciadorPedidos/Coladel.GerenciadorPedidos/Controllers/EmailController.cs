@@ -1,10 +1,10 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
+﻿using A4S.Application.Handlers.Empresas.Request;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Coladel.Core;
+using A4S.Core;
 using MediatR;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     public class EmailController : ApiController
     {

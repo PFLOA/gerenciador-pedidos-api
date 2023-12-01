@@ -1,4 +1,4 @@
-﻿namespace Coladel.GerenciadorPedidos.Domain.Enum
+﻿namespace A4S.ERP.Domain.Enum
 {
     public enum NivelAcesso
     {

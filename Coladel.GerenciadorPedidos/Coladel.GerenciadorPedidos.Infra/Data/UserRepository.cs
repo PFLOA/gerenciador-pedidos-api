@@ -1,22 +1,25 @@
-﻿using Coladel.Core;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.Core;
+using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.IO;
 using System.Reflection;
 
-namespace Coladel.GerenciadorPedidos.Infra.Data
+namespace A4S.ERP.Infra.Data
 {
     public class UserRepository<TEntidade> : IRepository<TEntidade> where TEntidade : Entity
     {
         protected DbSet<TEntidade> Set { get; private set; }
-        protected ApplicationDbContext context;
-        public UserRepository(ApplicationDbContext dbContext)
+
+        protected UserDbContext context;
+
+        public UserRepository(UserDbContext dbContext)
         {
             context = dbContext;
             Type tipo = typeof(TEntidade);
             MappingProperties(dbContext, tipo);
         }
-        public Guid Alterar(TEntidade entidade)
+        public short Alterar(TEntidade entidade)
         {
             throw new NotImplementedException();
         }
@@ -28,7 +31,10 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
 
         public TEntidade Criar(TEntidade entidade)
         {
-            throw new NotImplementedException();
+            var result = Set.Add(entidade);
+            context.SaveChanges();
+
+            return result.Entity;
         }
 
         public bool Remover(TEntidade entidade)
@@ -51,6 +57,16 @@ namespace Coladel.GerenciadorPedidos.Infra.Data
             {
                 Comparator(fromObjeto, properties, toObjeto);
             }
+        }
+
+        public void Importar(Stream arq)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Importar(Func<string[], TEntidade> func, Stream csv)
+        {
+            throw new NotImplementedException();
         }
     }
 }

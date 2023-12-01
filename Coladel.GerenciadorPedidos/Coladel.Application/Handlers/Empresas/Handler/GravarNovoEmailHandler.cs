@@ -1,12 +1,13 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
-using Coladel.GerenciadorAulas.Domain.Interface;
+﻿using A4S.Application.Handlers.Empresas.Request;
+using A4S.ERP.Domain.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Threading;
 using MediatR;
 using System;
+using A4S.ERP.Domain.Entidades;
 
-namespace Coladel.Application.Handlers.Empresas.Handler
+namespace A4S.Application.Handlers.Empresas.Handler
 {
     public class GravarNovoEmailHandler : IRequestHandler<GravarNovoEmailRequest, IActionResult>
     {
@@ -24,7 +25,7 @@ namespace Coladel.Application.Handlers.Empresas.Handler
 
                     if (email == null)
                     {
-                        _envioEmailRepository.Criar(new GerenciadorAulas.Domain.Entidades.EnvioEmail
+                        _envioEmailRepository.Criar(new EnvioEmail
                         {
                             Assunto = request.Assunto,
                             Mensagem = request.Mensagem,
@@ -53,7 +54,7 @@ namespace Coladel.Application.Handlers.Empresas.Handler
                 }
                 else
                 {
-                    _envioEmailRepository.Criar(new GerenciadorAulas.Domain.Entidades.EnvioEmail
+                    _envioEmailRepository.Criar(new EnvioEmail
                     {
                         Email = request.Email,
                         TipoEmail = request.TipoEmail,

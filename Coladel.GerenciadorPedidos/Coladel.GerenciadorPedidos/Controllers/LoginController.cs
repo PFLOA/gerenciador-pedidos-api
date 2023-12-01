@@ -1,11 +1,11 @@
-﻿using Coladel.Application.Handlers.Login.Request;
-using Coladel.Core;
+﻿using A4S.Application.Handlers.Login.Request;
+using A4S.Core;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     [AllowAnonymous]
     public class LoginController : ApiController

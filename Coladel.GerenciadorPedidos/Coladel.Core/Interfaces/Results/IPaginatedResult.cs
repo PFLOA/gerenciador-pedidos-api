@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Coladel.Core.Interfaces.Results
+namespace A4S.Core.Interfaces.Results
 {
     public interface IPaginatedResult : IOperationResult<IList>
     {

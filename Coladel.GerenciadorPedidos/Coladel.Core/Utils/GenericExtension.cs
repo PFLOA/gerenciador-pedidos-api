@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Utils
+namespace A4S.Core.Utils
 {
     public static class GenericExtension
     {

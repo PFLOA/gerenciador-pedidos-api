@@ -1,13 +1,13 @@
-﻿using Coladel.Application.Handlers.Login.Handler.Usuarios.Request;
-using Coladel.Core.Extensions;
-using Coladel.Core.Utils;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.Application.Handlers.Login.Handler.Usuarios.Request;
+using A4S.Core.Extensions;
+using A4S.Core.Utils;
+using A4S.ERP.Domain.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Coladel.Application.Handlers.Usuarios.Response
+namespace A4S.Application.Handlers.Usuarios.Response
 {
     public class CriarUsuarioResponse
     {

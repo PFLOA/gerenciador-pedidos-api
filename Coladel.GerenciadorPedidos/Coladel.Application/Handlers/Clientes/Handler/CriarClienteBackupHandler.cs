@@ -1,15 +1,15 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Clientes.Handler
+namespace A4S.Application.Handlers.Clientes.Handler
 {
-    public class CriarClienteBackupHandler : IRequestHandler<ExecutarBackupClienteRequest, IActionResult>
+    public class CriarClienteBackupHandler : IRequestHandler<ExportarClientes, IActionResult>
     {
         private readonly IClienteRepository _clienteRepository;
 
@@ -17,7 +17,7 @@ namespace Coladel.Application.Handlers.Clientes.Handler
         {
             _clienteRepository = clienteRepository;
         }
-        public async Task<IActionResult> Handle(ExecutarBackupClienteRequest request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Handle(ExportarClientes request, CancellationToken cancellationToken)
         {
             try
             {

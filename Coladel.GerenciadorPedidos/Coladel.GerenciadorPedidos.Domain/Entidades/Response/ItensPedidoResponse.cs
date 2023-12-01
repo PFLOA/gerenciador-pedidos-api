@@ -1,7 +1,7 @@
-﻿using Coladel.Core.Extensions;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.Core.Extensions;
+using A4S.ERP.Domain.Entidades;
 
-namespace Coladel.GerenciadorAulas.Domain.Entidades.Response
+namespace A4S.ERP.Domain.Entidades.Response
 {
     public class ItensPedidoResponse
     {

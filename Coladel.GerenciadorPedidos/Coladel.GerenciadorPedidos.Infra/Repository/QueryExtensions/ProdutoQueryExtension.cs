@@ -1,8 +1,8 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using System;
 using System.Linq;
 
-namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
+namespace A4S.ERP.Infra.Repository.QueryExtensions
 {
     public static class ProdutoQueryExtension
     {
@@ -18,7 +18,7 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions
         }
         public static IQueryable<Produto> FiltrarPorPreco(this IQueryable<Produto> query, decimal? preco)
         {
-            if (preco.HasValue) return query.Where(p => p.Preco == preco);
+            if (preco.HasValue) return query.Where(p => p.InformacoesFiscais.PrecoVenda == preco);
             return query;
         }
     }

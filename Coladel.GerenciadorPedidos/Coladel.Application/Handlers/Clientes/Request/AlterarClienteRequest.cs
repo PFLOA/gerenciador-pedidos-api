@@ -1,9 +1,9 @@
-﻿using Coladel.GerenciadorAulas.Domain.Body;
+﻿using A4S.ERP.Domain.Body;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Coladel.Application.Handlers.Clientes.Request
+namespace A4S.Application.Handlers.Clientes.Request
 {
     public class AlterarClienteRequest : AlterarClienteRequestBody, IRequest<IActionResult>
     {

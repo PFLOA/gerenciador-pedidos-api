@@ -1,9 +1,9 @@
-﻿using Coladel.Core.Interfaces.Results;
+﻿using A4S.Core.Interfaces.Results;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Models
+namespace A4S.Core.Models
 {
     public class BaseFilter : IPagination
     {

@@ -1,18 +1,20 @@
-﻿using Coladel.GerenciadorAulas.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Enum;
 using System.Collections.Generic;
 
-namespace Coladel.GerenciadorPedidos.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class CriarClienteRequestBody
     {
-        public string Ie { get; set; }
-        public string Cnpj { get; set; }
-        public string NomeCliente { get; set; }
+        public string DocumentoSecundario { get; set; }
+        public string DocumentoPrincipal { get; set; }
+        public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
+        public string Observacoes { get; set; }
+        public TipoPessoa TipoPessoa { get; set; }
+
         public Endereco Endereco { get; set; }
-        public List<string> EmailRequest { get; set; }
-        public List<Telefone> Telefones { get; set; } = new List<Telefone>();
+        public IList<ContatoCliente> Contato { get; set; }
 
         public virtual Cliente ToModel() => new Cliente(this);
     }

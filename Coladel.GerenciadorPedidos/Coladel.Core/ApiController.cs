@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Coladel.Core.Rest;
+using A4S.Core.Rest;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coladel.Core
+namespace A4S.Core
 {
     [ApiController]
     [Route("api/v1/[controller]")]

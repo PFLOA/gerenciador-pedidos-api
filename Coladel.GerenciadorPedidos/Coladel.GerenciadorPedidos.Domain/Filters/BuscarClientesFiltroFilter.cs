@@ -1,9 +1,9 @@
-﻿using Coladel.Core.Models;
+﻿using A4S.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.GerenciadorPedidos.Domain.Filters
+namespace A4S.ERP.Domain.Filters
 {
     public class BuscarClientesFiltroFilter : BaseFilter
     {

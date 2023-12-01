@@ -1,8 +1,8 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Body;
+﻿using A4S.ERP.Domain.Body;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coladel.Application.Handlers.Pedidos.Request
+namespace A4S.Application.Handlers.Pedidos.Request
 {
     public class CriarPedidoRequest : CriarPedidoBody, IRequest<IActionResult> { }
 }

@@ -1,10 +1,10 @@
-﻿using Coladel.Core.Interfaces;
-using Coladel.Core.Interfaces.Results;
+﻿using A4S.Core.Interfaces;
+using A4S.Core.Interfaces.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Coladel.Core.Rest
+namespace A4S.Core.Rest
 {
     public class RestController : ControllerBase
     {

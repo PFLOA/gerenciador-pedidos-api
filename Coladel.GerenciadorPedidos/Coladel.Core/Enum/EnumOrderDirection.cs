@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Enum
+namespace A4S.Core.Enum
 {
     public enum EnumOrderDirection : short
     {

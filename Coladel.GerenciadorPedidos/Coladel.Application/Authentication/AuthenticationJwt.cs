@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Coladel.GerenciadorPedidos.Authentication
+namespace A4S.ERP.Authentication
 {
     public static class AuthenticationJwt
     {

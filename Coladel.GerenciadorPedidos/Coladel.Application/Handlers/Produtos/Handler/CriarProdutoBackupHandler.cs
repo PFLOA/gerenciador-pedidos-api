@@ -1,13 +1,13 @@
-﻿using Coladel.Application.Handlers.Produtos.Request;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Produtos.Request;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Produtos.Handler
+namespace A4S.Application.Handlers.Produtos.Handler
 {
     public class CriarProdutoBackupHandler : IRequestHandler<ExecutarBackupProdutosRequest, IActionResult>
     {

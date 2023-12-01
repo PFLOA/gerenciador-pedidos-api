@@ -1,11 +1,11 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
+﻿using A4S.Application.Handlers.Empresas.Request;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Threading;
 using MediatR;
 using System;
 
-namespace Coladel.Application.Handlers.Empresas.Handler
+namespace A4S.Application.Handlers.Empresas.Handler
 {
     public class SelecionarEmailSeraoEnviadosHandler : IRequestHandler<SelecionarEmailSeraoEnviadosRequest, IActionResult>
     {

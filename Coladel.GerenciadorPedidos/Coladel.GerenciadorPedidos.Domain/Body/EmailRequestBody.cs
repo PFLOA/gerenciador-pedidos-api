@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.GerenciadorAulas.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class EmailRequestBody
     {

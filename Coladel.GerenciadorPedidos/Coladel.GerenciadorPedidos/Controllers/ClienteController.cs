@@ -1,11 +1,12 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.Core;
-using Coladel.Domain;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.Core;
+using A4S.Domain;
+using A4S.ERP.Application.Handlers.Clientes.Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     [Autorizacao]
     public class ClienteController : ApiController
@@ -15,7 +16,7 @@ namespace Coladel.GerenciadorPedidos.Controllers
         [HttpGet]
         public async Task<IActionResult> BuscarClientesPorFiltro([FromQuery] BuscarClientesFiltroRequest request) => await _mediator.Send(request);
 
-        [HttpGet("Guid/{Guid}")]
+        [HttpGet("{Guid}")]
         public async Task<IActionResult> BuscarClientesPorGuid([FromRoute] BuscarClientePorGuidRequest request) => await _mediator.Send(request);
 
         [HttpPut]
@@ -27,7 +28,10 @@ namespace Coladel.GerenciadorPedidos.Controllers
         [HttpDelete]
         public async Task<IActionResult> RemoverCliente([FromBody] RemoverClienteRequest request) => await _mediator.Send(request);
 
-        [HttpPost("ExecutarBackup")]
-        public async Task<IActionResult> CriarBackupProduto(ExecutarBackupClienteRequest request) => await _mediator.Send(request);
+        [HttpPost("Importar")]
+        public async Task<IActionResult> Importar([FromForm] ImportarClientesRequest request) => await _mediator.Send(request);
+
+        [HttpPost("Exportar")]
+        public async Task<IActionResult> Exportar([FromForm]  ExportarClientes request) => await _mediator.Send(request);
     }
 }

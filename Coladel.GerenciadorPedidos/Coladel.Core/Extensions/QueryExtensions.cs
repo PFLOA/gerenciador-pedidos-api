@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Coladel.Core.Extensions
+namespace A4S.Core.Extensions
 {
     public static class QueryExtensions
     {

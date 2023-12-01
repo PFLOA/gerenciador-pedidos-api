@@ -1,8 +1,8 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Body;
+﻿using A4S.ERP.Domain.Body;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 
-namespace Coladel.Application.Handlers.Clientes.Request
+namespace A4S.Application.Handlers.Clientes.Request
 {
   public class CriarClienteRequest : CriarClienteRequestBody, IRequest<IActionResult> { }
 }

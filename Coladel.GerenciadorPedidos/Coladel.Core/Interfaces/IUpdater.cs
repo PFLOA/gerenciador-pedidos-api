@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Coladel.Core.Interfaces
+namespace A4S.Core.Interfaces
 {
     public interface IUpdater<T>
     {
-        Guid Alterar(T entidade);
+        short Alterar(T entidade);
     }
 }

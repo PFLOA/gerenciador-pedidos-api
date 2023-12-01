@@ -1,21 +1,22 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Body;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Filters;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorPedidos.Infra.Data;
-using Coladel.GerenciadorPedidos.Infra.Repository.QueryExtensions;
-using Coladel.Infra.Repository.QueryExtensions;
+﻿using A4S.ERP.Domain.Body;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Filters;
+using A4S.ERP.Domain.Interface;
+using A4S.ERP.Infra.Data;
+using A4S.ERP.Infra.Repository.QueryExtensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Coladel.GerenciadorPedidos.Infra.Repository
+namespace A4S.ERP.Infra.Repository
 {
     public class PedidoRepository : Repository<Pedido>, IPedidoRepository
     {
-        public PedidoRepository(UserDbContext context) : base(context) { }
+        public PedidoRepository(AppDbContext context) : base(context) { }
 
+<<<<<<< HEAD
+=======
         public ProdutoMaisVendidoBody BuscarProdutoMaisVendidoMesAnoDados(int mes, int ano)
         {
             Produto produto = BuscarProdutoMaisVendido(mes, ano);
@@ -34,14 +35,20 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
             return FiltarListaItensPedido(mes, ano).FiltrarPorProdutoRecorrente();
         }
 
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
         public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter) =>
             Set.FiltrarPorNomeCliente(filter.Cliente)
                 .FiltrarPorData(filter.Mes, filter.Ano)
                 .FiltrarPorDia(filter.Dia)
                 .FiltrarPorStatus(filter.StatusPedido)
+                .FiltrarPorGuid(filter.ClienteGuid)
                 .OrderByDescending(p => p.DataCadastro)
+<<<<<<< HEAD
+                .Include(p => p.Cliente);
+=======
                 .Include(s => s.Cliente)
                 .Include("ItensPedido.Produto");
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
         public int BuscarTotalStatusPedidosPorFiltro(BuscarStatusPedidoFilter filter) => 
             Set.FiltrarPorAno(filter.Ano)
@@ -52,8 +59,9 @@ namespace Coladel.GerenciadorPedidos.Infra.Repository
         public override Pedido BuscarPorGuid(Guid guid)
         {
             var obj = base.Set
-                .Include(s => s.Cliente)
-                .Include("ItensPedido.Produto")
+                .Include(p => p.ItensPedido)
+                .ThenInclude(p => p.Produto)
+                .Include("Cliente")
                 .FirstOrDefault(p => p.Guid == guid);
 
             return obj;

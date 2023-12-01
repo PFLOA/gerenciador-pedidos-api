@@ -1,14 +1,14 @@
-﻿using Coladel.Application.Handlers.Dashboard.Request;
+﻿using A4S.Application.Handlers.Dashboard.Request;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Threading;
 using MediatR;
 using System;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorPedidos.Domain.Filters;
+using A4S.ERP.Domain.Interface;
+using A4S.ERP.Domain.Filters;
 using System.Linq;
 
-namespace Coladel.Application.Handlers.Dashboard.Handler
+namespace A4S.Application.Handlers.Dashboard.Handler
 {
     public class RetornarTotalPedidoHandler : IRequestHandler<RetornarTotalPedidoRequest, IActionResult>
     {

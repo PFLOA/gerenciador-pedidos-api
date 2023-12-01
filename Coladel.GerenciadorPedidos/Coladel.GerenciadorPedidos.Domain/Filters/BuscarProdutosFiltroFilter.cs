@@ -1,12 +1,12 @@
-﻿using Coladel.Core.Models;
+﻿using A4S.Core.Models;
 using System;
 
-namespace Coladel.GerenciadorPedidos.Domain.Filters
+namespace A4S.ERP.Domain.Filters
 {
     public class BuscarProdutosFiltroFilter : BaseFilter
     {
+        public decimal? Preco { get; set; }
         public string NomeProduto { get; set; }
         public DateTime DataCadastro { get; set; }
-        public decimal? Preco { get; set; }
     }
 }

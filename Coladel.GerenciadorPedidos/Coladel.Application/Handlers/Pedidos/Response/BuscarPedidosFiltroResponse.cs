@@ -1,9 +1,9 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Entidades.Response;
-using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Entidades.Response;
+using A4S.ERP.Domain.Enum;
 using System.Collections.Generic;
 
-namespace Coladel.Application.Handlers.Pedidos.Response
+namespace A4S.Application.Handlers.Pedidos.Response
 {
     public class BuscarPedidosFiltroResponse : PedidoResponse
     {

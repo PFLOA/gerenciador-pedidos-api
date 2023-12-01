@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Coladel.Core.Extensions
+namespace A4S.Core.Extensions
 {
     public static class MappingExtensions
     {
@@ -23,7 +23,17 @@ namespace Coladel.Core.Extensions
         private static void Comparator(Object fromObjeto, PropertyInfo propertyInfo, object toObjeto)
         {
             var found = toObjeto.GetType().GetProperty(propertyInfo.Name);
-            if (found != null) found.SetValue(toObjeto, propertyInfo.GetValue(fromObjeto));
+
+            if (found != null)
+            {
+                var pName = found.PropertyType.Name;
+
+                if (pName == propertyInfo.PropertyType.Name)
+                    found.SetValue(toObjeto, propertyInfo.GetValue(fromObjeto));
+                else
+                    propertyInfo.GetValue(fromObjeto).MappingProperties(found.GetValue(toObjeto));
+
+            }
         }
         private static void DifferenceComparator(Object fromObjeto, PropertyInfo propertyInfo, object toObjeto)
         {

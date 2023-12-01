@@ -1,5 +1,4 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,19 +8,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 
-namespace Coladel.Domain
+namespace A4S.Domain
 {
     public class AutorizacaoAttribute : Attribute, IAuthorizationFilter
     {
-        private readonly IList<NivelAcesso> _roles;
+        private readonly IList<Role> _roles = new List<Role>();
 
-        public AutorizacaoAttribute(params NivelAcesso[] roles) => _roles = roles ?? new NivelAcesso[] { };
+        public AutorizacaoAttribute(params string[] roles)
+        {
+            foreach (var item in roles)
+            {
+                _roles.Add(new Role { Descricao = item });
+            }
+        }
 
-        public AutorizacaoAttribute() => _roles = new List<NivelAcesso>();
+        public AutorizacaoAttribute() => _roles = new List<Role>();
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-
             var allowAnonymous = context.ActionDescriptor.EndpointMetadata.OfType<AllowAnonymousAttribute>().Any();
             if (allowAnonymous) return;
 
@@ -29,17 +33,12 @@ namespace Coladel.Domain
             var valor = claims.Where(p => p.Type == ClaimTypes.Role)
                             .Select(p => p.Value).FirstOrDefault();
 
-            if (valor is null) context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized }; ;
+            if (string.IsNullOrEmpty(valor)) context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized }; ;
 
-            var role = (NivelAcesso)Enum.Parse(typeof(NivelAcesso), valor);
-
-            if (role == NivelAcesso.NoAccess) context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized };
-
-            if (claims is null || (_roles.Any() && !_roles.Contains(role)))
+            if (claims is null || (_roles.Any() && !_roles.Contains(new Role { Descricao = valor })))
             {
                 context.Result = new JsonResult(new { message = "Não autorizado !" }) { StatusCode = StatusCodes.Status401Unauthorized };
             }
-
         }
     }
 }

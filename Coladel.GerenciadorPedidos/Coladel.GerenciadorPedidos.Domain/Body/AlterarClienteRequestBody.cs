@@ -1,13 +1,11 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Coladel.GerenciadorAulas.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class AlterarClienteRequestBody
     {
         public string NomeCliente { get; set; }
+        public string Observacoes { get; set; }
         public List<EmailRequestBody> EmailRequest { get; set; }
     }
 }

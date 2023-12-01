@@ -1,5 +1,7 @@
-using Coladel.GerenciadorPedidos.Infra;
-using Coladel.GerenciadorPedidos.Infra.Data;
+using A4S.Application.Handlers.Login.Handler;
+using A4S.ERP.Infra;
+using A4S.ERP.Infra.Data;
+using A4S.ERP.Servicos;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -15,7 +17,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Coladel.GerenciadorPedidos
+namespace A4S.ERP
 {
     public class Startup
     {
@@ -37,20 +39,22 @@ namespace Coladel.GerenciadorPedidos
 
             services.AddHttpContextAccessor();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+
+            services.AddDbContext<UserDbContext>(options =>
             {
                 var connetionString = Configuration.GetConnectionString("DefaultConnection");
                 options.UseMySql(connetionString, ServerVersion.AutoDetect(connetionString), b => b.MigrationsAssembly("Coladel.GerenciadorPedidos"));
             });
 
-            services.AddDbContext<UserDbContext>();
+            services.AddDbContext<AppDbContext>();
 
             services.ConfigureServices();
-            services.AddMediatR(typeof(Application.Handlers.Login.Handler.RealizarLoginHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RealizarLoginHandler).GetTypeInfo().Assembly);
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+            
             services.AddControllers()
                 .ConfigureApiBehaviorOptions(options =>
                 {

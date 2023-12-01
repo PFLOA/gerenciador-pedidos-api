@@ -1,6 +1,6 @@
-﻿using Coladel.Core.Enum;
-using Coladel.Core.Extensions;
-using Coladel.Core.Interfaces.Results;
+﻿using A4S.Core.Enum;
+using A4S.Core.Extensions;
+using A4S.Core.Interfaces.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Text;
 
-namespace Coladel.Core.Results
+namespace A4S.Core.Results
 {
     public class PaginatedResult<TResult>
     {

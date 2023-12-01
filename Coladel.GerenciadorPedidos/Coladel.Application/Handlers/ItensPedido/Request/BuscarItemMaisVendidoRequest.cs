@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Coladel.Application.Handlers.ItemPedido.Request
+namespace A4S.Application.Handlers.ItemPedido.Request
 {
     public class BuscarItemMaisVendidoRequest : IRequest<IActionResult>
     {

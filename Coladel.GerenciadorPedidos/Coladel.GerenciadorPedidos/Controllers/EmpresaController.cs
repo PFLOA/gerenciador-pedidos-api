@@ -1,10 +1,11 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
+﻿using A4S.Application.Handlers.Empresas.Request;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Coladel.Core;
+using A4S.Core;
 using MediatR;
+using A4S.ERP.Application.Handlers.Empresas.Request;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     public class EmpresaController : ApiController
     {
@@ -12,5 +13,8 @@ namespace Coladel.GerenciadorPedidos.Controllers
 
         [HttpGet]
         public async Task<IActionResult> BuscarEmpresa() => await _mediator.Send(new BuscarEmpresaRequest());
+
+        [HttpPost("Certificado")]
+        public async Task<IActionResult> CadastrarCertificado([FromForm] CadastrarCertificadoRequest request) => await _mediator.Send(request);
     }
 }

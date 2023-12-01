@@ -1,17 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.GerenciadorPedidos", "Coladel.GerenciadorPedidos\Coladel.GerenciadorPedidos.csproj", "{0A7E7E4A-A8E6-437F-832C-2CB7B38D7709}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP", "Coladel.GerenciadorPedidos\A4S.ERP.csproj", "{0A7E7E4A-A8E6-437F-832C-2CB7B38D7709}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Domain", "Coladel.GerenciadorPedidos.Domain\Coladel.Domain.csproj", "{6F4E9E4F-3ECF-4F94-BF82-86AE0F0BB2C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP.Domain", "Coladel.GerenciadorPedidos.Domain\A4S.ERP.Domain.csproj", "{6F4E9E4F-3ECF-4F94-BF82-86AE0F0BB2C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Infra", "Coladel.GerenciadorPedidos.Infra\Coladel.Infra.csproj", "{42745155-4A1F-4FAB-BA25-00FB68F5EE37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP.Infra", "Coladel.GerenciadorPedidos.Infra\A4S.ERP.Infra.csproj", "{42745155-4A1F-4FAB-BA25-00FB68F5EE37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Core", "Coladel.Core\Coladel.Core.csproj", "{F5B47D17-6F2D-4046-BFA9-8E0F64336675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.Core", "Coladel.Core\A4S.Core.csproj", "{F5B47D17-6F2D-4046-BFA9-8E0F64336675}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coladel.Application", "Coladel.Application\Coladel.Application.csproj", "{7063F59E-8247-4352-B45E-9460347CEE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP.Application", "Coladel.Application\A4S.ERP.Application.csproj", "{7063F59E-8247-4352-B45E-9460347CEE48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Aplicacao", "1 - Aplicacao", "{6B652E75-7CAD-40B1-8638-D9699C5D8865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{BC55F0A3-BEBA-4BDA-9EDA-46DB62152EDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{C456E799-BE73-4F0F-A0DB-0F7931B5D55A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Core", "4 - Core", "{C571525D-ADE6-4EA3-81E6-D153512B0E14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - App", "2 - App", "{0BD98B0B-AEEA-4877-91B0-70FE12E664F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP.Duplicatas", "A4S.ERP.Duplicatas\A4S.ERP.Duplicatas.csproj", "{EE99737C-33AE-4CA4-9A37-93698F786E8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +51,21 @@ Global
 		{7063F59E-8247-4352-B45E-9460347CEE48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7063F59E-8247-4352-B45E-9460347CEE48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7063F59E-8247-4352-B45E-9460347CEE48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A7E7E4A-A8E6-437F-832C-2CB7B38D7709} = {6B652E75-7CAD-40B1-8638-D9699C5D8865}
+		{6F4E9E4F-3ECF-4F94-BF82-86AE0F0BB2C2} = {C456E799-BE73-4F0F-A0DB-0F7931B5D55A}
+		{42745155-4A1F-4FAB-BA25-00FB68F5EE37} = {BC55F0A3-BEBA-4BDA-9EDA-46DB62152EDD}
+		{F5B47D17-6F2D-4046-BFA9-8E0F64336675} = {C571525D-ADE6-4EA3-81E6-D153512B0E14}
+		{7063F59E-8247-4352-B45E-9460347CEE48} = {0BD98B0B-AEEA-4877-91B0-70FE12E664F0}
+		{EE99737C-33AE-4CA4-9A37-93698F786E8B} = {0BD98B0B-AEEA-4877-91B0-70FE12E664F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7558218D-95A1-45A0-AA61-E270C36FCF42}

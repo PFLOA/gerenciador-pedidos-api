@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.GerenciadorPedidos.Domain.Enum
+namespace A4S.ERP.Domain.Enum
 {
     public enum RetornosEnum
     {

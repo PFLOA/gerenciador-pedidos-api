@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Backup\**" />
+    <EmbeddedResource Remove="Backup\**" />
+    <None Remove="Backup\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\Certificados\Response\" />
+    <Folder Include="Handlers\CondicoesPagamentos\Response\" />
+    <Folder Include="Handlers\Dashboard\Response\" />
+    <Folder Include="Handlers\Duplicatas\Handler\" />
+    <Folder Include="Handlers\ItensPedido\Handler\" />
+    <Folder Include="Handlers\ItensPedido\Response\" />
+    <Folder Include="Handlers\NotasFiscais\Handler\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\A4S.ERP.Duplicatas\A4S.ERP.Duplicatas.csproj" />
+    <ProjectReference Include="..\Coladel.Core\A4S.Core.csproj" />
+    <ProjectReference Include="..\Coladel.GerenciadorPedidos.Domain\A4S.ERP.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

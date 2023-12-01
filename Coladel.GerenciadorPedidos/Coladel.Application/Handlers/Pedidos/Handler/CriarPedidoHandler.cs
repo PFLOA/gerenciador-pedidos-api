@@ -1,30 +1,26 @@
-﻿using Coladel.Application.Handlers.Pedidos.Request;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorAulas.Domain.Entidades;
-using Coladel.GerenciadorAulas.Domain.Interface;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Threading;
+﻿using A4S.Application.Handlers.Pedidos.Request;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System;
-using Coladel.Application.Handlers.Empresas.Request;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Pedidos.Handler
+namespace A4S.Application.Handlers.Pedidos.Handler
 {
     public class CriarPedidoHandler : IRequestHandler<CriarPedidoRequest, IActionResult>
     {
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IClienteRepository _clienteRepository;
-        private readonly IItensPedidoRepository _itensPedidoRepository;
 
-        public CriarPedidoHandler(IPedidoRepository pedidoRepository, IClienteRepository clienteRepository, IItensPedidoRepository itensPedidoRepository)
+        public CriarPedidoHandler(IPedidoRepository pedidoRepository, IClienteRepository clienteRepository)
         {
             _pedidoRepository = pedidoRepository;
             _clienteRepository = clienteRepository;
-            _itensPedidoRepository = itensPedidoRepository;
         }
+
         public async Task<IActionResult> Handle(CriarPedidoRequest request, CancellationToken cancellationToken)
         {
             try
@@ -33,11 +29,13 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
 
                 Pedido pedido = new Pedido(request);
 
-                pedido.IdCliente = cliente.Id;
+                pedido.ClienteId = cliente.Id;
+
                 pedido.CalculoComissao(request.PorcentagemComissao);
 
                 short pedidoResultId = _pedidoRepository.Criar(pedido).Id;
-                CriarPedido(request.ItenPedido, pedidoResultId);
+
+                CriarPedido(request.ItensPedido, pedidoResultId);
 
                 return await Task.FromResult(new OkResult());
             }
@@ -52,7 +50,6 @@ namespace Coladel.Application.Handlers.Pedidos.Handler
             list.ForEach((itensPedido) =>
             {
                 itensPedido.IdPedido = idPedido;
-                _itensPedidoRepository.Criar(itensPedido);
             });
         }
     }

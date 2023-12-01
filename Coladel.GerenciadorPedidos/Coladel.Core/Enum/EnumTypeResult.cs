@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Coladel.Core.Enum
+namespace A4S.Core.Enum
 {
     public enum EnumTypeResult
     {

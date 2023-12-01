@@ -1,22 +1,36 @@
-﻿using Coladel.Core.Extensions;
-using Coladel.GerenciadorPedidos.Domain.Body;
-using Coladel.GerenciadorPedidos.Domain.Enum;
-using System;
+﻿using A4S.Core.Extensions;
+using A4S.ERP.Domain.Body;
+using A4S.ERP.Domain.Enum;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace Coladel.GerenciadorPedidos.Domain.Entidades
+namespace A4S.ERP.Domain.Entidades
 {
     public class Pedido : Entity
     {
-        public StatusPedido StatusPedido { get; set; }
-        public string NF { get; set; }
-        public string Observacoes { get; set; }
+        public short ClienteId { get; set; }
+        public short? CondicoesPagamentoId { get; set; }
+
         public decimal Total { get; set; }
         public decimal TotalComissao { get; set; }
+<<<<<<< HEAD
+
+        public string NF { get; set; }
+        public string Observacoes { get; set; }
+
+        public StatusPedido StatusPedido { get; set; }
+
+        public virtual CondicoesPagamento CondicoesPagamento { get; set; }
+        public virtual List<ItensPedido> ItensPedido { get; set; }
+
+        [IgnoreDataMember]
+        public virtual Cliente Cliente { get; set; }
+=======
         public short IdCliente { get; set; }
 
         public virtual Cliente Cliente { get; set; }
         public virtual List<ItensPedido> ItensPedido { get; set; }
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
         public Pedido() { }
         public Pedido(CriarPedidoBody criarPedidoBody) => criarPedidoBody.MappingProperties(this);

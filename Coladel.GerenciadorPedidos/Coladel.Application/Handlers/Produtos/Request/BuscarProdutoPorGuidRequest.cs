@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Coladel.Application.Handlers.Produtos.Request
+namespace A4S.Application.Handlers.Produtos.Request
 {
     public class BuscarProdutoPorGuidRequest : IRequest<IActionResult>
     {

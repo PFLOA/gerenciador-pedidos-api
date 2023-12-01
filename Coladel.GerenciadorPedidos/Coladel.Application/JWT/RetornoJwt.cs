@@ -1,11 +1,11 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Coladel.GerenciadorPedidos.JWT
+namespace A4S.ERP.JWT
 {
     public static class RetornoJwt
     {
@@ -18,10 +18,11 @@ namespace Coladel.GerenciadorPedidos.JWT
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                    new Claim(ClaimTypes.NameIdentifier, result.Id.ToString()),
+                   new Claim("empresa_id", result.Empresa.Id.ToString()),
                    new Claim(ClaimTypes.Email, result.Email),
-                   new Claim(ClaimTypes.Role, result.Role.ToString()),
-                   new Claim(ClaimTypes.Name, result.UserName),
-                   new Claim(ClaimTypes.Uri, result.ConnectionString)
+                   new Claim(ClaimTypes.Role, result.Role.Descricao.ToString()),
+                   new Claim(ClaimTypes.Name, result.Nome),
+                   new Claim(ClaimTypes.Uri, result.Empresa.BdEmpresa.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)

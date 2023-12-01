@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Coladel.Core.Interfaces
+namespace A4S.Core.Interfaces
 {
     public interface IBuscar<T>
     {

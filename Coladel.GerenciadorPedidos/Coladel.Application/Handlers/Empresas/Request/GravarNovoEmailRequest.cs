@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Coladel.GerenciadorAulas.Domain.Enum;
+using A4S.ERP.Domain.Enum;
 
-namespace Coladel.Application.Handlers.Empresas.Request
+namespace A4S.Application.Handlers.Empresas.Request
 {
     public class GravarNovoEmailRequest : IRequest<IActionResult>
     {

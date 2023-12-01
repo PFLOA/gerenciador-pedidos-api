@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Coladel.Core.Rest.Model
+namespace A4S.Core.Rest.Model
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class RestResult

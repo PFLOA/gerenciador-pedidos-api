@@ -1,11 +1,12 @@
-﻿using Coladel.Application.Handlers.Produtos.Request;
-using Coladel.Core;
-using Coladel.Domain;
+﻿using A4S.Application.Handlers.Produtos.Request;
+using A4S.Core;
+using A4S.Domain;
+using A4S.ERP.Application.Handlers.Produtos.Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Coladel.GerenciadorPedidos.Controllers
+namespace A4S.ERP.Controllers
 {
     public class ProdutoController : ApiController
     {
@@ -26,5 +27,8 @@ namespace Coladel.GerenciadorPedidos.Controllers
 
         [HttpPost("ExecutarBackup")]
         public async Task<IActionResult> CriarBackupProduto(ExecutarBackupProdutosRequest request) => await _mediator.Send(request);
+
+        [HttpPost("Importar")]
+        public async Task<IActionResult> Importar([FromForm] ImportarProdutosRequest request) => await _mediator.Send(request);
     }
 }

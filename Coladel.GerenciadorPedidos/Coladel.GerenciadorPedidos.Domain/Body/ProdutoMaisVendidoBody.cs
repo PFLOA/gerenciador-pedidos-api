@@ -1,8 +1,8 @@
-﻿using Coladel.Core.Extensions;
-using Coladel.GerenciadorAulas.Domain.Entidades.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.Core.Extensions;
+using A4S.ERP.Domain.Entidades.Response;
+using A4S.ERP.Domain.Entidades;
 
-namespace Coladel.GerenciadorPedidos.Domain.Body
+namespace A4S.ERP.Domain.Body
 {
     public class ProdutoMaisVendidoBody
     {
@@ -24,7 +24,6 @@ namespace Coladel.GerenciadorPedidos.Domain.Body
             MaiorValorVendidoMes = maiorValorVendidoMes;
             QuantidadeVendidaMes = quantidade;
             MediaPreco = Total / QuantidadeVendidaMes;
-            PrecoAtualProduto = produto.Preco;
             NomeProduto = produto.NomeProduto;
         }
     }

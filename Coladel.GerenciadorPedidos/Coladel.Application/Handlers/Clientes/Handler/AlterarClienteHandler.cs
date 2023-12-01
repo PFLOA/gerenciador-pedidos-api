@@ -1,15 +1,15 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.GerenciadorAulas.Domain.Entidades;
-using Coladel.GerenciadorAulas.Domain.Interface;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.GerenciadorAulas.Domain.Entidades;
+using A4S.GerenciadorAulas.Domain.Interface;
+using A4S.GerenciadorPedidos.Domain.Entidades;
+using A4S.GerenciadorPedidos.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Clientes.Handler
+namespace A4S.Application.Handlers.Clientes.Handler
 {
     public class AlterarClienteHandler : IRequestHandler<AlterarClienteRequest, IActionResult>
     {
@@ -21,6 +21,7 @@ namespace Coladel.Application.Handlers.Clientes.Handler
             _clienteRepository = clienteRepository;
             _emailRepository = emailRepository;
         }
+
         public async Task<IActionResult> Handle(AlterarClienteRequest request, CancellationToken cancellationToken)
         {
             try

@@ -1,16 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
-namespace Coladel.GerenciadorPedidos.Domain.Entidades
+namespace A4S.ERP.Domain.Entidades
 {
-    public class ItensPedido : Entity
+    public class ItensPedido : EntityBase
     {
-        [JsonIgnore]
-        public Pedido Pedido { get; set; }
-        [JsonIgnore]
-        public Produto Produto { get; set; }
+
         public short IdPedido { get; set; }
         public short IdProduto { get; set; }
-        public decimal Preco { get; set; }
+
         public int Quantidade { get; set; }
+        public decimal Preco { get; set; }
+
+        [IgnoreDataMember]
+        public Pedido Pedido { get; set; }
+
+        [IgnoreDataMember]
+        public Produto Produto { get; set; }
     }
 }

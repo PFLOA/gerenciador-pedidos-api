@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Coladel.Core.Rest
+namespace A4S.Core.Rest
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class ResultData

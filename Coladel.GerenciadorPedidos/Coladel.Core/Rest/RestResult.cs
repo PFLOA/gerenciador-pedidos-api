@@ -1,5 +1,5 @@
 ﻿
-namespace Coladel.Core.Rest
+namespace A4S.Core.Rest
 {
     public class RestResult
     {

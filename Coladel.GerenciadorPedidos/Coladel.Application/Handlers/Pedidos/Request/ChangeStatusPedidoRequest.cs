@@ -1,9 +1,9 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Enum;
+﻿using A4S.ERP.Domain.Enum;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Coladel.Application.Handlers.Pedidos.Request
+namespace A4S.Application.Handlers.Pedidos.Request
 {
     public class ChangeStatusPedidoRequest : IRequest<IActionResult>
     {

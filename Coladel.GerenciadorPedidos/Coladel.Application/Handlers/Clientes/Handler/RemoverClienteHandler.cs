@@ -1,5 +1,5 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Clientes.Handler
+namespace A4S.Application.Handlers.Clientes.Handler
 {
     public class RemoverClienteHandler : IRequestHandler<RemoverClienteRequest, IActionResult>
     {

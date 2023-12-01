@@ -1,6 +1,6 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 
-namespace Coladel.GerenciadorAulas.Domain.Entidades
+namespace A4S.ERP.Domain.Entidades
 {
     public class ConfiguracoesApp : Entity
     {

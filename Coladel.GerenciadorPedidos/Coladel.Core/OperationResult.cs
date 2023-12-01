@@ -1,9 +1,9 @@
-﻿using Coladel.Core.Enum;
-using Coladel.Core.Interfaces;
+﻿using A4S.Core.Enum;
+using A4S.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Coladel.Core
+namespace A4S.Core
 {
     public class OperationResult<TResult> : IOperationResult<TResult>
     {

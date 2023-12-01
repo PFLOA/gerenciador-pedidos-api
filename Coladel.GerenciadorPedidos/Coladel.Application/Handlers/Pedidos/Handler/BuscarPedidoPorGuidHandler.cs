@@ -1,14 +1,14 @@
-﻿using Coladel.Application.Handlers.Pedidos.Request;
-using Coladel.Application.Handlers.Pedidos.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Pedidos.Request;
+using A4S.Application.Handlers.Pedidos.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Pedidos.Handler
+namespace A4S.Application.Handlers.Pedidos.Handler
 {
     public class BuscarPedidoPorGuidHandler : IRequestHandler<BuscarPedidoPorGuidRequest, IActionResult>
     {

@@ -1,4 +1,4 @@
-﻿namespace Coladel.GerenciadorPedidos.Domain.Entidades
+﻿namespace A4S.ERP.Domain.Entidades
 {
     public class Login
     {

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+﻿using A4S.ERP.Domain.Entidades;
+
+namespace A4S.ERP.Domain.Entidades
+=======
 ﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
 
 namespace Coladel.GerenciadorAulas.Domain.Entidades
+>>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 {
     public class Telefone : Entity
     {

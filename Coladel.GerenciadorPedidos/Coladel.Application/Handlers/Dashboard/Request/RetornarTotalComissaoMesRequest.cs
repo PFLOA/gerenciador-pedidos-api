@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
 
-namespace Coladel.Application.Handlers.Dashboard.Request
+namespace A4S.Application.Handlers.Dashboard.Request
 {
     public class RetornarTotalComissaoMesRequest : IRequest<IActionResult>
     {

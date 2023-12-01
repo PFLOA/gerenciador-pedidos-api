@@ -1,8 +1,12 @@
-﻿using Coladel.Core.Interfaces;
+﻿using A4S.Core.Interfaces;
 
-namespace Coladel.Core
+namespace A4S.Core
 {
-    public interface IRepository<TEntidade> : IAdder<TEntidade>, IBuscar<TEntidade>, IUpdater<TEntidade>, IRemover<TEntidade>
+    public interface IRepository<TEntidade> : IBuscar<TEntidade>, IRepositoryBase<TEntidade>
+    {
+
+    }
+    public interface IRepositoryBase<TEntidade> : IAdder<TEntidade>, IUpdater<TEntidade>, IRemover<TEntidade>
     {
 
     }

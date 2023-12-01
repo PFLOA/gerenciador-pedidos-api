@@ -1,14 +1,14 @@
-﻿using Coladel.Application.Handlers.Produtos.Request;
-using Coladel.Application.Handlers.Produtos.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Produtos.Request;
+using A4S.ERP.Application.Handlers.Produtos.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Coladel.Application.Handlers.Produtos.Handler
+namespace A4S.Application.Handlers.Produtos.Handler
 {
     public class BuscarProdutoPorGuidHandler : IRequestHandler<BuscarProdutoPorGuidRequest, IActionResult>
     {
@@ -22,7 +22,7 @@ namespace Coladel.Application.Handlers.Produtos.Handler
                 Produto produto = _produtoRepository.BuscarPorGuid(request.Guid);
 
                 if (produto is null) return await Task.FromResult(new NotFoundResult());
-                return await Task.FromResult(new OkObjectResult(new { OkResult = new CriarProdutoResponse(produto) }));
+                return await Task.FromResult(new OkObjectResult(new { OkResult = new BuscarProdutoPorGuidResponse(produto) }));
             }
             catch (Exception ex)
             {

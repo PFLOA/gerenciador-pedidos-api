@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace A4S.ERP.Domain.Entidades
@@ -29,21 +28,6 @@ namespace A4S.ERP.Domain.Entidades
         public virtual BdEmpresa BdEmpresa { get; set; }
         public virtual Endereco Endereco { get; set; }
         public virtual Tributos Tributos { get; set; }
-=======
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-namespace Coladel.GerenciadorAulas.Domain.Entidades
-{
-    public class Empresa : Entity
-    {
-        [IgnoreDataMember]
-        public short IdConfiguracao { get; set; }
-
-        public string Nome { get; set; }
-        public virtual List<EnvioEmail> EnvioEmails { get; set; }
-        public virtual Configuracoes Configuracoes { get; set; }
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
+        public IList<string> EnvioEmails { get; set; }
     }
 }

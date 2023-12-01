@@ -1,10 +1,9 @@
 ﻿using A4S.Application.Handlers.Clientes.Request;
-using A4S.GerenciadorAulas.Domain.Entidades;
-using A4S.GerenciadorAulas.Domain.Interface;
-using A4S.GerenciadorPedidos.Domain.Entidades;
-using A4S.GerenciadorPedidos.Domain.Interface;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.HttpSys;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,20 +27,10 @@ namespace A4S.Application.Handlers.Clientes.Handler
             {
                 Cliente cliente = _clienteRepository.BuscarPorGuid(request.Guid);
 
-                request.EmailRequest.ForEach(email =>
-                {
-                    if (email.Id == 0)
-                        cliente.Emails.Add(new Email
-                        {
-                            Descricao = email.Email,
-                            Guid = Guid.NewGuid(),
-                            Cliente = cliente,
-                        });
-                });
-
                 if (cliente is null) return await Task.FromResult(new NotFoundObjectResult(new { Error = "Não encontrado o Cliente com o GUID passado. " }));
 
-                cliente.NomeCliente = request.NomeCliente;
+                cliente.RazaoSocial = request.RazaoSocial;
+                cliente.Observacoes = request.Observacoes;
 
                 _clienteRepository.Alterar(cliente);
 

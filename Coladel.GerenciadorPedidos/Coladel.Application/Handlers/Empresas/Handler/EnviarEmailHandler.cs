@@ -1,17 +1,17 @@
-﻿using Coladel.Application.Handlers.Empresas.Request;
-using Coladel.GerenciadorAulas.Domain.Interface;
-using System.Text.RegularExpressions;
+﻿using A4S.Application.Handlers.Empresas.Request;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Enum;
+using A4S.ERP.Domain.Interface;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Net.Mail;
+using System;
+using System.IO;
 using System.Linq;
 using System.Net;
-using System.IO;
-using MediatR;
-using System;
-using Coladel.GerenciadorAulas.Domain.Enum;
-using Coladel.GerenciadorAulas.Domain.Entidades;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Coladel.Application.Handlers.Empresas.Handler
 {
@@ -30,9 +30,6 @@ namespace Coladel.Application.Handlers.Empresas.Handler
 
                 var empresa = _empresaRepository.RetornarEmpresa();
 
-                if (empresa.Configuracoes.EnviarEmailLogistica) retorno = await EnvioEmail(request, empresa, TipoEmail.Logistica);
-                if (empresa.Configuracoes.EnviarEmailTransportadora) retorno = await EnvioEmail(request, empresa, TipoEmail.Transportadora);
-
                 return await Task.FromResult(retorno);
             }
             catch (Exception ex)
@@ -41,56 +38,57 @@ namespace Coladel.Application.Handlers.Empresas.Handler
             }
         }
 
-        private async Task<IActionResult> EnvioEmail(EnviarEmailRequest request, Empresa empresa, TipoEmail tipoEmail)
-        {
-            Attachment anexar;
+        //private async Task<IActionResult> EnvioEmail(EnviarEmailRequest request, Empresa empresa, TipoEmail tipoEmail)
+        //{
+        //    Attachment anexar;
 
-            var email = empresa.EnvioEmails.FirstOrDefault(p => p.TipoEmail == tipoEmail && p.IsOrigem == true);
-            var destinatarios = empresa.EnvioEmails.Where(p => p.TipoEmail == tipoEmail && p.IsOrigem == false).ToList();
+        //    var email = empresa.EnvioEmails.FirstOrDefault();
+        //    var destinatarios = empresa.EnvioEmails.ToList();
 
-            var msg = email.Mensagem.Replace("$cliente$", request.Cliente);
-            msg = msg.Replace("$nf$", request.Nf);
+        //    var msg = email.Mensagem.Replace("$cliente$", request.Cliente);
+        //    msg = msg.Replace("$nf$", request.Nf);
 
-            bool bValidaEmail = ValidaEnderecoEmail(destinatarios[0].Email);
+        //    bool bValidaEmail = ValidaEnderecoEmail(destinatarios[0].Email);
 
-            if (bValidaEmail == false)
-                return await Task.FromResult(new BadRequestObjectResult(new { Error = "Email Inválido!" }));
+        //    if (bValidaEmail == false)
+        //        return await Task.FromResult(new BadRequestObjectResult(new { Error = "Email Inválido!" }));
 
-            MailMessage mensagemEmail = new MailMessage(email.Email, destinatarios[0].Email, request.Cliente + " NF " + request.Nf, msg);
-            mensagemEmail.IsBodyHtml = true;
+        //    MailMessage mensagemEmail = new MailMessage(email.Email, destinatarios[0].Email, request.Cliente + " NF " + request.Nf, msg);
+        //    mensagemEmail.IsBodyHtml = true;
 
-            for (int i = 1; i < destinatarios.Count; i++)
-            {
-                mensagemEmail.Bcc.Add(destinatarios[i].Email);
-            }
+        //    for (int i = 1; i < destinatarios.Count; i++)
+        //    {
+        //        mensagemEmail.Bcc.Add(destinatarios[i].Email);
+        //    }
 
-            byte[] bytes;
+        //    byte[] bytes;
 
-            if (request.File.Length > 0)
-            {
-                using (var memoryStream = new MemoryStream())
-                {
-                    request.File.CopyTo(memoryStream);
-                    bytes = memoryStream.ToArray();
-                }
+        //    if (request.File.Length > 0)
+        //    {
+        //        using (var memoryStream = new MemoryStream())
+        //        {
+        //            request.File.CopyTo(memoryStream);
+        //            bytes = memoryStream.ToArray();
+        //        }
 
-                anexar = new Attachment(new MemoryStream(bytes), request.File.FileName, request.File.ContentType);
+        //        anexar = new Attachment(new MemoryStream(bytes), request.File.FileName, request.File.ContentType);
 
-                mensagemEmail.Attachments.Add(anexar);
-            }
+        //        mensagemEmail.Attachments.Add(anexar);
+        //    }
 
-            SmtpClient client = new SmtpClient(email.SmtpCliente, email.PortSmtp);
-            client.UseDefaultCredentials = false;
+        //    SmtpClient client = new SmtpClient(email.SmtpCliente, email.PortSmtp);
+        //    client.UseDefaultCredentials = false;
 
-            NetworkCredential cred = new NetworkCredential(email.Email, email.Senha);
+        //    NetworkCredential cred = new NetworkCredential(email.Email, email.Senha);
 
-            client.EnableSsl = true;
-            client.Credentials = cred;
+        //    client.EnableSsl = true;
+        //    client.Credentials = cred;
 
-            client.Send(mensagemEmail);
+        //    client.Send(mensagemEmail);
 
-            return await Task.FromResult(new OkObjectResult(new { OkResult = "Email Enviado !" }));
-        }
+        //    return await Task.FromResult(new OkObjectResult(new { OkResult = "Email Enviado !" }));
+        //}
+
         private static bool ValidaEnderecoEmail(string enderecoEmail)
         {
             try

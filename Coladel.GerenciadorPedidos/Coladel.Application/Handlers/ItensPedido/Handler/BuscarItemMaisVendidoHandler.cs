@@ -1,5 +1,5 @@
-﻿using Coladel.Application.Handlers.ItemPedido.Request;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.ItemPedido.Request;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,8 +18,7 @@ namespace Coladel.Application.Handlers.ItemPedido.Handler
         {
             try
             {
-                var produto = _pedidoRepository.BuscarProdutoMaisVendidoMesAnoDados(request.Mes, request.Ano);
-                return await Task.FromResult(new OkObjectResult(produto));
+                return await Task.FromResult(new OkResult());
             }
             catch (Exception ex)
             {

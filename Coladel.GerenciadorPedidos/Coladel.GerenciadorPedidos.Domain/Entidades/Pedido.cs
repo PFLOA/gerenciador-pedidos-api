@@ -13,8 +13,6 @@ namespace A4S.ERP.Domain.Entidades
 
         public decimal Total { get; set; }
         public decimal TotalComissao { get; set; }
-<<<<<<< HEAD
-
         public string NF { get; set; }
         public string Observacoes { get; set; }
 
@@ -25,12 +23,6 @@ namespace A4S.ERP.Domain.Entidades
 
         [IgnoreDataMember]
         public virtual Cliente Cliente { get; set; }
-=======
-        public short IdCliente { get; set; }
-
-        public virtual Cliente Cliente { get; set; }
-        public virtual List<ItensPedido> ItensPedido { get; set; }
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
         public Pedido() { }
         public Pedido(CriarPedidoBody criarPedidoBody) => criarPedidoBody.MappingProperties(this);

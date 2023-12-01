@@ -2,7 +2,6 @@
 using A4S.ERP.Domain.Entidades;
 using A4S.ERP.Domain.Enum;
 using System;
-using System.Collections.Generic;
 
 namespace A4S.Application.Handlers.Clientes.Response
 {
@@ -26,11 +25,6 @@ namespace A4S.Application.Handlers.Clientes.Response
         public BuscarClientesFiltroResponse(Cliente cliente)
         {
             cliente.MappingProperties(this);
-
-            if(cliente.Emails.Count > 0)
-            {
-                cliente.Emails.ForEach(email => Email.Add(email.Descricao));
-            }
         }
     }
 }

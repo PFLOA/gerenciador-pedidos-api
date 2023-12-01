@@ -1,13 +1,12 @@
-﻿using Coladel.Application.Handlers.Clientes.Request;
-using Coladel.Application.Handlers.Clientes.Response;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
+﻿using A4S.Application.Handlers.Clientes.Request;
+using A4S.Application.Handlers.Clientes.Response;
+using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Threading;
-using MediatR;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace A4S.Application.Handlers.Clientes
 {
@@ -29,15 +28,6 @@ namespace A4S.Application.Handlers.Clientes
             try
             {
                 Cliente cliente = _clienteRepository.Criar(request.ToModel());
-
-                request.EmailRequest.ForEach(email =>
-                {
-                    _emailRepository.Criar(new Email
-                    {
-                        Cliente = cliente,
-                        Descricao = email
-                    });
-                });
 
                 return await Task.FromResult(new OkObjectResult(new { Produto = new CriarClienteResponse(cliente) }));
             }

@@ -7,5 +7,5 @@ services:
     build:
       context: .
     ports:
-      - "5003:5003"
+      - "5003:443"
       - "8090:80"

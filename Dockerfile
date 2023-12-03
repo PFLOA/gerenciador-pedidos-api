@@ -6,7 +6,14 @@ EXPOSE 5003
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-COPY ["Coladel.GerenciadorPedidos/A4S.Modulo.Email/A4S.Modulo.Email.csproj", "A4S.Modulo.Email/"]
+
+COPY ["Coladel.GerenciadorPedidos/A4S.Modulo.Email", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/A4S.ERP.Duplicatas/", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/Coladel.Application", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/Coladel.Core", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/Coladel.Core.Rest", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.Domain", "A4S.Modulo.Email/"]
+COPY ["Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.Infra", "A4S.Modulo.Email/"]
 
 RUN dotnet restore "A4S.Modulo.Email/A4S.Modulo.Email.csproj"
 COPY . .

@@ -6,8 +6,8 @@ using Microsoft.Extensions.Options;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
-using TheArtOfDev.HtmlRenderer.PdfSharp;
 using System.Text;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace A4S.ERP.Application.Services
 {
@@ -32,19 +32,27 @@ namespace A4S.ERP.Application.Services
 
             if (file != null)
             {
-                if (file.FileName.Contains(".html"))
+                if (file.Length > 0)
                 {
-                    if (file.Length > 0)
+                    using (var ms = new MemoryStream())
                     {
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            var pdf = PdfGenerator.GeneratePdf(mailRequest.ReadAsList(), PdfSharp.PageSize.A4);
-                            pdf.Save(ms);
-
-                            Attachment att = new Attachment(new MemoryStream(ms.ToArray()), file.FileName);
-                            message.Attachments.Add(att);
-                        }
+                        file.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        Attachment att = new Attachment(new MemoryStream(fileBytes), file.FileName);
+                        message.Attachments.Add(att);
                     }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(mailRequest.HtmlAnexo))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    var pdf = PdfGenerator.GeneratePdf(mailRequest.HtmlAnexo, PdfSharp.PageSize.A4);
+                    pdf.Save(ms);
+
+                    Attachment att = new Attachment(new MemoryStream(ms.ToArray()), file.FileName);
+                    message.Attachments.Add(att);
                 }
             }
 

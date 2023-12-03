@@ -13,9 +13,9 @@ RUN dotnet restore "A4S.Modulo.Email/A4S.Modulo.Email.csproj"
 COPY . .
 
 WORKDIR "/src/A4S"
-RUN dotnet build "A4S.Modulo.Email.csproj" -c Release -o /app/build
+RUN dotnet build "A4S.Modulo.Email/A4S.Modulo.Email.csproj" -c Release -o /app/build
 FROM build AS publish
-RUN dotnet publish "A4S.Modulo.Email.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "A4S.Modulo.Email/A4S.Modulo.Email.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 
 FROM base AS final

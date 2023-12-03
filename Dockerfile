@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["Coladel.GerenciadorPedidos/A4S.Modulo.Email/A4S.Modulo.Email.csproj", "A4S.Modulo.Email/"]
 
-RUN dotnet restore "Coladel.GerenciadorPedidos/A4S.Modulo.Email/A4S.Modulo.Email.csproj"
+RUN dotnet restore "./Coladel.GerenciadorPedidos/A4S.Modulo.Email/A4S.Modulo.Email.csproj"
 COPY . .
 
 WORKDIR "/src/A4S"

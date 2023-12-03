@@ -8,3 +8,4 @@ services:
       context: .
     ports:
       - "5003:5003"
+      - "8090:80"

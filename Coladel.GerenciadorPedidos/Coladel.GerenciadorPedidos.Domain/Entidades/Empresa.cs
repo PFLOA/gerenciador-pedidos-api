@@ -28,6 +28,5 @@ namespace A4S.ERP.Domain.Entidades
         public virtual BdEmpresa BdEmpresa { get; set; }
         public virtual Endereco Endereco { get; set; }
         public virtual Tributos Tributos { get; set; }
-        public IList<string> EnvioEmails { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 using A4S.Application.Handlers.Login.Handler;
 using A4S.ERP.Infra;
 using A4S.ERP.Infra.Data;
-using A4S.ERP.Servicos;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -54,7 +53,7 @@ namespace A4S.ERP
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
-            
+
             services.AddControllers()
                 .ConfigureApiBehaviorOptions(options =>
                 {

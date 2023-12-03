@@ -3,7 +3,7 @@ using A4S.ERP.Domain.Entidades;
 
 namespace A4S.ERP.Domain.Interface
 {
-    public interface IItensPedidoRepository : IRepository<ItensPedido>
+    public interface IItensPedidoRepository : IRepositoryBase<ItensPedido>
     {
     }
 }

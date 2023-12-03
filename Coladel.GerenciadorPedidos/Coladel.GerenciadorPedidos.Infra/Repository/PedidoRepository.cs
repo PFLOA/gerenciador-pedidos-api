@@ -15,27 +15,6 @@ namespace A4S.ERP.Infra.Repository
     {
         public PedidoRepository(AppDbContext context) : base(context) { }
 
-<<<<<<< HEAD
-=======
-        public ProdutoMaisVendidoBody BuscarProdutoMaisVendidoMesAnoDados(int mes, int ano)
-        {
-            Produto produto = BuscarProdutoMaisVendido(mes, ano);
-
-            if (produto is null) return new ProdutoMaisVendidoBody();
-
-            var total = BuscarTotalProdutoMaisVendidoMes(mes, ano, produto);
-            var quantidade = BuscarQuantidadeProdutoMaisVendidoMes(mes, ano, produto);
-            var maxValorProdutoMes = BuscarAvgValorProdutoMaisVendidoMes(mes, ano, produto);
-
-            return new ProdutoMaisVendidoBody(produto, total, quantidade, maxValorProdutoMes);
-        }
-
-        public Produto BuscarProdutoMaisVendido(int mes, int ano)
-        {
-            return FiltarListaItensPedido(mes, ano).FiltrarPorProdutoRecorrente();
-        }
-
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
         public IQueryable<Pedido> BuscarPedidosPorFiltro(BuscarPedidosFiltroFilter filter) =>
             Set.FiltrarPorNomeCliente(filter.Cliente)
                 .FiltrarPorData(filter.Mes, filter.Ano)
@@ -43,12 +22,7 @@ namespace A4S.ERP.Infra.Repository
                 .FiltrarPorStatus(filter.StatusPedido)
                 .FiltrarPorGuid(filter.ClienteGuid)
                 .OrderByDescending(p => p.DataCadastro)
-<<<<<<< HEAD
                 .Include(p => p.Cliente);
-=======
-                .Include(s => s.Cliente)
-                .Include("ItensPedido.Produto");
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
         public int BuscarTotalStatusPedidosPorFiltro(BuscarStatusPedidoFilter filter) => 
             Set.FiltrarPorAno(filter.Ano)

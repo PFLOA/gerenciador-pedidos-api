@@ -1,10 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-<<<<<<< HEAD:Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.Infra/Data/Mapping/AppDb/PedidosMapping.cs
-using A4S.ERP.Domain.Entidades;
-=======
-using Coladel.GerenciadorPedidos.Domain.Entidades;
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6:Coladel.GerenciadorPedidos/Coladel.GerenciadorPedidos.Infra/Data/Mapping/PedidosMapping.cs
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace A4S.ERP.Infra.Data.Mapping
 {

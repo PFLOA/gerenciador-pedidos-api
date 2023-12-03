@@ -16,7 +16,7 @@ namespace A4S.ERP.Domain.Entidades
 
 
         [IgnoreDataMember]
-        public short IdEmpresa { get; set; }
+        public short EmpresaId { get; set; }
 
         [IgnoreDataMember]
         public string Senha { get; set; }

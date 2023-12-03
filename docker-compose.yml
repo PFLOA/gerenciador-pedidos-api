@@ -2,8 +2,9 @@ version: '3'
 
 services:
   a4s-erp-api:
-    image: a4s-erp-api-img
+    container_name: a4s-email-api
+    image: a4s-email-api-img
     build:
       context: .
     ports:
-      - "5000:5000"
+      - "5000:5003"

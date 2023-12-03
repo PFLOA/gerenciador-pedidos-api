@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Coladel.GerenciadorAulas.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Coladel.Infra.Data.Mapping
 {
@@ -16,8 +16,6 @@ namespace Coladel.Infra.Data.Mapping
             builder.Property(p => p.MostrarComissaoDashboard).HasColumnName("mostrar_comissao");
             builder.Property(p => p.EnviarEmailTransportadora).HasColumnName("enviar_transportadora");
             builder.Property(p => p.EnviarEmailLogistica).HasColumnName("enviar_logistica");
-
-            builder.HasOne(p => p.Empresa).WithOne(p => p.Configuracoes).HasForeignKey<Empresa>(p => p.IdConfiguracao);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace A4S.ERP.Infra.Repository.QueryExtensions
 
             return query;
         }
-<<<<<<< HEAD
         public static IQueryable<Pedido> FiltrarPorGuid(this IQueryable<Pedido> query, Guid? guid)
         {
             if (guid.HasValue) return query.Where(p => p.Cliente.Guid == guid.Value);
@@ -52,18 +51,6 @@ namespace A4S.ERP.Infra.Repository.QueryExtensions
         public static IQueryable<Pedido> FiltrarPorData(this IQueryable<Pedido> query, int? mes, int? ano)
         {
             if (!mes.HasValue || !ano.HasValue) return query;
-=======
-        public static IQueryable<Pedido> FiltrarPorDia(this IQueryable<Pedido> query, int dia)
-        {
-            if (dia == 0) return query;
-
-            return query.Where(p => p.DataCadastro.Date.Day <= dia);
-        }
-
-        public static IQueryable<Pedido> FiltrarPorData(this IQueryable<Pedido> query, int mes, int ano)
-        {
-            if (mes == 0 || ano == 0) return query;
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 
 
             return query.Where(p => p.DataCadastro.Date.Month == mes).AsQueryable();

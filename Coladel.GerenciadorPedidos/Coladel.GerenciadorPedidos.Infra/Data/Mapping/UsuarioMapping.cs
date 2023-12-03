@@ -1,7 +1,6 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
 {
@@ -17,9 +16,12 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.Property(p => p.Nome).HasColumnName("nome");
             builder.Property(p => p.Senha).HasColumnName("senha");
             builder.Property(p => p.Email).HasColumnName("email");
-            builder.Property(p => p.UserName).HasColumnName("user_name");
+            builder.Property(p => p.EmiteNfe).HasColumnName("user_name");
             builder.Property(p => p.Role).HasColumnName("Role").HasConversion<string>();
-            builder.Property(p => p.ConnectionString).HasColumnName("connection_string");
+            builder.Property(p => p.EmpresaId).HasColumnName("id_empresa");
+            builder.Property(p => p.ContatoUserId).HasColumnName("id_contato");
+            builder.Property(p => p.SetorId).HasColumnName("id_setor");
+            builder.Property(p => p.RoleId).HasColumnName("id_role");
         }
     }
 }

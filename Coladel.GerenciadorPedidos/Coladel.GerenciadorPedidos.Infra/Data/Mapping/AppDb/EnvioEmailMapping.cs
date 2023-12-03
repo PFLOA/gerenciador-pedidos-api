@@ -11,7 +11,7 @@ namespace A4S.ERP.Infra.Data.Mapping
             builder.ToTable("envio_emails");
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("id").ValueGeneratedOnAdd();
-            builder.Property(p => p.IdEmpresa).HasColumnName("id_empresa");
+            builder.Property(p => p.EmpresaId).HasColumnName("id_empresa");
             builder.Property(p => p.Guid).HasColumnName("guid");
             builder.Property(p => p.DataCadastro).HasColumnName("data_cadastro");
             builder.Property(p => p.SmtpCliente).HasColumnName("smtp_cliente").HasColumnType("varchar(50)");

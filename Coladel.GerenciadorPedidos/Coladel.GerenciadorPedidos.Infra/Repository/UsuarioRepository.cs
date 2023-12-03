@@ -1,17 +1,8 @@
-<<<<<<< HEAD
 ﻿using A4S.Core.Utils;
 using A4S.ERP.Domain.Body;
 using A4S.ERP.Domain.Entidades;
 using A4S.ERP.Domain.Interface;
 using A4S.ERP.Infra.Data;
-=======
-﻿using Coladel.Core.Utils;
-using Coladel.GerenciadorPedidos.Domain.Body;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorPedidos.Infra.Data;
-using Microsoft.AspNetCore.Http;
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 using System.Security.Cryptography;
 
 namespace A4S.ERP.Infra.Repository

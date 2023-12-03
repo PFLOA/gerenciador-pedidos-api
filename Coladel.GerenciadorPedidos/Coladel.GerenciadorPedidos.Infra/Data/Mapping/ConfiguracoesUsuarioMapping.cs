@@ -1,4 +1,4 @@
-﻿using Coladel.GerenciadorAulas.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +8,7 @@ namespace Coladel.Infra.Data.Mapping
     {
         public void Configure(EntityTypeBuilder<ConfiguracoesUsuario> builder)
         {
-            builder.ToTable("configuracoes_usuario"); 
+            builder.ToTable("configuracoes_usuario");
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("id").ValueGeneratedOnAdd();
             builder.Property(p => p.Guid).HasColumnName("guid");

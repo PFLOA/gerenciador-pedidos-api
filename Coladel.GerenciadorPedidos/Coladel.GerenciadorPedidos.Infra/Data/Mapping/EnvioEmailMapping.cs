@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Coladel.GerenciadorAulas.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Coladel.Infra.Data.Mapping
 {
@@ -11,7 +11,6 @@ namespace Coladel.Infra.Data.Mapping
             builder.ToTable("envio_emails");
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("id").ValueGeneratedOnAdd();
-            builder.Property(p => p.IdEmpresa).HasColumnName("id_empresa");
             builder.Property(p => p.Guid).HasColumnName("guid");
             builder.Property(p => p.DataCadastro).HasColumnName("data_cadastro");
             builder.Property(p => p.SmtpCliente).HasColumnName("smtp_cliente").HasColumnType("varchar(50)");
@@ -22,8 +21,6 @@ namespace Coladel.Infra.Data.Mapping
             builder.Property(p => p.Assunto).HasColumnName("assunto");
             builder.Property(p => p.Mensagem).HasColumnName("mensagem");
             builder.Property(p => p.IsOrigem).HasColumnName("is_origem");
-
-            builder.HasOne(p => p.Empresa).WithMany(p => p.EnvioEmails).HasForeignKey(p => p.IdEmpresa);
         }
     }
 }

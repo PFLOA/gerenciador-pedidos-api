@@ -32,7 +32,7 @@ namespace A4S.ERP.Domain.Entidades
         public virtual RamoAtividade RamoAtividade { get; set; }
         public virtual CondicoesPagamento CondicoesPagamento { get; set; }
 
-        public virtual List<ContasReceber> ContasReceber{ get; set; }
+        public virtual List<ContasReceber> ContasReceber { get; set; }
         public virtual List<ContatoCliente> ContatosCliente { get; set; }
         public virtual List<NotaFiscal> NotasFiscais { get; set; }
         public virtual List<Pedido> Pedidos { get; set; }

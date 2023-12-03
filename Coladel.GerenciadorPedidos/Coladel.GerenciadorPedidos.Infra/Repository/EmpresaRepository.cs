@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using A4S.ERP.Domain.Entidades;
 using A4S.ERP.Domain.Interface;
 using A4S.ERP.Infra.Data;
@@ -24,23 +23,6 @@ namespace A4S.ERP.Infra.Repository
                 .Include(p => p.Endereco)
                 .Include(p => p.Tributos)
                 .FirstOrDefault(p => p.Id == empresaId);
-=======
-﻿using Coladel.GerenciadorAulas.Domain.Entidades;
-using Coladel.GerenciadorAulas.Domain.Interface;
-using Coladel.GerenciadorPedidos.Infra.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-
-namespace Coladel.Infra.Repository
-{
-    public class EmpresaRepository : Repository<Empresa>, IEmpresaRepository
-    {
-        public EmpresaRepository(UserDbContext dbContext) : base(dbContext) { }
-
-        public Empresa RetornarEmpresa()
-        {
-            return Set.Include(p => p.Configuracoes).Include(p => p.EnvioEmails).FirstOrDefault();
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
         }
     }
 }

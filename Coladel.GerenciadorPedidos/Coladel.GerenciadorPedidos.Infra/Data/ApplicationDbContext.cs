@@ -1,4 +1,4 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Coladel.GerenciadorPedidos.Infra.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 

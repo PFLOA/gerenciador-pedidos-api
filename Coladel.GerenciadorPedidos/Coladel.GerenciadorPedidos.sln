@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - App", "2 - App", "{0BD9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A4S.ERP.Duplicatas", "A4S.ERP.Duplicatas\A4S.ERP.Duplicatas.csproj", "{EE99737C-33AE-4CA4-9A37-93698F786E8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A4S.Modulo.Email", "A4S.Modulo.Email\A4S.Modulo.Email.csproj", "{0A077FEA-4EED-42FC-915A-5992954AB6AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE99737C-33AE-4CA4-9A37-93698F786E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A077FEA-4EED-42FC-915A-5992954AB6AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A077FEA-4EED-42FC-915A-5992954AB6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A077FEA-4EED-42FC-915A-5992954AB6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A077FEA-4EED-42FC-915A-5992954AB6AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{F5B47D17-6F2D-4046-BFA9-8E0F64336675} = {C571525D-ADE6-4EA3-81E6-D153512B0E14}
 		{7063F59E-8247-4352-B45E-9460347CEE48} = {0BD98B0B-AEEA-4877-91B0-70FE12E664F0}
 		{EE99737C-33AE-4CA4-9A37-93698F786E8B} = {0BD98B0B-AEEA-4877-91B0-70FE12E664F0}
+		{0A077FEA-4EED-42FC-915A-5992954AB6AE} = {6B652E75-7CAD-40B1-8638-D9699C5D8865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7558218D-95A1-45A0-AA61-E270C36FCF42}

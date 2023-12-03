@@ -16,9 +16,6 @@ namespace A4S.ERP.Controllers
         [HttpGet]
         public async Task<IActionResult> BuscarPedidos([FromQuery] BuscarPedidosFiltroRequest request) => await _mediator.Send(request);
 
-        [HttpGet("ItemMaisVendido")]
-        public async Task<IActionResult> BuscarItemMaisVendido([FromQuery] BuscarItemMaisVendidoRequest request) => await _mediator.Send(request);
-
         [HttpGet("TotalStatus")]
         public async Task<IActionResult> BuscarTotalStatus([FromQuery] BuscarStatusPedidosRequest request) => await _mediator.Send(request);
 

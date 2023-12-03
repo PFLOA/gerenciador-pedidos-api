@@ -35,7 +35,7 @@ namespace A4S.Application.Handlers.Empresas.Handler
                             TipoEmail = request.TipoEmail,
                             PortSmtp = request.PortSmtp,
                             IsOrigem = request.IsOrigem,
-                            IdEmpresa = 1
+                            EmpresaId = 1
                         });
                     }
                     else
@@ -59,7 +59,7 @@ namespace A4S.Application.Handlers.Empresas.Handler
                         Email = request.Email,
                         TipoEmail = request.TipoEmail,
                         IsOrigem = request.IsOrigem,
-                        IdEmpresa = 1
+                        EmpresaId = 1
                     });
                 }
 

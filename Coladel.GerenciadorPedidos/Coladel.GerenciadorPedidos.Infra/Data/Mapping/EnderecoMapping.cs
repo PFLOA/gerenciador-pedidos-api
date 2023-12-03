@@ -1,17 +1,8 @@
-<<<<<<< HEAD
 ﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace A4S.ERP.Infra.Data.Mapping
-=======
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Coladel.GerenciadorAulas.Domain.Entidades;
-using Microsoft.EntityFrameworkCore;
-using System;
-
-namespace Coladel.Infra.Data.Mapping
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 {
     public class EnderecoMapping : IEntityTypeConfiguration<Endereco>
     {
@@ -30,14 +21,10 @@ namespace Coladel.Infra.Data.Mapping
             builder.Property(p => p.Complemento).HasColumnName("complemento").HasColumnType("varchar(126)");
             builder.Property(p => p.Cep).HasColumnName("cep").HasColumnType("varchar(10)");
 
-<<<<<<< HEAD
             builder.HasOne(p => p.Transportadora).WithOne(p => p.Endereco).HasForeignKey<Transportadora>(p => p.EnderecoId);
             builder.HasOne(p => p.Cliente).WithOne(p => p.Endereco).HasForeignKey<Cliente>(p => p.EnderecoId);
             builder.HasOne(p => p.ClienteCobranca).WithOne(p => p.EnderecoCobranca).HasForeignKey<Cliente>(p => p.EnderecoCobrancaId);
             builder.HasOne(p => p.ClienteEntrega).WithOne(p => p.EnderecoEntrega).HasForeignKey<Cliente>(p => p.EnderecoEntregaId);
-=======
-            builder.HasOne(p => p.Transportadora).WithOne(p => p.Endereco).HasForeignKey<Transportadora>(p => p.IdEndereco);
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
         }
     }
 }

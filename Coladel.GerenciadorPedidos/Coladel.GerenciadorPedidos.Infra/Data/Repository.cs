@@ -13,15 +13,9 @@ namespace A4S.ERP.Infra.Data
     public class Repository<TEntidade> : IRepository<TEntidade> where TEntidade : Entity
     {
         protected DbSet<TEntidade> Set { get; private set; }
-<<<<<<< HEAD
         protected AppDbContext context;
 
         public Repository(AppDbContext dbContext)
-=======
-        protected UserDbContext context;
-
-        public Repository(UserDbContext dbContext)
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
         {
             context = dbContext;
             Type tipo = typeof(TEntidade);

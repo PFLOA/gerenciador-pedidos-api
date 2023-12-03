@@ -1,4 +1,4 @@
-﻿using Coladel.GerenciadorAulas.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

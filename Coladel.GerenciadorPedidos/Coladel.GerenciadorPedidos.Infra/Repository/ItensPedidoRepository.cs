@@ -1,12 +1,12 @@
-﻿using Coladel.GerenciadorPedidos.Domain.Entidades;
-using Coladel.GerenciadorPedidos.Domain.Interface;
-using Coladel.GerenciadorPedidos.Infra.Data;
+﻿using A4S.ERP.Domain.Entidades;
+using A4S.ERP.Domain.Interface;
+using A4S.ERP.Infra.Data;
 
 namespace Coladel.GerenciadorPedidos.Infra.Repository
 {
-    public class ItensPedidoRepository : Repository<ItensPedido>, IItensPedidoRepository
+    public class ItensPedidoRepository : RepositoryBase<ItensPedido>, IItensPedidoRepository
     {
-        public ItensPedidoRepository(UserDbContext dbContext) : base(dbContext) { }
+        public ItensPedidoRepository(AppDbContext dbContext) : base(dbContext) { }
 
     }
 }

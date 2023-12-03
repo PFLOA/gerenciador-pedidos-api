@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Coladel.GerenciadorAulas.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
 {
@@ -15,8 +15,6 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.Property(p => p.Guid).HasColumnName("guid");
             builder.Property(p => p.DataCadastro).HasColumnName("data_cadastro");
             builder.Property(p => p.Descricao).HasColumnName("email").HasColumnType("varchar(256)");
-
-            builder.HasOne(p => p.Cliente).WithMany(p => p.Emails);
         }
     }
 }

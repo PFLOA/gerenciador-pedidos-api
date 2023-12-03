@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Coladel.GerenciadorPedidos.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
 {
@@ -17,10 +17,10 @@ namespace Coladel.GerenciadorPedidos.Infra.Data.Mapping
             builder.Property(p => p.Observacoes).HasColumnName("observacoes");
             builder.Property(p => p.StatusPedido).HasColumnName("status");
             builder.Property(p => p.Total).HasColumnName("total");
-            builder.Property(p => p.IdCliente).HasColumnName("id_cliente");
+            builder.Property(p => p.ClienteId).HasColumnName("id_cliente");
             builder.Property(p => p.TotalComissao).HasColumnName("total_comissao");
 
-            builder.HasOne(p => p.Cliente).WithMany().HasForeignKey(fk => fk.IdCliente);
+            builder.HasOne(p => p.Cliente).WithMany().HasForeignKey(fk => fk.ClienteId);
         }
     }
 }

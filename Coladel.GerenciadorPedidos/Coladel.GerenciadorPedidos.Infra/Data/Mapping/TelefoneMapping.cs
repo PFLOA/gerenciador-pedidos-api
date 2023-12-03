@@ -1,15 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-<<<<<<< HEAD
-using A4S.ERP.Domain.Entidades;
+﻿using A4S.ERP.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace A4S.ERP.Infra.Data.Mapping
-=======
-using Coladel.GerenciadorAulas.Domain.Entidades;
-using Microsoft.EntityFrameworkCore;
-
-namespace Coladel.Infra.Data.Mapping
->>>>>>> 0d898aa9a598847d35bd4a65ea35f8eb6f5798b6
 {
     public class TelefoneMapping : IEntityTypeConfiguration<Telefone>
     {

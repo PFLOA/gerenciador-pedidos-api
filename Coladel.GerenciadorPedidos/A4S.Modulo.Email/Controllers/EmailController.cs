@@ -5,8 +5,6 @@ using A4S.ERP.Domain.Interface.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.IO;
-using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace A4S.Modulo.Email.Controllers
 {

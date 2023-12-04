@@ -31,7 +31,7 @@ namespace A4S.Modulo.Email.Controllers
             }
             catch (Exception ex)
             {
-                throw ex;
+                return StatusCode(500, ex.Message);
             }
         }
     }
